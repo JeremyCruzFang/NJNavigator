@@ -40,7 +40,6 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="#home" class="brand" aria-label="NJNavigator home">
-        <!-- Replaceable logo placeholder: a path-like N icon, easy to swap later -->
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 40 40" width="32" height="32" role="img" aria-label="NJNavigator logo placeholder">
             <circle cx="20" cy="20" r="19" fill="rgba(255,255,255,0.6)" stroke="#0B1F3A" stroke-width="1.2"/>
@@ -50,7 +49,7 @@
           </svg>
         </span>
         <span class="brand-text">NJNavigator</span>
-        <span class="brand-tag" data-i18n="brand.tag">v0 · placeholder</span>
+        <span class="brand-tag" data-i18n="brand.tag">v1</span>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Menu">
@@ -104,7 +103,7 @@
             <a class="btn btn-primary" href="#survival" data-i18n="hero.cta1">Start Exploring</a>
             <a class="btn btn-ghost" href="#campus" data-i18n="hero.cta2">Campus Essentials</a>
           </div>
-          <p class="hero-note" data-i18n="hero.note">v0 · Visual foundation. Final content and verified facts to follow.</p>
+          <p class="hero-note" data-i18n="hero.note">v1 · Display logic and interaction layer. Final verified content still rolling in.</p>
         </div>
       </div>
     </section>
@@ -157,24 +156,37 @@
         </div>
 
         <h3 class="subhead reveal" data-i18n="survival.appsTitle">Essential Apps</h3>
+        <!-- v1: PNG icons from assets/icons/app_icon. Drop the four files in to replace the letter placeholders. -->
         <div class="grid grid-4 reveal">
           <article class="glass app-card">
-            <div class="app-icon" aria-hidden="true">支</div>
+            <div class="app-icon app-icon-img">
+              <img src="assets/icons/app_icon/alipay.png" alt="Alipay app icon" loading="lazy"
+                   onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'app-icon-fallback',textContent:'支'}))" />
+            </div>
             <h4>Alipay</h4>
             <p data-i18n="survival.apps.alipay">Payments, transit QR, utilities, mini-programs.</p>
           </article>
           <article class="glass app-card">
-            <div class="app-icon" aria-hidden="true">微</div>
+            <div class="app-icon app-icon-img">
+              <img src="assets/icons/app_icon/wechat.png" alt="WeChat Pay app icon" loading="lazy"
+                   onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'app-icon-fallback',textContent:'微'}))" />
+            </div>
             <h4>WeChat Pay</h4>
             <p data-i18n="survival.apps.wechat">Messaging, payments, official accounts.</p>
           </article>
           <article class="glass app-card">
-            <div class="app-icon" aria-hidden="true">地</div>
+            <div class="app-icon app-icon-img">
+              <img src="assets/icons/app_icon/amap.png" alt="Amap app icon" loading="lazy"
+                   onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'app-icon-fallback',textContent:'地'}))" />
+            </div>
             <h4>Amap</h4>
             <p data-i18n="survival.apps.amap">Navigation, transit, bilingual POI labels.</p>
           </article>
           <article class="glass app-card">
-            <div class="app-icon" aria-hidden="true">滴</div>
+            <div class="app-icon app-icon-img">
+              <img src="assets/icons/app_icon/didi.png" alt="Didi app icon" loading="lazy"
+                   onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'app-icon-fallback',textContent:'滴'}))" />
+            </div>
             <h4>Didi</h4>
             <p data-i18n="survival.apps.didi">Ride-hailing with English interface option.</p>
           </article>
@@ -198,61 +210,69 @@
           <p class="lede" data-i18n="campus.lede">Where to find a book, a meal, a clinic, and the gate. A working map of an academic day at NUIST.</p>
         </header>
 
-        <div class="map-embed reveal" aria-label="NUIST Campus Map placeholder">
+        <!-- v1: campus map card is now clickable, opens official NUIST map in a new tab. -->
+        <a class="map-embed reveal map-link" href="https://map.nuist.edu.cn" target="_blank" rel="noopener noreferrer" aria-label="Open NUIST campus map in a new tab">
           <div class="map-placeholder">
             <span class="map-id">MAP-01 · NUIST Campus Map</span>
             <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
+            <p class="map-cta" data-i18n="map.openNuist">Open map.nuist.edu.cn ↗</p>
           </div>
-        </div>
+        </a>
 
+        <!-- v1: campus points are clickable → openAmap() (no prefilled query yet). Last card is Bus → bus.html. -->
         <div class="grid grid-3 reveal" style="margin-top:22px">
-          <article class="glass card campus-point">
+          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
             <span class="point-id">CAMPUS-POINT-01</span>
             <h3 data-i18n="campus.points.waterford.title">Waterford Institute Area</h3>
             <p data-i18n="campus.points.waterford.body">Primary teaching and office area for international faculty.</p>
             <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-          </article>
-          <article class="glass card campus-point">
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
             <span class="point-id">CAMPUS-POINT-02</span>
             <h3 data-i18n="campus.points.library.title">Library</h3>
             <p data-i18n="campus.points.library.body">Quiet study floors, journals, and reserved reading rooms.</p>
             <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-          </article>
-          <article class="glass card campus-point">
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
             <span class="point-id">CAMPUS-POINT-03</span>
             <h3 data-i18n="campus.points.canteen.title">Canteen</h3>
             <p data-i18n="campus.points.canteen.body">Affordable daily meals, peak hours best avoided.</p>
             <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-          </article>
-          <article class="glass card campus-point">
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
             <span class="point-id">CAMPUS-POINT-04</span>
             <h3 data-i18n="campus.points.clinic.title">Clinic</h3>
             <p data-i18n="campus.points.clinic.body">On-campus first aid and routine consultations.</p>
             <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-          </article>
-          <article class="glass card campus-point">
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
             <span class="point-id">CAMPUS-POINT-05</span>
             <h3 data-i18n="campus.points.gate.title">Main Gate / Transport Access</h3>
             <p data-i18n="campus.points.gate.body">Bus stops, metro connections, and ride-hailing pickup.</p>
             <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-          </article>
-          <article class="glass card campus-point">
-            <h3 data-i18n="campus.points.routine.title">Daily Routine</h3>
-            <p data-i18n="campus.points.routine.body">A typical Monday–Friday rhythm for a new arrival.</p>
-            <ul class="bullet">
-              <li data-i18n="campus.routine.l1">Morning coffee &amp; office hours</li>
-              <li data-i18n="campus.routine.l2">Canteen lunch (11:30–12:30)</li>
-              <li data-i18n="campus.routine.l3">Afternoon teaching / research</li>
-              <li data-i18n="campus.routine.l4">Evening walk / Xuanwu Lake</li>
-            </ul>
-          </article>
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <!-- v1: Daily Routine card replaced by Bus card → bus.html -->
+          <a class="glass card campus-point clickable card-bus" href="bus.html">
+            <span class="point-id">CAMPUS-POINT-06</span>
+            <h3 data-i18n="campus.points.bus.title">Bus</h3>
+            <p data-i18n="campus.points.bus.body">Campus shuttles and city bus lines around NUIST.</p>
+            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
+            <span class="card-go" data-i18n="action.openBus">Open bus guide →</span>
+          </a>
         </div>
 
         <h3 class="subhead reveal" data-i18n="campus.diningTitle">Dining Guide</h3>
+        <!-- v1: three cards — two real foods + one Show More action card. Old standalone food image placeholders removed. -->
         <div class="grid grid-3 reveal">
           <article class="glass food-card">
             <span class="point-id">FOOD-CAMPUS-01</span>
-            <h4 data-i18n="campus.food.f1.title">Tomato and egg over rice</h4>
+            <h4 data-i18n="campus.food.f1.title">Claypot-style Chicken</h4>
+            <div class="img-ph small food-img" data-img="IMG-FOOD-01" data-desc-en="Claypot-style chicken plate" data-desc-zh="瓦香鸡示意图"></div>
             <dl class="sensory">
               <dt data-i18n="campus.food.smell">Smell</dt><dd>[TO BE WRITTEN]</dd>
               <dt data-i18n="campus.food.taste">Taste</dt><dd>[TO BE WRITTEN]</dd>
@@ -262,7 +282,8 @@
           </article>
           <article class="glass food-card">
             <span class="point-id">FOOD-CAMPUS-02</span>
-            <h4 data-i18n="campus.food.f2.title">Braised pork ribs</h4>
+            <h4 data-i18n="campus.food.f2.title">Duck Blood Vermicelli Soup</h4>
+            <div class="img-ph small food-img" data-img="IMG-FOOD-02" data-desc-en="Duck blood vermicelli soup bowl" data-desc-zh="鸭血粉丝汤示意图"></div>
             <dl class="sensory">
               <dt data-i18n="campus.food.smell">Smell</dt><dd>[TO BE WRITTEN]</dd>
               <dt data-i18n="campus.food.taste">Taste</dt><dd>[TO BE WRITTEN]</dd>
@@ -270,21 +291,13 @@
               <dt data-i18n="campus.food.context">Context</dt><dd>[TO BE WRITTEN]</dd>
             </dl>
           </article>
-          <article class="glass food-card">
-            <span class="point-id">FOOD-CAMPUS-03</span>
-            <h4 data-i18n="campus.food.f3.title">Duck blood vermicelli soup</h4>
-            <dl class="sensory">
-              <dt data-i18n="campus.food.smell">Smell</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.taste">Taste</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.texture">Texture</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.context">Context</dt><dd>[TO BE WRITTEN]</dd>
-            </dl>
-          </article>
-        </div>
-
-        <div class="grid grid-2 reveal" style="margin-top:22px">
-          <div class="img-ph" data-img="IMG-CAMPUS-01" data-desc-en="Library reading hall" data-desc-zh="图书馆阅览室"></div>
-          <div class="img-ph" data-img="IMG-CAMPUS-02" data-desc-en="Campus canteen interior" data-desc-zh="校园食堂内景"></div>
+          <!-- v1: Show More action card linking to food.html -->
+          <a class="glass food-card showmore-card" href="food.html" aria-label="See more food">
+            <span class="showmore-mark" aria-hidden="true">+</span>
+            <h4 data-i18n="campus.food.more.title">Show More</h4>
+            <p data-i18n="campus.food.more.body">See more campus and Nanjing food recommendations.</p>
+            <span class="card-go" data-i18n="action.openFood">Open food page →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -300,37 +313,109 @@
           <p class="lede" data-i18n="story.lede">A short walk through the layers of the city — Ming walls, Republican avenues, modern districts.</p>
         </header>
 
+        <!-- v1: timeline cards now open a centered detail modal. -->
         <ol class="timeline reveal" aria-label="Nanjing timeline">
-          <li class="timeline-item">
-            <span class="t-id">TIME-01</span>
-            <h4 data-i18n="story.t1.title">Ming Dynasty &amp; the City Wall</h4>
-            <p data-i18n="story.t1.body">[Placeholder] Foundation of the Ming capital and construction of one of the world's longest surviving city walls.</p>
+          <li>
+            <button type="button" class="timeline-item clickable"
+                    data-modal-trigger="story"
+                    data-modal-title-key="story.t1.title"
+                    data-modal-body-key="story.t1.modal">
+              <span class="t-id">TIME-01</span>
+              <h4 data-i18n="story.t1.title">Ming Dynasty &amp; the City Wall</h4>
+              <p data-i18n="story.t1.body">[Placeholder] Foundation of the Ming capital and construction of one of the world's longest surviving city walls.</p>
+              <span class="card-go" data-i18n="action.readMore">Read more →</span>
+            </button>
           </li>
-          <li class="timeline-item">
-            <span class="t-id">TIME-02</span>
-            <h4 data-i18n="story.t2.title">Republican Era</h4>
-            <p data-i18n="story.t2.body">[Placeholder] Nanjing as a 20th-century capital — civic architecture, planning, and political memory.</p>
+          <li>
+            <button type="button" class="timeline-item clickable"
+                    data-modal-trigger="story"
+                    data-modal-title-key="story.t2.title"
+                    data-modal-body-key="story.t2.modal">
+              <span class="t-id">TIME-02</span>
+              <h4 data-i18n="story.t2.title">Republican Era</h4>
+              <p data-i18n="story.t2.body">[Placeholder] Nanjing as a 20th-century capital — civic architecture, planning, and political memory.</p>
+              <span class="card-go" data-i18n="action.readMore">Read more →</span>
+            </button>
           </li>
-          <li class="timeline-item">
-            <span class="t-id">TIME-03</span>
-            <h4 data-i18n="story.t3.title">Modern Nanjing</h4>
-            <p data-i18n="story.t3.body">[Placeholder] University clusters, metro expansion, and contemporary cultural life.</p>
+          <li>
+            <button type="button" class="timeline-item clickable"
+                    data-modal-trigger="story"
+                    data-modal-title-key="story.t3.title"
+                    data-modal-body-key="story.t3.modal">
+              <span class="t-id">TIME-03</span>
+              <h4 data-i18n="story.t3.title">Modern Nanjing</h4>
+              <p data-i18n="story.t3.body">[Placeholder] University clusters, metro expansion, and contemporary cultural life.</p>
+              <span class="card-go" data-i18n="action.readMore">Read more →</span>
+            </button>
           </li>
         </ol>
 
-        <div class="grid grid-2 reveal" style="margin-top:30px">
-          <article class="glass deepdive">
-            <span class="point-id">DEEP-DIVE-01</span>
-            <div class="img-ph small" data-img="IMG-STORY-01" data-desc-en="Ming City Wall" data-desc-zh="明城墙"></div>
-            <h3 data-i18n="story.d1.title">The Wall &amp; The City</h3>
-            <p data-i18n="story.d1.body">[Ming City Wall historical analysis placeholder] How the wall shapes neighborhoods, traffic, and the cognitive map of present-day Nanjing.</p>
-          </article>
-          <article class="glass deepdive">
-            <span class="point-id">DEEP-DIVE-02</span>
-            <div class="img-ph small" data-img="IMG-STORY-02" data-desc-en="Sun Yat-sen Mausoleum / Presidential Palace" data-desc-zh="中山陵 / 总统府"></div>
-            <h3 data-i18n="story.d2.title">Republican Legacy</h3>
-            <p data-i18n="story.d2.body">[Sun Yat-sen Mausoleum / Presidential Palace analysis placeholder] Reading Republican-era sites as living civic spaces, not only monuments.</p>
-          </article>
+        <!-- v1: Deep Dive becomes a two-up looping card deck with six cards total. -->
+        <div class="deck reveal" id="storyDeck" aria-label="Deep dive card deck">
+          <button type="button" class="deck-arrow prev" id="deckPrev" aria-label="Previous pair">‹</button>
+          <div class="deck-viewport">
+            <div class="deck-track" id="deckTrack">
+              <!-- Group 1 -->
+              <div class="deck-group">
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-01</span>
+                  <div class="img-ph small" data-img="IMG-STORY-01" data-desc-en="Ming City Wall" data-desc-zh="明城墙"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.heritage">Heritage</span>
+                  <h3 data-i18n="story.d1.title">The Wall &amp; The City</h3>
+                  <p class="deepdive-sub" data-i18n="story.d1.sub">Ming City Wall &amp; the present-day map</p>
+                  <p data-i18n="story.d1.body">[Ming City Wall historical analysis placeholder] How the wall shapes neighborhoods, traffic, and the cognitive map of present-day Nanjing.</p>
+                </article>
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-02</span>
+                  <div class="img-ph small" data-img="IMG-STORY-02" data-desc-en="Sun Yat-sen Mausoleum / Presidential Palace" data-desc-zh="中山陵 / 总统府"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.republic">Republican</span>
+                  <h3 data-i18n="story.d2.title">Republican Legacy</h3>
+                  <p class="deepdive-sub" data-i18n="story.d2.sub">Civic spaces, not only monuments</p>
+                  <p data-i18n="story.d2.body">[Sun Yat-sen Mausoleum / Presidential Palace analysis placeholder] Reading Republican-era sites as living civic spaces, not only monuments.</p>
+                </article>
+              </div>
+              <!-- Group 2 -->
+              <div class="deck-group">
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-03</span>
+                  <div class="img-ph small" data-img="IMG-STORY-03" data-desc-en="Qinhuai River scenes" data-desc-zh="秦淮河风光"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.water">Water &amp; Culture</span>
+                  <h3 data-i18n="story.d3.title">Rivers &amp; Culture</h3>
+                  <p class="deepdive-sub" data-i18n="story.d3.sub">The Qinhuai and the city's literary memory</p>
+                  <p data-i18n="story.d3.body">[Placeholder] The Qinhuai River, the Yangtze, and how water has shaped Nanjing's poetry, markets, and night life.</p>
+                </article>
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-04</span>
+                  <div class="img-ph small" data-img="IMG-STORY-04" data-desc-en="Jiangnan Examination Hall" data-desc-zh="江南贡院"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.education">Education</span>
+                  <h3 data-i18n="story.d4.title">Imperial Examinations</h3>
+                  <p class="deepdive-sub" data-i18n="story.d4.sub">Jiangnan Examination Hall &amp; the scholar city</p>
+                  <p data-i18n="story.d4.body">[Placeholder] How the Jiangnan Examination Hall positions Nanjing as a long-running center of Chinese scholarship.</p>
+                </article>
+              </div>
+              <!-- Group 3 -->
+              <div class="deck-group">
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-05</span>
+                  <div class="img-ph small" data-img="IMG-STORY-05" data-desc-en="Modern skyline / metro / Xinjiekou" data-desc-zh="现代天际线 / 地铁 / 新街口"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.modern">Modern</span>
+                  <h3 data-i18n="story.d5.title">Modern Nanjing</h3>
+                  <p class="deepdive-sub" data-i18n="story.d5.sub">Metro, universities, new districts</p>
+                  <p data-i18n="story.d5.body">[Placeholder] University clusters, metro expansion, Hexi new district, and the contemporary rhythm of the city.</p>
+                </article>
+                <article class="glass deepdive">
+                  <span class="point-id">DEEP-DIVE-06</span>
+                  <div class="img-ph small" data-img="IMG-STORY-06" data-desc-en="Daily street life / breakfast stalls" data-desc-zh="日常街景 / 早餐摊"></div>
+                  <span class="deepdive-cat" data-i18n="story.cat.everyday">Everyday</span>
+                  <h3 data-i18n="story.d6.title">Everyday Heritage</h3>
+                  <p class="deepdive-sub" data-i18n="story.d6.sub">Small habits, neighborhoods, and old trees</p>
+                  <p data-i18n="story.d6.body">[Placeholder] Street trees, old lanes, breakfast rituals — the everyday textures that hold the city together.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="deck-arrow next" id="deckNext" aria-label="Next pair">›</button>
+          <ol class="deck-dots" id="deckDots" aria-label="Card deck pagination"></ol>
         </div>
       </div>
     </section>
@@ -353,7 +438,19 @@
               <h3 data-i18n="routes.a.title">Route A · History Buff</h3>
               <p data-i18n="routes.a.sub">Nanjing Museum → Ming Xiaoling Mausoleum</p>
             </header>
-            <div class="img-ph small" data-img="IMG-ROUTE-A-01" data-desc-en="Ming Xiaoling forest path" data-desc-zh="明孝陵神道"></div>
+
+            <!-- v1: route image becomes a manual gallery. -->
+            <div class="route-gallery" data-gallery="routeA" aria-label="Route A images">
+              <ol class="route-slides">
+                <li class="route-slide is-active img-ph small" data-img="IMG-ROUTE-A-01" data-desc-en="Nanjing Museum" data-desc-zh="南京博物院"></li>
+                <li class="route-slide img-ph small" data-img="IMG-ROUTE-A-02" data-desc-en="Ming Xiaoling forest path" data-desc-zh="明孝陵神道"></li>
+                <li class="route-slide img-ph small" data-img="IMG-ROUTE-A-03" data-desc-en="Ming Xiaoling stone statues" data-desc-zh="明孝陵石像生"></li>
+              </ol>
+              <button type="button" class="gallery-arrow prev" aria-label="Previous image">‹</button>
+              <button type="button" class="gallery-arrow next" aria-label="Next image">›</button>
+              <ol class="gallery-dots" aria-label="Route A pagination"></ol>
+            </div>
+
             <ol class="steps">
               <li>
                 <h5 data-i18n="routes.a.s1.t">Nanjing Museum</h5>
@@ -372,12 +469,15 @@
                 <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
               </li>
             </ol>
-            <div class="map-embed">
+
+            <!-- v1: route map placeholder is clickable → openAmap() -->
+            <button type="button" class="map-embed map-link" data-action="amap" data-amap-query="" aria-label="Open Route A in Amap">
               <div class="map-placeholder">
                 <span class="map-id">MAP-02 · Route A</span>
                 <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
+                <p class="map-cta" data-i18n="map.openAmap">Open in Amap ↗</p>
               </div>
-            </div>
+            </button>
           </article>
 
           <article class="glass route-card">
@@ -386,7 +486,18 @@
               <h3 data-i18n="routes.b.title">Route B · Nature &amp; Peace</h3>
               <p data-i18n="routes.b.sub">Xuanwu Lake → Zifeng Tower / Gulou Area</p>
             </header>
-            <div class="img-ph small" data-img="IMG-ROUTE-B-01" data-desc-en="Xuanwu Lake at dusk" data-desc-zh="黄昏的玄武湖"></div>
+
+            <div class="route-gallery" data-gallery="routeB" aria-label="Route B images">
+              <ol class="route-slides">
+                <li class="route-slide is-active img-ph small" data-img="IMG-ROUTE-B-01" data-desc-en="Xuanwu Lake at dusk" data-desc-zh="黄昏的玄武湖"></li>
+                <li class="route-slide img-ph small" data-img="IMG-ROUTE-B-02" data-desc-en="Zifeng Tower / Gulou Area" data-desc-zh="紫峰大厦 / 鼓楼一带"></li>
+                <li class="route-slide img-ph small" data-img="IMG-ROUTE-B-03" data-desc-en="Lakeside path" data-desc-zh="湖畔小径"></li>
+              </ol>
+              <button type="button" class="gallery-arrow prev" aria-label="Previous image">‹</button>
+              <button type="button" class="gallery-arrow next" aria-label="Next image">›</button>
+              <ol class="gallery-dots" aria-label="Route B pagination"></ol>
+            </div>
+
             <ol class="steps">
               <li>
                 <h5 data-i18n="routes.b.s1.t">Xuanwu Lake</h5>
@@ -405,12 +516,14 @@
                 <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
               </li>
             </ol>
-            <div class="map-embed">
+
+            <button type="button" class="map-embed map-link" data-action="amap" data-amap-query="" aria-label="Open Route B in Amap">
               <div class="map-placeholder">
                 <span class="map-id">MAP-03 · Route B</span>
                 <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
+                <p class="map-cta" data-i18n="map.openAmap">Open in Amap ↗</p>
               </div>
-            </div>
+            </button>
           </article>
         </div>
 
@@ -420,15 +533,18 @@
             <h4 data-i18n="routes.foodie.f1.title">Nanjing Salted Duck</h4>
             <p data-i18n="routes.foodie.f1.body">[PLACEHOLDER] Brief cultural and sensory note to be written.</p>
           </article>
+          <!-- v1: Plum Blossom Cake replaces Duck Blood Vermicelli Soup. -->
           <article class="glass food-card">
-            <h4 data-i18n="routes.foodie.f2.title">Duck Blood Vermicelli Soup</h4>
+            <h4 data-i18n="routes.foodie.f2.title">Plum Blossom Cake</h4>
             <p data-i18n="routes.foodie.f2.body">[PLACEHOLDER] Brief cultural and sensory note to be written.</p>
           </article>
           <article class="glass food-card">
-            <span class="point-id">IMG-FOOD-01</span>
+            <span class="point-id">IMG-FOOD-LOCAL</span>
             <h4 data-i18n="routes.foodie.f3.title">Local Restaurant</h4>
             <p data-i18n="routes.foodie.f3.body">[PLACEHOLDER] Recommended restaurant to be confirmed by group.</p>
             <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
+            <!-- v1: Show More opens a restaurant modal. -->
+            <button type="button" class="btn btn-ghost btn-sm showmore-btn" data-modal-trigger="restaurants" data-i18n="action.showMore">Show More</button>
           </article>
         </div>
       </div>
@@ -442,7 +558,7 @@
         <header class="section-head reveal">
           <p class="eyebrow" data-i18n="appendix.eyebrow">Section 5</p>
           <h2 data-i18n="appendix.title">Appendix</h2>
-          <p class="lede" data-i18n="appendix.lede">Reference material: ten useful phrases, sources, a QR for mobile use, and the AI disclosure required by the course.</p>
+          <p class="lede" data-i18n="appendix.lede">Reference material: ten useful phrases, sources, and a QR card stack for mobile use.</p>
         </header>
 
         <h3 class="subhead reveal" data-i18n="appendix.phrasesTitle">10 Essential Chinese Phrases</h3>
@@ -471,39 +587,77 @@
             </ol>
             <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
           </article>
-          <article class="glass card qr-card">
+
+          <!-- v1: QR card becomes a card stack with manual + timed switching. -->
+          <article class="glass card qr-card qr-stack" id="qrStack" aria-label="QR card stack">
             <h3 data-i18n="appendix.qrTitle">QR Code</h3>
-            <div class="qr-ph" aria-hidden="true">
-              <svg viewBox="0 0 80 80" width="120" height="120">
-                <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
-                <g fill="#0B1F3A">
-                  <rect x="6" y="6" width="18" height="18"/>
-                  <rect x="56" y="6" width="18" height="18"/>
-                  <rect x="6" y="56" width="18" height="18"/>
-                  <rect x="11" y="11" width="8" height="8" fill="#fff"/>
-                  <rect x="61" y="11" width="8" height="8" fill="#fff"/>
-                  <rect x="11" y="61" width="8" height="8" fill="#fff"/>
-                  <rect x="34" y="34" width="4" height="4"/>
-                  <rect x="42" y="34" width="4" height="4"/>
-                  <rect x="34" y="42" width="4" height="4"/>
-                  <rect x="42" y="42" width="4" height="4"/>
-                  <rect x="50" y="50" width="4" height="4"/>
-                  <rect x="30" y="58" width="4" height="4"/>
-                </g>
-              </svg>
+            <div class="qr-track" id="qrTrack">
+              <div class="qr-slide is-active" data-qr-id="QR-01" data-i18n-title="appendix.qr.q1.title" data-i18n-body="appendix.qr.q1.body">
+                <div class="qr-ph" aria-hidden="true">
+                  <svg viewBox="0 0 80 80" width="120" height="120">
+                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
+                    <g fill="#0B1F3A">
+                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
+                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
+                      <rect x="34" y="34" width="4" height="4"/><rect x="42" y="34" width="4" height="4"/><rect x="34" y="42" width="4" height="4"/><rect x="42" y="42" width="4" height="4"/><rect x="50" y="50" width="4" height="4"/><rect x="30" y="58" width="4" height="4"/>
+                    </g>
+                  </svg>
+                </div>
+                <p class="qr-purpose"><span class="qr-id">QR-01</span> · <span data-i18n="appendix.qr.q1.title">Website Link</span></p>
+                <p class="qr-body" data-i18n="appendix.qr.q1.body">QR Code Placeholder. To be replaced later.</p>
+              </div>
+              <div class="qr-slide" data-qr-id="QR-02" data-i18n-title="appendix.qr.q2.title" data-i18n-body="appendix.qr.q2.body">
+                <div class="qr-ph" aria-hidden="true">
+                  <svg viewBox="0 0 80 80" width="120" height="120">
+                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
+                    <g fill="#0B1F3A">
+                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
+                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
+                      <rect x="38" y="30" width="4" height="4"/><rect x="30" y="38" width="4" height="4"/><rect x="46" y="38" width="4" height="4"/><rect x="38" y="46" width="4" height="4"/><rect x="54" y="46" width="4" height="4"/><rect x="46" y="54" width="4" height="4"/>
+                    </g>
+                  </svg>
+                </div>
+                <p class="qr-purpose"><span class="qr-id">QR-02</span> · <span data-i18n="appendix.qr.q2.title">Subway Map</span></p>
+                <p class="qr-body" data-i18n="appendix.qr.q2.body">QR Code Placeholder. To be replaced later.</p>
+              </div>
+              <div class="qr-slide" data-qr-id="QR-03" data-i18n-title="appendix.qr.q3.title" data-i18n-body="appendix.qr.q3.body">
+                <div class="qr-ph" aria-hidden="true">
+                  <svg viewBox="0 0 80 80" width="120" height="120">
+                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
+                    <g fill="#0B1F3A">
+                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
+                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
+                      <rect x="30" y="30" width="6" height="6"/><rect x="44" y="30" width="6" height="6"/><rect x="30" y="44" width="6" height="6"/><rect x="44" y="44" width="6" height="6"/><rect x="52" y="58" width="4" height="4"/><rect x="26" y="58" width="4" height="4"/>
+                    </g>
+                  </svg>
+                </div>
+                <p class="qr-purpose"><span class="qr-id">QR-03</span> · <span data-i18n="appendix.qr.q3.title">City Wall Virtual Tour</span></p>
+                <p class="qr-body" data-i18n="appendix.qr.q3.body">QR Code Placeholder. To be replaced later.</p>
+              </div>
             </div>
-            <p>QR-01 — <span data-i18n="appendix.qr.body">Website link / subway map / useful resource placeholder.</span></p>
+            <div class="qr-controls">
+              <button type="button" class="qr-arrow prev" id="qrPrev" aria-label="Previous QR">‹</button>
+              <ol class="qr-dots" id="qrDots" aria-label="QR pagination"></ol>
+              <button type="button" class="qr-arrow next" id="qrNext" aria-label="Next QR">›</button>
+            </div>
           </article>
         </div>
-
-        <article class="glass card reveal" style="margin-top:22px">
-          <h3 data-i18n="appendix.aiTitle">AI Usage Disclosure</h3>
-          <p data-i18n="appendix.aiBody">AI Usage Disclosure: [TO BE COMPLETED BY EACH STUDENT]. Each contributor should declare tools used, the nature of assistance, and verification steps performed.</p>
-          <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
-        </article>
+        <!-- v1: AI Usage Disclosure card removed. -->
       </div>
     </section>
   </main>
+
+  <!-- ============================= -->
+  <!-- Reusable Modal -->
+  <!-- ============================= -->
+  <div class="modal-root" id="modalRoot" hidden>
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-dialog glass" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <button type="button" class="modal-close" data-modal-close aria-label="Close">×</button>
+      <h3 id="modalTitle" class="modal-title"></h3>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
 
   <!-- ============================= -->
   <!-- Footer -->
@@ -515,9 +669,8 @@
         <p data-i18n="footer.tag">A practical and cultural guide for international faculty at NUIST.</p>
       </div>
       <div>
-        <p data-i18n="footer.version">Version: v0 (visual foundation)</p>
-        <p data-i18n="footer.domain">Future domain: njnavigator.site</p>
-        <p data-i18n="footer.note">All factual content currently marked as placeholder.</p>
+        <p data-i18n="footer.version">Version: v1</p>
+        <p data-i18n="footer.note">Display logic in place. Verified content rolling in.</p>
       </div>
     </div>
   </footer>

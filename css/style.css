@@ -708,3 +708,428 @@ html[data-lang="zh"] .img-ph::after {
   }
   html { scroll-behavior: auto; }
 }
+
+/* =================================================================
+   v1 — display logic and interaction layer
+   ================================================================= */
+
+/* ---------- App-icon PNGs (Essential Apps) ---------- */
+.app-icon.app-icon-img {
+  background: rgba(255,255,255,0.85);
+  padding: 6px;
+  width: 56px;
+  height: 56px;
+}
+.app-icon.app-icon-img img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.app-icon-fallback {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--soft-blue), var(--navy));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* ---------- Clickable cards / map links ---------- */
+.clickable {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+  display: block;
+}
+.clickable:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.clickable:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+.card-go {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brick);
+  letter-spacing: 0.02em;
+}
+button.clickable { background: var(--glass); }
+a.clickable { color: inherit; text-decoration: none; }
+
+.map-link {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  text-align: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: 1px solid var(--line);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.map-cta {
+  margin-top: 10px !important;
+  color: var(--brick);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+/* ---------- Bus card accent ---------- */
+.card-bus {
+  background: linear-gradient(180deg, rgba(111,149,189,0.18), rgba(255,255,255,0.68));
+}
+
+/* ---------- Food images inside cards ---------- */
+.food-card .food-img { margin: 8px 0 12px; aspect-ratio: 4 / 3; }
+
+/* ---------- Show More cards ---------- */
+.showmore-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  background:
+    linear-gradient(180deg, rgba(158,63,53,0.10), rgba(255,255,255,0.68));
+  border: 1px dashed rgba(158,63,53,0.45);
+  min-height: 180px;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.showmore-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.showmore-mark {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--brick);
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+
+.btn-sm { padding: 8px 14px; font-size: 0.85rem; }
+.showmore-btn { margin-top: 10px; }
+
+/* ---------- Story timeline triggers ---------- */
+.timeline li { list-style: none; }
+.timeline-item.clickable {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.timeline-item.clickable:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* ---------- Deep-dive card deck ---------- */
+.deck {
+  position: relative;
+  margin-top: 30px;
+  padding: 0 56px;
+}
+.deck-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.deck-track {
+  display: flex;
+  transition: transform .55s var(--ease);
+  will-change: transform;
+}
+.deck-group {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.deck-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  font-size: 1.4rem;
+  color: var(--navy);
+  z-index: 3;
+  transition: transform .2s var(--ease), background .2s var(--ease);
+}
+.deck-arrow:hover { transform: translateY(-50%) scale(1.06); background: #fff; }
+.deck-arrow.prev { left: 4px; }
+.deck-arrow.next { right: 4px; }
+.deck-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.deck-dots button {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.25);
+  transition: all .2s var(--ease);
+}
+.deck-dots button.is-active { background: var(--navy); width: 24px; }
+.deepdive-cat {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(111,149,189,0.18);
+  color: var(--navy);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.deepdive-sub {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin-top: -4px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+/* ---------- Route galleries ---------- */
+.route-gallery {
+  position: relative;
+  margin-bottom: 14px;
+}
+.route-slides {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.route-slide {
+  position: absolute; inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+  border-radius: var(--radius);
+}
+.route-slide.is-active { opacity: 1; position: absolute; }
+.route-slide.img-ph.small { aspect-ratio: 4 / 3; margin: 0; }
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+  transition: transform .2s var(--ease);
+}
+.gallery-arrow:hover { transform: translateY(-50%) scale(1.06); }
+.gallery-arrow.prev { left: 8px; }
+.gallery-arrow.next { right: 8px; }
+.gallery-dots {
+  position: absolute;
+  bottom: 10px; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+.gallery-dots button {
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.30);
+  transition: all .2s var(--ease);
+}
+.gallery-dots button.is-active { background: var(--navy); width: 20px; }
+
+/* ---------- QR card stack ---------- */
+.qr-stack { position: relative; }
+.qr-track {
+  position: relative;
+  width: 100%;
+  min-height: 230px;
+}
+.qr-slide {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  pointer-events: none;
+}
+.qr-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+.qr-purpose {
+  margin: 4px 0 2px;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+.qr-body {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin: 0;
+  text-align: center;
+}
+.qr-id {
+  font-family: 'JetBrains Mono','Consolas',monospace;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+}
+.qr-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.qr-arrow {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 1.1rem;
+  transition: transform .2s var(--ease);
+}
+.qr-arrow:hover { transform: scale(1.06); background: #fff; }
+.qr-dots {
+  display: flex;
+  gap: 6px;
+}
+.qr-dots button {
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.30);
+  transition: all .2s var(--ease);
+}
+.qr-dots button.is-active { background: var(--navy); width: 18px; }
+
+/* ---------- Modal system ---------- */
+.modal-root {
+  position: fixed; inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-root[hidden] { display: none; }
+.modal-overlay {
+  position: absolute; inset: 0;
+  background: rgba(11,31,58,0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: modalFade .25s var(--ease);
+}
+.modal-dialog {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  padding: 28px 28px 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.94);
+  box-shadow: var(--shadow-lg);
+  animation: modalRise .3s var(--ease);
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: var(--navy);
+  background: rgba(11,31,58,0.06);
+  transition: background .2s var(--ease);
+}
+.modal-close:hover { background: rgba(11,31,58,0.12); }
+.modal-title {
+  margin: 0 0 12px;
+  padding-right: 36px;
+}
+.modal-body { color: var(--text-soft); font-size: 0.95rem; line-height: 1.65; }
+.modal-body p { margin: 0 0 10px; }
+
+@keyframes modalFade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes modalRise { from { opacity: 0; transform: translateY(8px) scale(.98) } to { opacity: 1; transform: none } }
+
+body.modal-open { overflow: hidden; }
+
+/* ---------- Restaurant list inside modal ---------- */
+.restaurant-list { display: grid; gap: 10px; margin: 6px 0 0; }
+.restaurant-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(111,149,189,0.10);
+  border: 1px solid var(--line);
+}
+.restaurant-item .r-name { font-weight: 600; color: var(--navy); margin: 0 0 2px; }
+.restaurant-item .r-addr { font-size: 0.85rem; color: var(--text-soft); margin: 0; }
+.restaurant-item .btn-go {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: transform .2s var(--ease), background .2s var(--ease);
+}
+.restaurant-item .btn-go:hover { transform: translateY(-1px); background: #0d2547; }
+
+/* ---------- v1 subpage header ---------- */
+.subpage-header .subpage-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--glass);
+  transition: background .2s var(--ease), border-color .2s var(--ease);
+}
+.back-link:hover { background: var(--glass-strong); border-color: var(--navy); }
+.subpage { padding: 24px 0 60px; }
+
+.modal-intro {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(111,149,189,0.10);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--soft-blue);
+}
+
+/* ---------- Responsive overrides for v1 components ---------- */
+@media (max-width: 720px) {
+  .deck { padding: 0 40px; }
+  .deck-group { grid-template-columns: 1fr; }
+  .restaurant-item { grid-template-columns: 1fr; }
+  .restaurant-item .btn-go { justify-self: start; }
+  .qr-track { min-height: 250px; }
+  .app-icon.app-icon-img { width: 52px; height: 52px; }
+}
+
