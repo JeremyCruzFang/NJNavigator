@@ -82,11 +82,11 @@
     <section class="hero" id="home" aria-label="Welcome">
       <div class="hero-carousel" id="heroCarousel" aria-roledescription="carousel">
         <ol class="hero-slides" id="heroSlides">
-          <li class="hero-slide is-active" data-img="hero-nuist-main" style="background-image:url('assets/images/hero/hero-nuist-main.webp');"></li>
-          <li class="hero-slide" data-img="hero-ming-wall" style="background-image:url('assets/images/hero/hero-ming-wall.webp');"></li>
-          <li class="hero-slide" data-img="hero-xuanwu-lake" style="background-image:url('assets/images/hero/hero-xuanwu-lake.webp');"></li>
-          <li class="hero-slide" data-img="hero-nanjing-skyline" style="background-image:url('assets/images/hero/hero-nanjing-skyline.webp');"></li>
-          <li class="hero-slide" data-img="hero-zhonghua-gate" style="background-image:url('assets/images/hero/hero-zhonghua-gate.webp');"></li>
+          <li class="hero-slide is-active" style="background-image:url('assets/images/hero/hero-nuist-main.webp');"><span class="hero-label" data-i18n="hero.label.nuist">NUIST</span></li>
+          <li class="hero-slide" style="background-image:url('assets/images/hero/hero-ming-wall.webp');"><span class="hero-label" data-i18n="hero.label.mingWall">Ming Wall</span></li>
+          <li class="hero-slide" style="background-image:url('assets/images/hero/hero-xuanwu-lake.webp');"><span class="hero-label" data-i18n="hero.label.xuanwuLake">XuanWu Lake</span></li>
+          <li class="hero-slide" style="background-image:url('assets/images/hero/hero-nanjing-skyline.webp');"><span class="hero-label" data-i18n="hero.label.skyline">Skyline</span></li>
+          <li class="hero-slide" style="background-image:url('assets/images/hero/hero-zhonghua-gate.webp');"><span class="hero-label" data-i18n="hero.label.zhonghuaGate">ZhongHua Gate</span></li>
         </ol>
 
         <button class="carousel-arrow prev" id="heroPrev" aria-label="Previous slide">‹</button>
@@ -210,13 +210,20 @@
           <p class="lede" data-i18n="campus.lede">Where to find a book, a meal, a clinic, and the gate. A working map of an academic day at NUIST.</p>
         </header>
 
-        <!-- v1: campus map card is now clickable, opens official NUIST map in a new tab. -->
-        <a class="map-embed reveal map-link" href="https://map.nuist.edu.cn" target="_blank" rel="noopener noreferrer" aria-label="Open NUIST campus map in a new tab">
-          <div class="map-placeholder">
-            <span class="map-id">MAP-01 · NUIST Campus Map</span>
-            <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
-            <p class="map-cta" data-i18n="map.openNuist">Open map.nuist.edu.cn ↗</p>
-          </div>
+        <!-- v2.2: NUIST campus map image — clickable, opens official map portal. -->
+        <a class="map-embed map-image-card reveal map-link"
+           href="https://map.nuist.edu.cn"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Open NUIST campus map in a new tab">
+          <figure class="map-image-figure">
+            <img src="assets/maps/nuist-map.png"
+                 alt="NUIST campus map"
+                 loading="lazy" decoding="async" />
+            <figcaption class="map-image-caption">
+              <span class="map-image-title" data-i18n="map.nuist.title">NUIST Campus Map</span>
+              <span class="map-image-cta" data-i18n="map.openNuist">Open map.nuist.edu.cn ↗</span>
+            </figcaption>
+          </figure>
         </a>
 
         <!-- v2.1: direct cards open Amap; option cards open a chooser popup. -->
@@ -251,11 +258,12 @@
             <p data-i18n="campus.points.gate.body">NUIST campus gates — choose a gate to open it in Amap.</p>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <a class="glass card campus-point clickable card-bus" href="bus.html">
+          <button type="button" class="glass card campus-point clickable card-bus"
+                  data-modal-trigger="bus">
             <h3 data-i18n="campus.points.bus.title">Bus</h3>
-            <p data-i18n="campus.points.bus.body">Campus shuttles and city bus lines around NUIST.</p>
-            <span class="card-go" data-i18n="action.openBus">Open bus guide →</span>
-          </a>
+            <p data-i18n="campus.points.bus.body">Campus shuttle routes — tap to view stop sequences.</p>
+            <span class="card-go" data-i18n="action.openBus">View routes →</span>
+          </button>
         </div>
 
         <h3 class="subhead reveal" data-i18n="campus.diningTitle">Dining Guide</h3>

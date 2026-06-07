@@ -18,7 +18,7 @@
   const i18n = {
     en: {
       'meta.title': 'NJNavigator — A Guide for International Faculty in Nanjing',
-      'brand.tag': 'v1',
+      'brand.tag': 'v2.2',
 
       'nav.home': 'Home',
       'nav.survival': 'Survival',
@@ -32,14 +32,19 @@
       'hero.sub': 'A practical and cultural guide for international faculty at NUIST.',
       'hero.cta1': 'Start Exploring',
       'hero.cta2': 'Campus Essentials',
-      'hero.note': 'v1 · Display logic and interaction layer. Final verified content still rolling in.',
+      'hero.note': 'v2.2 · Display, interaction, and verified location data online. Routes and food content rolling in.',
+      'hero.label.nuist':        'NUIST',
+      'hero.label.mingWall':     'Ming Wall',
+      'hero.label.xuanwuLake':   'XuanWu Lake',
+      'hero.label.skyline':      'Skyline',
+      'hero.label.zhonghuaGate': 'ZhongHua Gate',
 
       'tag.verified': 'Verified',
       'tag.unverified': 'Needs verification',
       'tag.placeholder': 'Placeholder',
 
       'action.openAmap': 'Open in Amap ↗',
-      'action.openBus': 'Open bus guide →',
+      'action.openBus': 'View routes →',
       'action.openFood': 'Open food page →',
       'action.readMore': 'Read more →',
       'action.showMore': 'Show More',
@@ -83,8 +88,8 @@
       'campus.points.clinic.body': 'On-campus general outpatient clinic.',
       'campus.points.gate.title': 'Main Gate',
       'campus.points.gate.body': 'NUIST campus gates — choose a gate to open it in Amap.',
-      'campus.points.bus.title': 'Bus',
-      'campus.points.bus.body': 'Campus shuttles and city bus lines around NUIST.',
+      'campus.points.bus.title': 'Bus / Campus Shuttle',
+      'campus.points.bus.body': 'Campus shuttle routes — tap to view stop sequences.',
       'campus.diningTitle': 'Dining Guide',
       'campus.food.f1.title': 'Claypot-style Chicken',
       'campus.food.f2.title': 'Duck Blood Vermicelli Soup',
@@ -98,6 +103,8 @@
       'map.placeholder': 'Embedded map placeholder — to be replaced with official / verified map iframe.',
       'map.openNuist': 'Open map.nuist.edu.cn ↗',
       'map.openAmap': 'Open in Amap ↗',
+      'map.nuist.title': 'NUIST Campus Map',
+      'map.nuist.desc': 'Official aerial map — tap to open map.nuist.edu.cn.',
 
       'story.eyebrow': 'Section 3',
       'story.title': 'The Nanjing Story',
@@ -161,6 +168,14 @@
       'routes.foodie.f3.body': '[PLACEHOLDER] Recommended restaurant to be confirmed by group.',
 
       'options.modal.intro': 'Choose a destination — it will open in Amap.',
+
+      'bus.modal.title': 'Bus / Campus Shuttle',
+      'bus.modal.intro': 'Two NUIST campus shuttle lines. Tap and hold a stop name to copy.',
+      'bus.modal.stopsLabel': 'Stops',
+      'bus.routes.loop.name': 'Loop Line',
+      'bus.routes.loop.desc': 'Circular, bidirectional service',
+      'bus.routes.peak.name': 'Peak Line',
+      'bus.routes.peak.desc': 'Bidirectional peak-hour service',
       'options.waterford.linjiang': 'Linjiang Tower (临江楼)',
       'options.waterford.yuejiang': 'Yuejiang Tower (阅江楼)',
       'options.canteen.xiyuanNew':    'Xiyuan New Canteen (西苑新食堂)',
@@ -198,8 +213,8 @@
       'appendix.qr.q3.body': 'QR Code Placeholder. To be replaced later.',
 
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
-      'footer.version': 'Version: v1',
-      'footer.note': 'Display logic in place. Verified content rolling in.',
+      'footer.version': 'Version: v2.2',
+      'footer.note': 'Verified locations, phones, and campus shuttle routes online.',
 
       'bus.title': 'Bus · Getting around NUIST',
       'bus.lede': 'Placeholder guide to campus shuttles and city bus lines. Final stops, schedules, and routes to be verified.',
@@ -222,7 +237,7 @@
 
     zh: {
       'meta.title': 'NJNavigator — 南京国际教师生活与文化导航',
-      'brand.tag': 'v1',
+      'brand.tag': 'v2.2',
 
       'nav.home': '首页',
       'nav.survival': '生存',
@@ -236,14 +251,19 @@
       'hero.sub': '面向南信大国际教师的生活与文化导航平台。',
       'hero.cta1': '开始浏览',
       'hero.cta2': '校园要点',
-      'hero.note': 'v1 · 展示与交互层已落地,最终核实内容将持续补入。',
+      'hero.note': 'v2.2 · 展示、交互与已核实地点已上线,路线与美食内容持续补入。',
+      'hero.label.nuist':        'NUIST',
+      'hero.label.mingWall':     'Ming Wall',
+      'hero.label.xuanwuLake':   'XuanWu Lake',
+      'hero.label.skyline':      'Skyline',
+      'hero.label.zhonghuaGate': 'ZhongHua Gate',
 
       'tag.verified': '已核实',
       'tag.unverified': '待核实',
       'tag.placeholder': '占位',
 
       'action.openAmap': '在高德地图中打开 ↗',
-      'action.openBus': '查看公交指南 →',
+      'action.openBus': '查看线路 →',
       'action.openFood': '查看美食页 →',
       'action.readMore': '查看详情 →',
       'action.showMore': '查看更多',
@@ -287,8 +307,8 @@
       'campus.points.clinic.body': '南京信息工程大学综合门诊部,校内日常问诊。',
       'campus.points.gate.title': '校门',
       'campus.points.gate.body': '南京信息工程大学各校门 —— 点击选择具体校门,在高德地图中打开。',
-      'campus.points.bus.title': '公交',
-      'campus.points.bus.body': '南信大周边的校园班车与城市公交线路。',
+      'campus.points.bus.title': 'Bus / 校园巴士',
+      'campus.points.bus.body': '校园班车线路 —— 点击查看站点顺序。',
       'campus.diningTitle': '校园餐饮',
       'campus.food.f1.title': '瓦香鸡',
       'campus.food.f2.title': '鸭血粉丝汤',
@@ -302,6 +322,8 @@
       'map.placeholder': '嵌入式地图占位 —— 后续将替换为官方 / 已核实的地图 iframe。',
       'map.openNuist': '打开 map.nuist.edu.cn ↗',
       'map.openAmap': '在高德地图中打开 ↗',
+      'map.nuist.title': '南信大校园地图',
+      'map.nuist.desc': '官方校园鸟瞰图 —— 点击跳转 map.nuist.edu.cn。',
 
       'story.eyebrow': '第三部分',
       'story.title': '南京的故事',
@@ -365,6 +387,14 @@
       'routes.foodie.f3.body': '[占位] 推荐餐厅待小组确认。',
 
       'options.modal.intro': '请选择目的地 —— 将在高德地图中打开。',
+
+      'bus.modal.title': 'Bus / 校园巴士',
+      'bus.modal.intro': '南信大校内两条班车线路。长按站点名可复制。',
+      'bus.modal.stopsLabel': '站点',
+      'bus.routes.loop.name': '循环线',
+      'bus.routes.loop.desc': '循环对开',
+      'bus.routes.peak.name': '高峰线',
+      'bus.routes.peak.desc': '双向对开',
       'options.waterford.linjiang': '临江楼',
       'options.waterford.yuejiang': '阅江楼',
       'options.canteen.xiyuanNew':    '西苑新食堂',
@@ -402,8 +432,8 @@
       'appendix.qr.q3.body': '二维码占位,后续将替换。',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
-      'footer.version': '版本:v1',
-      'footer.note': '展示与交互层已就绪,核实内容持续补入。',
+      'footer.version': '版本:v2.2',
+      'footer.note': '已核实地点、电话与校园班车线路已上线。',
 
       'bus.title': '公交 · 南信大周边出行',
       'bus.lede': '校园班车与城市公交占位指南。最终站点、时刻表与线路待核实。',
@@ -467,7 +497,12 @@
     }, 180);
   }
 
-  /* ---------- hero carousel ---------- */
+  /* ---------- hero carousel ----------
+     One INTERVAL governs dwell + one TRANSITION governs fade. Every slide
+     uses the same numbers, so cadence is identical across all five images. */
+  const HERO_INTERVAL = 5000;   // dwell per slide (ms)
+  const HERO_TRANSITION = 800;  // fade duration (ms) — mirrors CSS .hero-slide opacity transition
+
   function initCarousel() {
     const carousel = $('#heroCarousel');
     if (!carousel) return;
@@ -479,7 +514,7 @@
 
     let idx = 0;
     let timer = null;
-    const INTERVAL = 5500;
+    const INTERVAL = HERO_INTERVAL;
 
     dotsWrap.innerHTML = '';
     slides.forEach((_, i) => {
@@ -584,6 +619,25 @@
     });
   }
 
+  /* ---------- v2.2: Bus shuttle routes ----------
+     Stop names stay in Chinese because there's no canonical English roster
+     for these on-campus stops yet. Route name + description + UI chrome do
+     switch language via the i18n keys below. */
+  const busRoutes = [
+    {
+      id: 'loop',
+      nameKey: 'bus.routes.loop.name',
+      descKey: 'bus.routes.loop.desc',
+      stops: ['行政楼南','行政楼北','气象楼北','文德楼','明德楼','人才公寓1号门','大礼堂南门','滨江食堂','滨江楼','图书馆','中苑老食堂','气象楼南','行政楼南']
+    },
+    {
+      id: 'peak',
+      nameKey: 'bus.routes.peak.name',
+      descKey: 'bus.routes.peak.desc',
+      stops: ['行政楼南','行政楼北','气象楼北','文德楼','明德楼','大礼堂','中苑老食堂','图书馆','逸夫楼','滨江楼','滨江食堂']
+    }
+  ];
+
   /* ---------- v2.1: Option groups for multi-choice cards ----------
      Cards that resolve to several Amap targets open a chooser popup; each
      option carries the exact Amap keyword to hand to openAmapSearch. */
@@ -645,6 +699,9 @@
           openAmapSearch(q);
         });
       });
+    } else if (modalState.trigger === 'bus') {
+      titleEl.textContent = dict['bus.modal.title'] || '';
+      bodyEl.innerHTML = renderBusRoutesHtml(dict);
     } else if (modalState.trigger === 'options') {
       const group = optionGroups[modalState.optionsId];
       if (group) {
@@ -668,6 +725,26 @@
       const body = modalState.bodyKey ? (dict[modalState.bodyKey] || '') : '';
       bodyEl.innerHTML = '<p>' + escapeHtml(body) + '</p>';
     }
+  }
+
+  function renderBusRoutesHtml(dict) {
+    const intro = '<p class="modal-intro">' + escapeHtml(dict['bus.modal.intro'] || '') + '</p>';
+    const cards = busRoutes.map(route => {
+      const stopsHtml = route.stops.map(s => (
+        '<li class="bus-stop">' + escapeHtml(s) + '</li>'
+      )).join('');
+      return (
+        '<section class="bus-route">' +
+          '<header class="bus-route-head">' +
+            '<h4 class="bus-route-name">' + escapeHtml(dict[route.nameKey] || '') + '</h4>' +
+            '<span class="bus-route-desc">' + escapeHtml(dict[route.descKey] || '') + '</span>' +
+          '</header>' +
+          '<p class="bus-route-stops-label">' + escapeHtml(dict['bus.modal.stopsLabel'] || '') + '</p>' +
+          '<ol class="bus-route-stops">' + stopsHtml + '</ol>' +
+        '</section>'
+      );
+    }).join('');
+    return intro + '<div class="bus-routes">' + cards + '</div>';
   }
 
   function renderOptionsHtml(group, dict) {
