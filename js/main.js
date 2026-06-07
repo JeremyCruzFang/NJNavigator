@@ -18,7 +18,7 @@
   const i18n = {
     en: {
       'meta.title': 'NJNavigator — A Guide for International Faculty in Nanjing',
-      'brand.tag': 'v2.3',
+      'brand.tag': 'v2.4',
 
       'nav.home': 'Home',
       'nav.survival': 'Survival',
@@ -32,7 +32,8 @@
       'hero.sub': 'A practical and cultural guide for international faculty at NUIST.',
       'hero.cta1': 'Start Exploring',
       'hero.cta2': 'Campus Essentials',
-      'hero.note': 'v2.3 · Verified locations, phones, campus shuttle routes, and a practical Chinese phrasebook online. Routes and food content rolling in.',
+      'hero.note': 'v2.4 · Verified locations, phones, campus shuttle routes, a practical Chinese phrasebook, and a real dining guide online.',
+      'hero.hideAria': 'Hide welcome card',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
       'hero.label.xuanwuLake':   'XuanWu Lake',
@@ -45,7 +46,7 @@
 
       'action.openAmap': 'Open in Amap ↗',
       'action.openBus': 'View routes →',
-      'action.openFood': 'Open food page →',
+      'action.openFood': 'Browse dishes →',
       'action.readMore': 'Read more →',
       'action.showMore': 'Show More',
       'action.go': 'Go',
@@ -91,14 +92,55 @@
       'campus.points.bus.title': 'Bus / Campus Shuttle',
       'campus.points.bus.body': 'Campus shuttle routes — tap to view stop sequences.',
       'campus.diningTitle': 'Dining Guide',
-      'campus.food.f1.title': 'Claypot-style Chicken',
-      'campus.food.f2.title': 'Duck Blood Vermicelli Soup',
       'campus.food.more.title': 'Show More',
-      'campus.food.more.body': 'See more campus and Nanjing food recommendations.',
-      'campus.food.smell': 'Smell',
+      'campus.food.more.body': 'Eight more popular dishes around NUIST.',
+      'campus.food.smell': 'Aroma',
       'campus.food.taste': 'Taste',
       'campus.food.texture': 'Texture',
-      'campus.food.context': 'Context',
+
+      'campus.food.claypotChicken.name':         'Claypot-Flavored Chicken',
+      'campus.food.claypotChicken.aroma':        'Rich savory sauce aroma',
+      'campus.food.claypotChicken.taste':        'Savory with a mild kick',
+      'campus.food.claypotChicken.texture':      'Tender chicken in a thick sauce',
+      'campus.food.duckBloodVermicelli.name':    'Duck Blood Vermicelli Soup',
+      'campus.food.duckBloodVermicelli.aroma':   'Light, fresh, savory broth',
+      'campus.food.duckBloodVermicelli.taste':   'Fresh, salty, mellow',
+      'campus.food.duckBloodVermicelli.texture': 'Silky vermicelli with delicate duck blood',
+      'campus.food.crabSoupDumplings.name':      'Crab Roe Soup Dumplings',
+      'campus.food.crabSoupDumplings.aroma':     'Bright crab aroma',
+      'campus.food.crabSoupDumplings.taste':     'Sweet and juicy',
+      'campus.food.crabSoupDumplings.texture':   'Soft skin, soup-filled inside',
+      'campus.food.spicyHotPot.name':            'Spicy Hot Pot Mix',
+      'campus.food.spicyHotPot.aroma':           'Numbing, spicy, fragrant',
+      'campus.food.spicyHotPot.taste':           'Numbing-spicy and savory',
+      'campus.food.spicyHotPot.texture':         'Many ingredients, layered textures',
+      'campus.food.braisedChickenRice.name':     'Braised Chicken Rice',
+      'campus.food.braisedChickenRice.aroma':    'Inviting savory sauce',
+      'campus.food.braisedChickenRice.taste':    'Savory with a hint of sweetness',
+      'campus.food.braisedChickenRice.texture':  'Soft chicken, well-soaked rice',
+      'campus.food.bibimbap.name':               'Stone Pot Bibimbap',
+      'campus.food.bibimbap.aroma':              'Fresh grainy aroma',
+      'campus.food.bibimbap.taste':              'Savory with a mild kick',
+      'campus.food.bibimbap.texture':            'Crispy rice crust, mixed toppings',
+      'campus.food.lanzhouBeefNoodles.name':     'Lanzhou Beef Noodles',
+      'campus.food.lanzhouBeefNoodles.aroma':    'Deep beef aroma',
+      'campus.food.lanzhouBeefNoodles.taste':    'Savory with a mild kick',
+      'campus.food.lanzhouBeefNoodles.texture':  'Chewy noodles, clear bright broth',
+      'campus.food.yangzhouFriedRice.name':      'Yangzhou Fried Rice',
+      'campus.food.yangzhouFriedRice.aroma':     'Rich egg aroma',
+      'campus.food.yangzhouFriedRice.taste':     'Salty-savory, well balanced',
+      'campus.food.yangzhouFriedRice.texture':   'Distinct grains, light and fluffy',
+      'campus.food.fishWithTofu.name':           'Fish with Soft Tofu',
+      'campus.food.fishWithTofu.aroma':          'Numbing-spicy and fragrant',
+      'campus.food.fishWithTofu.taste':          'Fresh, hot, layered',
+      'campus.food.fishWithTofu.texture':        'Tender fish, silky soft tofu',
+      'campus.food.grilledFish.name':            'Grilled Fish',
+      'campus.food.grilledFish.aroma':           'Deep smoky charcoal aroma',
+      'campus.food.grilledFish.taste':           'Numbing-spicy and fragrant',
+      'campus.food.grilledFish.texture':         'Crisp outside, tender inside',
+
+      'dining.modal.title': 'More Dishes Around NUIST',
+      'dining.modal.intro': 'Eight more popular dishes you can find around campus or nearby.',
 
       'map.placeholder': 'Embedded map placeholder — to be replaced with official / verified map iframe.',
       'map.openNuist': 'Open map.nuist.edu.cn ↗',
@@ -232,8 +274,8 @@
       'appendix.qa.q10.when': 'Used when introducing yourself and building professional or social connections.',
 
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
-      'footer.version': 'Version: v2.3',
-      'footer.note': 'Verified locations, phones, campus shuttle routes, and a practical Chinese phrasebook online.',
+      'footer.version': 'Version: v2.4',
+      'footer.note': 'Verified locations, phones, shuttle routes, phrasebook, and Dining Guide online.',
       'footer.telLabel': 'TEL',
       'footer.telSep': ': ',
 
@@ -258,7 +300,7 @@
 
     zh: {
       'meta.title': 'NJNavigator — 南京国际教师生活与文化导航',
-      'brand.tag': 'v2.3',
+      'brand.tag': 'v2.4',
 
       'nav.home': '首页',
       'nav.survival': '生存',
@@ -272,7 +314,8 @@
       'hero.sub': '面向南信大国际教师的生活与文化导航平台。',
       'hero.cta1': '开始浏览',
       'hero.cta2': '校园要点',
-      'hero.note': 'v2.3 · 已核实地点、电话、校园班车线路与实用中文短语集均已上线;路线与美食内容持续补入。',
+      'hero.note': 'v2.4 · 已核实地点、电话、校园班车线路、实用中文短语集与南信大美食指南均已上线。',
+      'hero.hideAria': '隐藏欢迎卡片',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
       'hero.label.xuanwuLake':   'XuanWu Lake',
@@ -285,7 +328,7 @@
 
       'action.openAmap': '在高德地图中打开 ↗',
       'action.openBus': '查看线路 →',
-      'action.openFood': '查看美食页 →',
+      'action.openFood': '查看菜品 →',
       'action.readMore': '查看详情 →',
       'action.showMore': '查看更多',
       'action.go': '前往',
@@ -331,14 +374,55 @@
       'campus.points.bus.title': 'Bus / 校园巴士',
       'campus.points.bus.body': '校园班车线路 —— 点击查看站点顺序。',
       'campus.diningTitle': '校园餐饮',
-      'campus.food.f1.title': '瓦香鸡',
-      'campus.food.f2.title': '鸭血粉丝汤',
       'campus.food.more.title': '查看更多',
-      'campus.food.more.body': '查看更多校园与南京美食推荐。',
+      'campus.food.more.body': '南信大周边另外 8 道热门菜品。',
       'campus.food.smell': '气味',
       'campus.food.taste': '味道',
       'campus.food.texture': '口感',
-      'campus.food.context': '场景',
+
+      'campus.food.claypotChicken.name':         '瓦香鸡',
+      'campus.food.claypotChicken.aroma':        '酱香浓郁',
+      'campus.food.claypotChicken.taste':        '咸鲜微辣',
+      'campus.food.claypotChicken.texture':      '鸡肉嫩滑,汤汁浓厚',
+      'campus.food.duckBloodVermicelli.name':    '鸭血粉丝汤',
+      'campus.food.duckBloodVermicelli.aroma':   '鲜香清爽',
+      'campus.food.duckBloodVermicelli.taste':   '鲜咸醇厚',
+      'campus.food.duckBloodVermicelli.texture': '粉丝顺滑,鸭血细嫩',
+      'campus.food.crabSoupDumplings.name':      '蟹黄汤包',
+      'campus.food.crabSoupDumplings.aroma':     '蟹香浓郁',
+      'campus.food.crabSoupDumplings.taste':     '鲜甜多汁',
+      'campus.food.crabSoupDumplings.texture':   '外皮柔软,汤汁丰富',
+      'campus.food.spicyHotPot.name':            '麻辣香锅',
+      'campus.food.spicyHotPot.aroma':           '麻辣香浓',
+      'campus.food.spicyHotPot.taste':           '麻辣鲜香',
+      'campus.food.spicyHotPot.texture':         '食材丰富,层次分明',
+      'campus.food.braisedChickenRice.name':     '黄焖鸡米饭',
+      'campus.food.braisedChickenRice.aroma':    '酱香扑鼻',
+      'campus.food.braisedChickenRice.taste':    '咸鲜微甜',
+      'campus.food.braisedChickenRice.texture':  '鸡肉软嫩,米饭入味',
+      'campus.food.bibimbap.name':               '石锅拌饭',
+      'campus.food.bibimbap.aroma':              '谷物清香',
+      'campus.food.bibimbap.taste':              '咸香微辣',
+      'campus.food.bibimbap.texture':            '锅巴酥脆,食材丰富',
+      'campus.food.lanzhouBeefNoodles.name':     '兰州牛肉面',
+      'campus.food.lanzhouBeefNoodles.aroma':    '牛肉香浓',
+      'campus.food.lanzhouBeefNoodles.taste':    '鲜香微辣',
+      'campus.food.lanzhouBeefNoodles.texture':  '面条劲道,汤底清鲜',
+      'campus.food.yangzhouFriedRice.name':      '扬州炒饭',
+      'campus.food.yangzhouFriedRice.aroma':     '蛋香浓郁',
+      'campus.food.yangzhouFriedRice.taste':     '咸鲜适口',
+      'campus.food.yangzhouFriedRice.texture':   '米粒分明,松软爽口',
+      'campus.food.fishWithTofu.name':           '豆花鱼',
+      'campus.food.fishWithTofu.aroma':          '麻辣鲜香',
+      'campus.food.fishWithTofu.taste':          '鲜辣浓郁',
+      'campus.food.fishWithTofu.texture':        '鱼肉细嫩,豆花柔滑',
+      'campus.food.grilledFish.name':            '烤鱼',
+      'campus.food.grilledFish.aroma':           '炭烤香气浓郁',
+      'campus.food.grilledFish.taste':           '麻辣鲜香',
+      'campus.food.grilledFish.texture':         '外焦里嫩,肉质鲜美',
+
+      'dining.modal.title': '南信大周边更多菜品',
+      'dining.modal.intro': '另外 8 道在校园或周边常见的热门菜品。',
 
       'map.placeholder': '嵌入式地图占位 —— 后续将替换为官方 / 已核实的地图 iframe。',
       'map.openNuist': '打开 map.nuist.edu.cn ↗',
@@ -472,8 +556,8 @@
       'appendix.qa.q10.when': '自我介绍以及建立工作或社交关系时使用。',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
-      'footer.version': '版本:v2.3',
-      'footer.note': '已核实地点、电话、校园班车线路及实用中文短语集已上线。',
+      'footer.version': '版本:v2.4',
+      'footer.note': '已核实地点、电话、校园班车线路、实用中文短语集与美食指南均已上线。',
       'footer.telLabel': 'TEL',
       'footer.telSep': ':',
 
@@ -521,6 +605,11 @@
         if (node.tagName === 'TITLE') node.textContent = dict[key];
         else node.textContent = dict[key];
       }
+    });
+    // v2.4: aria-label attribute i18n (e.g. hero card "Hide welcome card")
+    $$('[data-i18n-aria]').forEach(node => {
+      const key = node.getAttribute('data-i18n-aria');
+      if (dict[key] != null) node.setAttribute('aria-label', dict[key]);
     });
 
     // If a modal is open, re-render its content for the new language.
@@ -661,6 +750,23 @@
     });
   }
 
+  /* ---------- v2.4: Dining Guide — 10 dishes ----------
+     First two render directly on the page (Claypot-Flavored Chicken and Duck
+     Blood Vermicelli Soup). The remaining eight live behind Show More → modal. */
+  const diningItems = [
+    { id: 'claypotChicken',      img: 'claypot-chicken' },
+    { id: 'duckBloodVermicelli', img: 'duck-blood-vermicelli' },
+    { id: 'crabSoupDumplings',   img: 'crab-roe-soup-dumplings' },
+    { id: 'spicyHotPot',         img: 'spicy-hot-pot' },
+    { id: 'braisedChickenRice',  img: 'braised-chicken-rice' },
+    { id: 'bibimbap',            img: 'bibimbap' },
+    { id: 'lanzhouBeefNoodles',  img: 'lanzhou-beef-noodles' },
+    { id: 'yangzhouFriedRice',   img: 'yangzhou-fried-rice' },
+    { id: 'fishWithTofu',        img: 'fish-with-tofu' },
+    { id: 'grilledFish',         img: 'grilled-fish' }
+  ];
+  const diningMoreItems = diningItems.slice(2);
+
   /* ---------- v2.3: Practical Chinese Q&A (Appendix two-level modal) ----------
      Phrase / Pinyin / Translation stay verbatim across languages. The two
      question prompts and the "When to use" rationale do switch language. */
@@ -785,6 +891,9 @@
     } else if (top.trigger === 'bus') {
       titleEl.textContent = dict['bus.modal.title'] || '';
       bodyEl.innerHTML = renderBusRoutesHtml(dict);
+    } else if (top.trigger === 'dining-more') {
+      titleEl.textContent = dict['dining.modal.title'] || '';
+      bodyEl.innerHTML = renderDiningMoreHtml(dict);
     } else if (top.trigger === 'options') {
       const group = optionGroups[top.optionsId];
       if (group) {
@@ -869,6 +978,37 @@
         '</div>' +
       '</div>'
     );
+  }
+
+  function renderDiningMoreHtml(dict) {
+    const intro = '<p class="modal-intro">' + escapeHtml(dict['dining.modal.intro'] || '') + '</p>';
+    const cards = diningMoreItems.map(item => {
+      const name    = escapeHtml(dict['campus.food.' + item.id + '.name']    || '');
+      const aroma   = escapeHtml(dict['campus.food.' + item.id + '.aroma']   || '');
+      const taste   = escapeHtml(dict['campus.food.' + item.id + '.taste']   || '');
+      const texture = escapeHtml(dict['campus.food.' + item.id + '.texture'] || '');
+      const labels = {
+        aroma:   escapeHtml(dict['campus.food.smell']   || ''),
+        taste:   escapeHtml(dict['campus.food.taste']   || ''),
+        texture: escapeHtml(dict['campus.food.texture'] || '')
+      };
+      return (
+        '<article class="dish-card-mini">' +
+          '<div class="dish-img-wrap">' +
+            '<img src="assets/food/' + escapeHtml(item.img) + '.jpg" alt="' + name + '" loading="lazy" decoding="async" />' +
+          '</div>' +
+          '<div class="dish-mini-body">' +
+            '<h5>' + name + '</h5>' +
+            '<dl class="sensory">' +
+              '<dt>' + labels.aroma   + '</dt><dd>' + aroma   + '</dd>' +
+              '<dt>' + labels.taste   + '</dt><dd>' + taste   + '</dd>' +
+              '<dt>' + labels.texture + '</dt><dd>' + texture + '</dd>' +
+            '</dl>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join('');
+    return intro + '<div class="dining-more-list">' + cards + '</div>';
   }
 
   function renderBusRoutesHtml(dict) {
@@ -1115,6 +1255,79 @@
     targets.forEach(t => io.observe(t));
   }
 
+  /* ---------- v2.4: Welcome intro overlay + hero card close ----------
+     - Overlay plays once per browser (gated by localStorage); cleared cache
+       lets it play again.
+     - Closing the hero card with "x" persists across visits.
+     - Honors prefers-reduced-motion: skip the slow fade and snap to done. */
+  const WELCOME_INTRO_KEY = 'unidockWelcomeIntroPlayed';
+  const WELCOME_CARD_HIDDEN_KEY = 'unidockWelcomeCardHidden';
+
+  function readFlag(key) {
+    try { return localStorage.getItem(key) === '1'; } catch (e) { return false; }
+  }
+  function writeFlag(key, val) {
+    try { localStorage.setItem(key, val ? '1' : '0'); } catch (e) { /* ignore */ }
+  }
+
+  function initWelcomeIntro() {
+    const overlay = $('#welcomeOverlay');
+    if (!overlay) return;
+    const cardHidden = readFlag(WELCOME_CARD_HIDDEN_KEY);
+    const introPlayed = readFlag(WELCOME_INTRO_KEY);
+    // If hero card is already hidden by the user, don't force the welcome
+    // overlay either — they've opted out of the welcome experience.
+    if (cardHidden || introPlayed) {
+      overlay.remove();
+      return;
+    }
+
+    const reduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    overlay.classList.add('is-visible');
+    document.body.classList.add('welcome-intro-active');
+
+    const finish = () => {
+      overlay.classList.remove('is-visible');
+      overlay.classList.add('is-done');
+      document.body.classList.remove('welcome-intro-active');
+      // Mark played early so a fast reload doesn't replay it.
+      writeFlag(WELCOME_INTRO_KEY, true);
+      // Remove from DOM after the CSS transition ends, so it never blocks clicks.
+      setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 600);
+    };
+
+    // Start the shrink-to-card phase after the hold window.
+    const HOLD_MS = reduced ? 150 : 1800;
+    setTimeout(() => {
+      overlay.classList.add('is-leaving');
+      // Wait for the leaving transition (~1s) before fully removing.
+      setTimeout(finish, reduced ? 120 : 1100);
+    }, HOLD_MS);
+  }
+
+  function initHeroCardClose() {
+    const card = $('#heroCard');
+    const btn = $('#heroCardClose');
+    if (!card || !btn) return;
+    if (readFlag(WELCOME_CARD_HIDDEN_KEY)) {
+      card.classList.add('is-hidden');
+      card.setAttribute('aria-hidden', 'true');
+      return;
+    }
+    btn.addEventListener('click', () => {
+      card.classList.add('is-hiding');
+      // Wait for the fade-out then fully hide so it leaves no layout box.
+      setTimeout(() => {
+        card.classList.add('is-hidden');
+        card.classList.remove('is-hiding');
+        card.setAttribute('aria-hidden', 'true');
+      }, 260);
+      writeFlag(WELCOME_CARD_HIDDEN_KEY, true);
+    });
+  }
+
   /* ---------- boot ---------- */
   function boot() {
     let saved = 'en';
@@ -1123,6 +1336,11 @@
 
     const langBtn = $('#langToggle');
     if (langBtn) langBtn.addEventListener('click', toggleLang);
+
+    // v2.4: welcome intro must run before/with carousel so the overlay sits
+    // above the hero from first paint.
+    initWelcomeIntro();
+    initHeroCardClose();
 
     initCarousel();
     initNavToggle();

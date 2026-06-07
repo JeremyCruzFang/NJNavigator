@@ -95,7 +95,10 @@
       </div>
 
       <div class="container hero-overlay">
-        <div class="glass hero-card">
+        <div class="glass hero-card" id="heroCard">
+          <button type="button" class="hero-card-close" id="heroCardClose"
+                  data-i18n-aria="hero.hideAria"
+                  aria-label="Hide welcome card">×</button>
           <p class="eyebrow" data-i18n="hero.eyebrow">An onboarding portal for international faculty</p>
           <h1 class="hero-title" data-i18n="hero.title">Welcome to Nanjing</h1>
           <p class="hero-sub" data-i18n="hero.sub">A practical and cultural guide for international faculty at NUIST.</p>
@@ -103,10 +106,20 @@
             <a class="btn btn-primary" href="#survival" data-i18n="hero.cta1">Start Exploring</a>
             <a class="btn btn-ghost" href="#campus" data-i18n="hero.cta2">Campus Essentials</a>
           </div>
-          <p class="hero-note" data-i18n="hero.note">v1 · Display logic and interaction layer. Final verified content still rolling in.</p>
+          <p class="hero-note" data-i18n="hero.note">v2.4 · Verified locations, phones, campus shuttle routes, and Dining Guide online.</p>
         </div>
       </div>
     </section>
+
+    <!-- v2.4: First-visit Welcome intro overlay (shows once, opt-out via close). -->
+    <div class="welcome-overlay" id="welcomeOverlay" aria-hidden="true">
+      <div class="welcome-overlay-card glass" role="dialog" aria-modal="false"
+           aria-labelledby="welcomeOverlayTitle">
+        <p class="eyebrow" data-i18n="hero.eyebrow">An onboarding portal for international faculty</p>
+        <h1 id="welcomeOverlayTitle" class="welcome-overlay-title" data-i18n="hero.title">Welcome to Nanjing</h1>
+        <p class="welcome-overlay-sub" data-i18n="hero.sub">A practical and cultural guide for international faculty at NUIST.</p>
+      </div>
+    </div>
 
     <!-- ============================= -->
     <!-- SURVIVAL KIT -->
@@ -267,37 +280,47 @@
         </div>
 
         <h3 class="subhead reveal" data-i18n="campus.diningTitle">Dining Guide</h3>
-        <!-- v1: three cards — two real foods + one Show More action card. Old standalone food image placeholders removed. -->
-        <div class="grid grid-3 reveal">
-          <article class="glass food-card">
-            <span class="point-id">FOOD-CAMPUS-01</span>
-            <h4 data-i18n="campus.food.f1.title">Claypot-style Chicken</h4>
-            <div class="img-ph small food-img" data-img="IMG-FOOD-01" data-desc-en="Claypot-style chicken plate" data-desc-zh="瓦香鸡示意图"></div>
+        <!-- v2.4: two real cards (Claypot-style Chicken, Duck Blood Vermicelli) +
+             one Show More card that opens a modal listing the remaining 8 dishes. -->
+        <div class="grid grid-3 reveal dining-grid">
+          <article class="glass food-card dish-card">
+            <div class="dish-img-wrap">
+              <img src="assets/food/claypot-chicken.jpg" alt="Claypot-style chicken plate"
+                   loading="lazy" decoding="async" />
+            </div>
+            <h4 data-i18n="campus.food.claypotChicken.name">Claypot-Flavored Chicken</h4>
             <dl class="sensory">
-              <dt data-i18n="campus.food.smell">Smell</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.taste">Taste</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.texture">Texture</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.context">Context</dt><dd>[TO BE WRITTEN]</dd>
+              <dt data-i18n="campus.food.smell">Aroma</dt>
+              <dd data-i18n="campus.food.claypotChicken.aroma">Rich savory sauce aroma</dd>
+              <dt data-i18n="campus.food.taste">Taste</dt>
+              <dd data-i18n="campus.food.claypotChicken.taste">Savory with a mild kick</dd>
+              <dt data-i18n="campus.food.texture">Texture</dt>
+              <dd data-i18n="campus.food.claypotChicken.texture">Tender chicken in a thick sauce</dd>
             </dl>
           </article>
-          <article class="glass food-card">
-            <span class="point-id">FOOD-CAMPUS-02</span>
-            <h4 data-i18n="campus.food.f2.title">Duck Blood Vermicelli Soup</h4>
-            <div class="img-ph small food-img" data-img="IMG-FOOD-02" data-desc-en="Duck blood vermicelli soup bowl" data-desc-zh="鸭血粉丝汤示意图"></div>
+          <article class="glass food-card dish-card">
+            <div class="dish-img-wrap">
+              <img src="assets/food/duck-blood-vermicelli.jpg" alt="Duck blood vermicelli soup bowl"
+                   loading="lazy" decoding="async" />
+            </div>
+            <h4 data-i18n="campus.food.duckBloodVermicelli.name">Duck Blood Vermicelli Soup</h4>
             <dl class="sensory">
-              <dt data-i18n="campus.food.smell">Smell</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.taste">Taste</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.texture">Texture</dt><dd>[TO BE WRITTEN]</dd>
-              <dt data-i18n="campus.food.context">Context</dt><dd>[TO BE WRITTEN]</dd>
+              <dt data-i18n="campus.food.smell">Aroma</dt>
+              <dd data-i18n="campus.food.duckBloodVermicelli.aroma">Light, fresh, savory broth</dd>
+              <dt data-i18n="campus.food.taste">Taste</dt>
+              <dd data-i18n="campus.food.duckBloodVermicelli.taste">Fresh, salty, mellow</dd>
+              <dt data-i18n="campus.food.texture">Texture</dt>
+              <dd data-i18n="campus.food.duckBloodVermicelli.texture">Silky vermicelli with delicate duck blood</dd>
             </dl>
           </article>
-          <!-- v1: Show More action card linking to food.html -->
-          <a class="glass food-card showmore-card" href="food.html" aria-label="See more food">
+          <button type="button" class="glass food-card showmore-card"
+                  data-modal-trigger="dining-more"
+                  aria-label="Show more dishes">
             <span class="showmore-mark" aria-hidden="true">+</span>
             <h4 data-i18n="campus.food.more.title">Show More</h4>
-            <p data-i18n="campus.food.more.body">See more campus and Nanjing food recommendations.</p>
-            <span class="card-go" data-i18n="action.openFood">Open food page →</span>
-          </a>
+            <p data-i18n="campus.food.more.body">Eight more popular dishes around NUIST.</p>
+            <span class="card-go" data-i18n="action.openFood">Browse dishes →</span>
+          </button>
         </div>
       </div>
     </section>

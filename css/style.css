@@ -1472,3 +1472,183 @@ body.modal-open { overflow: hidden; }
   .footer-tel p { font-size: 0.9rem; }
 }
 
+/* =================================================================
+   v2.4 — Dining Guide + Welcome intro overlay + hero card close
+   ================================================================= */
+
+/* ---------- Dining home cards (two real dishes + Show More) ---------- */
+.dish-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.dish-card h4 { margin: 0; padding: 14px 16px 4px; }
+.dish-card .sensory { padding: 0 16px 16px; }
+.dish-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e8ddd0;
+}
+.dish-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .5s var(--ease);
+}
+.dish-card:hover .dish-img-wrap img { transform: scale(1.03); }
+
+/* Show More keeps its dashed brick style from v1, just match height. */
+.showmore-card {
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ---------- Dining Show More modal: 8 mini dish cards ---------- */
+.dining-more-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 4px;
+}
+.dish-card-mini {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dish-card-mini .dish-img-wrap { aspect-ratio: 4 / 3; }
+.dish-card-mini .dish-mini-body {
+  padding: 10px 12px 12px;
+}
+.dish-card-mini h5 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  color: var(--navy);
+}
+.dish-card-mini .sensory {
+  grid-template-columns: 56px 1fr;
+  font-size: 0.82rem;
+  gap: 2px 10px;
+}
+.dish-card-mini .sensory dd { font-size: 0.78rem; }
+@media (max-width: 720px) {
+  .dining-more-list { grid-template-columns: 1fr; }
+}
+
+/* ---------- Welcome intro overlay (first visit) ---------- */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  padding-top: max(24px, env(safe-area-inset-top, 0px));
+  padding-bottom: max(24px, env(safe-area-inset-bottom, 0px));
+  background: rgba(11, 31, 58, 0.45);
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s var(--ease), backdrop-filter .6s var(--ease);
+}
+.welcome-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.welcome-overlay-card {
+  width: min(620px, 92vw);
+  padding: 40px 36px 36px;
+  text-align: center;
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius-lg);
+  transform: scale(0.94) translateY(8px);
+  opacity: 0;
+  transition: transform .9s var(--ease), opacity .7s var(--ease);
+}
+.welcome-overlay.is-visible .welcome-overlay-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+.welcome-overlay-title {
+  font-size: clamp(2rem, 5vw + 1rem, 3.4rem);
+  margin: 8px 0 12px;
+  line-height: 1.1;
+  color: var(--navy);
+}
+.welcome-overlay-sub {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Leaving animation: shrink + fade, mimicking handoff to the hero card. */
+.welcome-overlay.is-leaving {
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+.welcome-overlay.is-leaving .welcome-overlay-card {
+  transform: scale(0.55) translateY(40px);
+  opacity: 0;
+  transition: transform 1s var(--ease), opacity .8s var(--ease);
+}
+
+/* While overlay is up, lock body scroll so the moment lands cleanly. */
+body.welcome-intro-active { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-overlay,
+  .welcome-overlay-card,
+  .welcome-overlay.is-leaving,
+  .welcome-overlay.is-leaving .welcome-overlay-card {
+    transition-duration: .15s !important;
+  }
+}
+
+/* ---------- Hero card close (×) ---------- */
+.hero-card { position: relative; }
+.hero-card-close {
+  position: absolute;
+  top: 10px; right: 12px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(11,31,58,0.06);
+  color: var(--navy);
+  font-size: 1.45rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.hero-card-close:hover { background: rgba(11,31,58,0.14); }
+.hero-card-close:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+.hero-card.is-hiding {
+  opacity: 0;
+  transform: translateY(8px) scale(0.985);
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  pointer-events: none;
+}
+.hero-card.is-hidden { display: none; }
+
+@media (max-width: 720px) {
+  .hero-card-close {
+    top: 8px; right: 10px;
+    width: 40px; height: 40px;
+    font-size: 1.5rem;
+  }
+  .welcome-overlay-card { padding: 30px 22px 26px; }
+  .welcome-overlay-sub { font-size: 0.98rem; }
+}
+
