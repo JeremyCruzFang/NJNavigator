@@ -56,12 +56,12 @@
       'survival.cards.amb.body': 'Nationwide medical emergency hotline.',
       'survival.cards.fire.title': 'Fire',
       'survival.cards.fire.body': 'Nationwide fire emergency hotline.',
-      'survival.cards.security.title': 'Campus Security',
-      'survival.cards.security.body': '24-hour campus security contact for NUIST / Waterford Institute area.',
-      'survival.cards.security.note': 'Number to be confirmed by group.',
+      'survival.cards.security.title': 'Campus Security Office',
+      'survival.cards.security.body': 'Campus security office at NUIST. Tap to open in Amap.',
+      'survival.cards.security.telLabel': 'Tel',
       'survival.cards.hospital.title': 'Nearby Hospital',
-      'survival.cards.hospital.body': 'Recommended hospital with English-capable services near campus.',
-      'survival.cards.hospital.note': 'Specific hospital to be confirmed.',
+      'survival.cards.hospital.body': 'Zhongda Hospital (Jiangbei Campus), Southeast University — closest large hospital to NUIST.',
+      'survival.cards.hospital.telLabel': '24h Tel',
       'survival.appsTitle': 'Essential Apps',
       'survival.apps.alipay': 'Payments, transit QR, utilities, mini-programs.',
       'survival.apps.wechat': 'Messaging, payments, official accounts.',
@@ -74,15 +74,15 @@
       'campus.title': 'Campus & Daily Routine',
       'campus.lede': 'Where to find a book, a meal, a clinic, and the gate. A working map of an academic day at NUIST.',
       'campus.points.waterford.title': 'Waterford Institute Area',
-      'campus.points.waterford.body': 'Primary teaching and office area for international faculty.',
+      'campus.points.waterford.body': 'Primary teaching and office area for international faculty — tap to choose a building.',
       'campus.points.library.title': 'Library',
       'campus.points.library.body': 'Quiet study floors, journals, and reserved reading rooms.',
       'campus.points.canteen.title': 'Canteen',
-      'campus.points.canteen.body': 'Affordable daily meals, peak hours best avoided.',
+      'campus.points.canteen.body': 'Campus canteens — tap to choose which one to open in Amap.',
       'campus.points.clinic.title': 'Clinic',
-      'campus.points.clinic.body': 'On-campus first aid and routine consultations.',
-      'campus.points.gate.title': 'Main Gate / Transport Access',
-      'campus.points.gate.body': 'Bus stops, metro connections, and ride-hailing pickup.',
+      'campus.points.clinic.body': 'On-campus general outpatient clinic.',
+      'campus.points.gate.title': 'Main Gate',
+      'campus.points.gate.body': 'NUIST campus gates — choose a gate to open it in Amap.',
       'campus.points.bus.title': 'Bus',
       'campus.points.bus.body': 'Campus shuttles and city bus lines around NUIST.',
       'campus.diningTitle': 'Dining Guide',
@@ -159,6 +159,21 @@
       'routes.foodie.f2.body': '[PLACEHOLDER] Brief cultural and sensory note to be written.',
       'routes.foodie.f3.title': 'Local Restaurant',
       'routes.foodie.f3.body': '[PLACEHOLDER] Recommended restaurant to be confirmed by group.',
+
+      'options.modal.intro': 'Choose a destination — it will open in Amap.',
+      'options.waterford.linjiang': 'Linjiang Tower (临江楼)',
+      'options.waterford.yuejiang': 'Yuejiang Tower (阅江楼)',
+      'options.canteen.xiyuanNew':    'Xiyuan New Canteen (西苑新食堂)',
+      'options.canteen.binjiang2':    'Binjiang College 2nd Canteen (滨江学院第二食堂)',
+      'options.canteen.staff':        'Faculty & Staff Canteen (教职工食堂)',
+      'options.canteen.zhongyuanOld': 'Zhongyuan Old Canteen (中苑老食堂)',
+      'options.gate.xiyuanN':     'Xiyuan North Gate (西苑北门)',
+      'options.gate.xiyuanS':     'Xiyuan South Gate (西苑南门)',
+      'options.gate.talentN':     'Talent Apartments North Gate (人才公寓北门)',
+      'options.gate.zhongyuanS1': 'Zhongyuan South Gate #1 (中苑南1门)',
+      'options.gate.dongyuanS':   'Dongyuan South Gate (东苑南门)',
+      'options.gate.dongyuanN':   'Dongyuan North Gate (东苑北门)',
+      'options.gate.dongyuanE':   'Dongyuan East Gate (东苑东门)',
 
       'restaurants.modal.title': 'Restaurant Recommendations',
       'restaurants.modal.intro': 'Placeholder list — restaurants below to be verified by the group. Tapping Go opens Amap (search keyword to be added later).',
@@ -246,11 +261,11 @@
       'survival.cards.fire.title': '火警',
       'survival.cards.fire.body': '全国通用消防紧急电话。',
       'survival.cards.security.title': '校园保卫处',
-      'survival.cards.security.body': '南信大 / 沃特福德学院区域 24 小时校园保卫联系方式。',
-      'survival.cards.security.note': '具体号码需小组核实确认。',
+      'survival.cards.security.body': '南京信息工程大学校园保卫处。点击在高德地图中打开。',
+      'survival.cards.security.telLabel': '电话',
       'survival.cards.hospital.title': '就近医院',
-      'survival.cards.hospital.body': '校园附近、可提供英语服务的推荐医院。',
-      'survival.cards.hospital.note': '具体医院信息待小组核实。',
+      'survival.cards.hospital.body': '东南大学附属中大医院江北院区,距南信大最近的综合性医院。',
+      'survival.cards.hospital.telLabel': '24h 电话',
       'survival.appsTitle': '必装应用',
       'survival.apps.alipay': '支付、公交码、生活缴费、小程序。',
       'survival.apps.wechat': '即时通讯、支付、公众号。',
@@ -263,15 +278,15 @@
       'campus.title': '校园与日常',
       'campus.lede': '找书、就餐、看诊、出入校门 —— 一份能跑通的南信大一天。',
       'campus.points.waterford.title': '沃特福德学院区域',
-      'campus.points.waterford.body': '国际教师主要的教学与办公区。',
+      'campus.points.waterford.body': '国际教师主要的教学与办公区 —— 点击选择具体楼宇。',
       'campus.points.library.title': '图书馆',
-      'campus.points.library.body': '安静的自习层、期刊与预约阅览室。',
+      'campus.points.library.body': '南京信息工程大学图书馆,自习、期刊与阅览室。',
       'campus.points.canteen.title': '食堂',
-      'campus.points.canteen.body': '价格亲民的日常餐饮,建议避开高峰时段。',
-      'campus.points.clinic.title': '校医院',
-      'campus.points.clinic.body': '校内急救与日常问诊。',
-      'campus.points.gate.title': '校门 / 出行接驳',
-      'campus.points.gate.body': '公交站、地铁接驳与网约车上车点。',
+      'campus.points.canteen.body': '校内食堂 —— 点击选择具体食堂,在高德地图中打开。',
+      'campus.points.clinic.title': '校内门诊',
+      'campus.points.clinic.body': '南京信息工程大学综合门诊部,校内日常问诊。',
+      'campus.points.gate.title': '校门',
+      'campus.points.gate.body': '南京信息工程大学各校门 —— 点击选择具体校门,在高德地图中打开。',
       'campus.points.bus.title': '公交',
       'campus.points.bus.body': '南信大周边的校园班车与城市公交线路。',
       'campus.diningTitle': '校园餐饮',
@@ -348,6 +363,21 @@
       'routes.foodie.f2.body': '[占位] 简短的文化与感官描述,后续补写。',
       'routes.foodie.f3.title': '本地餐厅',
       'routes.foodie.f3.body': '[占位] 推荐餐厅待小组确认。',
+
+      'options.modal.intro': '请选择目的地 —— 将在高德地图中打开。',
+      'options.waterford.linjiang': '临江楼',
+      'options.waterford.yuejiang': '阅江楼',
+      'options.canteen.xiyuanNew':    '西苑新食堂',
+      'options.canteen.binjiang2':    '滨江学院第二食堂',
+      'options.canteen.staff':        '教职工食堂',
+      'options.canteen.zhongyuanOld': '中苑老食堂',
+      'options.gate.xiyuanN':     '西苑北门',
+      'options.gate.xiyuanS':     '西苑南门',
+      'options.gate.talentN':     '人才公寓北门',
+      'options.gate.zhongyuanS1': '中苑南1门',
+      'options.gate.dongyuanS':   '东苑南门',
+      'options.gate.dongyuanN':   '东苑北门',
+      'options.gate.dongyuanE':   '东苑东门',
 
       'restaurants.modal.title': '推荐餐厅',
       'restaurants.modal.intro': '占位列表 —— 以下餐厅待小组核实。点击「前往」打开高德地图(搜索关键字将在后续填入)。',
@@ -486,28 +516,107 @@
     io.observe(carousel);
   }
 
-  /* ---------- v1: Amap jump helper ----------
-     Shared helper so future areas can pass a search keyword (street name,
-     POI, lat/lng) and we only update one place. Passing nothing is the
-     v1 default — we don't invent locations or fake coordinates yet. */
-  function openAmap(query) {
-    // TODO(v1+): once locations are verified, build a search URL like
-    //   `https://uri.amap.com/search?keywords=${encodeURIComponent(query)}`
-    // and respect coordinates per stop.
-    const base = 'https://uri.amap.com/';
-    const url = query ? base + 'search?keywords=' + encodeURIComponent(query) : base;
-    window.open(url, '_blank', 'noopener,noreferrer');
+  /* ---------- v2.1: Amap jump helper ----------
+     PC  → open https://uri.amap.com/search?keyword=... in a new tab.
+     Mobile → try amapuri:// deep link first, fall back to uri.amap.com.
+              uri.amap.com itself also performs an App-or-Web handoff, which
+              keeps WeChat / Safari in-app browsers usable when the custom
+              scheme is silently blocked. */
+  function isMobileDevice() {
+    if (typeof navigator === 'undefined') return false;
+    const ua = navigator.userAgent || '';
+    return /Android|iPhone|iPad|iPod|HarmonyOS|Mobile/i.test(ua);
   }
+
+  function buildAmapWebUrl(keyword) {
+    return 'https://uri.amap.com/search?keyword=' + encodeURIComponent(keyword)
+      + '&src=njnavigator&coordinate=gaode&callnative=1';
+  }
+  function buildAmapAppScheme(keyword) {
+    // Official Amap URI for searching POIs — keywords + sourceApplication.
+    return 'amapuri://poi?sourceApplication=njnavigator&keywords='
+      + encodeURIComponent(keyword) + '&dev=0';
+  }
+
+  function openAmapSearch(keyword) {
+    const k = String(keyword == null ? '' : keyword).trim();
+    if (!k) return;
+    const webUrl = buildAmapWebUrl(k);
+
+    if (!isMobileDevice()) {
+      window.open(webUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    // Mobile path: attempt App scheme; if the page never hides (App not
+    // installed / scheme blocked), navigate to the web URL as fallback.
+    const scheme = buildAmapAppScheme(k);
+    let switched = false;
+    const onHide = () => { switched = true; };
+    document.addEventListener('visibilitychange', onHide, { once: true });
+    window.addEventListener('pagehide', onHide, { once: true });
+    window.addEventListener('blur', onHide, { once: true });
+
+    try { window.location.href = scheme; } catch (e) { /* ignore */ }
+
+    setTimeout(() => {
+      document.removeEventListener('visibilitychange', onHide);
+      window.removeEventListener('pagehide', onHide);
+      window.removeEventListener('blur', onHide);
+      if (!switched && !document.hidden) {
+        // App did not take over — fall back to Amap web (callnative=1
+        // lets Amap retry the App handoff from its own page).
+        window.location.href = webUrl;
+      }
+    }, 1200);
+  }
+
+  // Back-compat alias for any older callers.
+  function openAmap(q) { openAmapSearch(q); }
 
   function initAmapJumps() {
     $$('[data-action="amap"]').forEach(el => {
       el.addEventListener('click', ev => {
         ev.preventDefault();
         const q = el.getAttribute('data-amap-query') || '';
-        openAmap(q);
+        openAmapSearch(q);
       });
     });
   }
+
+  /* ---------- v2.1: Option groups for multi-choice cards ----------
+     Cards that resolve to several Amap targets open a chooser popup; each
+     option carries the exact Amap keyword to hand to openAmapSearch. */
+  const optionGroups = {
+    waterford: {
+      titleKey: 'campus.points.waterford.title',
+      options: [
+        { labelKey: 'options.waterford.linjiang', keyword: '南京信息工程大学临江楼' },
+        { labelKey: 'options.waterford.yuejiang', keyword: '南京信息工程大学阅江楼' }
+      ]
+    },
+    canteen: {
+      titleKey: 'campus.points.canteen.title',
+      options: [
+        { labelKey: 'options.canteen.xiyuanNew', keyword: '南京信息工程大学西苑新食堂' },
+        { labelKey: 'options.canteen.binjiang2', keyword: '南京信息工程大学滨江学院第二食堂' },
+        { labelKey: 'options.canteen.staff',     keyword: '南京信息工程大学教职工食堂' },
+        { labelKey: 'options.canteen.zhongyuanOld', keyword: '南京信息工程大学中苑老食堂' }
+      ]
+    },
+    gate: {
+      titleKey: 'campus.points.gate.title',
+      options: [
+        { labelKey: 'options.gate.xiyuanN',    keyword: '南京信息工程大学西苑北门' },
+        { labelKey: 'options.gate.xiyuanS',    keyword: '南京信息工程大学西苑南门' },
+        { labelKey: 'options.gate.talentN',    keyword: '南京信息工程大学北门' },
+        { labelKey: 'options.gate.zhongyuanS1',keyword: '南京信息工程大学南1门' },
+        { labelKey: 'options.gate.dongyuanS',  keyword: '南京信息工程大学东苑南门' },
+        { labelKey: 'options.gate.dongyuanN',  keyword: '南京信息工程大学东苑北门' },
+        { labelKey: 'options.gate.dongyuanE',  keyword: '南京信息工程大学东苑东门' }
+      ]
+    }
+  };
 
   /* ---------- v1: Modal system ---------- */
   const modalState = {
@@ -515,7 +624,8 @@
     trigger: null,
     activeTrigger: null,
     titleKey: null,
-    bodyKey: null
+    bodyKey: null,
+    optionsId: null
   };
 
   function renderModalContent() {
@@ -531,16 +641,44 @@
       // Wire Go buttons inside the modal to openAmap.
       $$('.restaurant-item .btn-go', bodyEl).forEach(btn => {
         btn.addEventListener('click', () => {
-          // v1: no prefilled query yet — easy to add later via data-amap-query.
           const q = btn.getAttribute('data-amap-query') || '';
-          openAmap(q);
+          openAmapSearch(q);
         });
       });
+    } else if (modalState.trigger === 'options') {
+      const group = optionGroups[modalState.optionsId];
+      if (group) {
+        titleEl.textContent = dict[group.titleKey] || '';
+        bodyEl.innerHTML = renderOptionsHtml(group, dict);
+        $$('.option-item', bodyEl).forEach(btn => {
+          btn.addEventListener('click', () => {
+            const kw = btn.getAttribute('data-amap-query') || '';
+            // Trigger Amap first while we are still inside the user gesture,
+            // then close the modal — keeps the gesture available for App launch.
+            openAmapSearch(kw);
+            closeModal();
+          });
+        });
+      } else {
+        titleEl.textContent = '';
+        bodyEl.innerHTML = '';
+      }
     } else {
       titleEl.textContent = modalState.titleKey ? (dict[modalState.titleKey] || '') : '';
       const body = modalState.bodyKey ? (dict[modalState.bodyKey] || '') : '';
       bodyEl.innerHTML = '<p>' + escapeHtml(body) + '</p>';
     }
+  }
+
+  function renderOptionsHtml(group, dict) {
+    const intro = '<p class="modal-intro">' + escapeHtml(dict['options.modal.intro'] || '') + '</p>';
+    const list = group.options.map(opt => (
+      '<button type="button" class="option-item" data-amap-query="' + escapeHtml(opt.keyword) + '">' +
+        '<span class="option-label">' + escapeHtml(dict[opt.labelKey] || opt.labelKey) + '</span>' +
+        '<span class="option-go">' + escapeHtml(dict['action.openAmap'] || '') + '</span>' +
+      '</button>'
+    )).join('');
+    return intro + '<div class="option-list">' + list + '</div>';
   }
 
   function renderRestaurantsHtml(dict) {
@@ -576,6 +714,7 @@
     modalState.trigger = triggerEl.getAttribute('data-modal-trigger');
     modalState.titleKey = triggerEl.getAttribute('data-modal-title-key');
     modalState.bodyKey = triggerEl.getAttribute('data-modal-body-key');
+    modalState.optionsId = triggerEl.getAttribute('data-options-id');
     renderModalContent();
     root.hidden = false;
     document.body.classList.add('modal-open');
@@ -597,6 +736,7 @@
     modalState.trigger = null;
     modalState.titleKey = null;
     modalState.bodyKey = null;
+    modalState.optionsId = null;
   }
 
   function initModal() {

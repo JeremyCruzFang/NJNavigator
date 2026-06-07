@@ -214,17 +214,11 @@ html[data-lang="zh"] .lang-toggle .lang-zh { color: var(--navy); }
 .hero-slide::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(244,239,231,0.85) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(244,239,231,0.62) 100%);
 }
-/* placeholder visuals — each slide gets its own soft gradient + label */
-.hero-slide[data-img="IMG-HERO-01"] { background-image: linear-gradient(135deg, #cdd9e8 0%, #9bb4d1 100%); }
-.hero-slide[data-img="IMG-HERO-02"] { background-image: linear-gradient(135deg, #d9cfc5 0%, #9e7a6c 100%); }
-.hero-slide[data-img="IMG-HERO-03"] { background-image: linear-gradient(135deg, #c7dde2 0%, #88a9b1 100%); }
-.hero-slide[data-img="IMG-HERO-04"] { background-image: linear-gradient(135deg, #d4d8e0 0%, #6f95bd 100%); }
-.hero-slide[data-img="IMG-HERO-05"] { background-image: linear-gradient(135deg, #e5ddd0 0%, #b5a07b 100%); }
+/* Hero filename label, bottom-right pill — value comes from data-img */
 .hero-slide::after {
-  content: attr(data-img) "\A " attr(data-desc-en);
-  white-space: pre;
+  content: attr(data-img);
   position: absolute;
   bottom: 24px; right: 24px;
   padding: 8px 14px;
@@ -234,9 +228,7 @@ html[data-lang="zh"] .lang-toggle .lang-zh { color: var(--navy); }
   font-size: 0.75rem;
   color: var(--text-soft);
   letter-spacing: 0.04em;
-}
-html[data-lang="zh"] .hero-slide::after {
-  content: attr(data-img) "\A " attr(data-desc-zh);
+  font-family: 'JetBrains Mono','Consolas',monospace;
 }
 
 .carousel-arrow {
@@ -1131,5 +1123,70 @@ body.modal-open { overflow: hidden; }
   .restaurant-item .btn-go { justify-self: start; }
   .qr-track { min-height: 250px; }
   .app-icon.app-icon-img { width: 52px; height: 52px; }
+}
+
+/* =================================================================
+   v2.1 — info fill (Amap jumps, option popups, phone display)
+   ================================================================= */
+
+/* ---------- Phone display on survival cards ---------- */
+.phone-line {
+  margin: 8px 0 4px;
+  font-size: 0.95rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+.phone-line .phone-num {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Option-chooser popup (Waterford / Canteen / Main Gate) ---------- */
+.option-list {
+  display: grid;
+  gap: 10px;
+  margin: 6px 0 0;
+}
+.option-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(111,149,189,0.10);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.option-item:hover {
+  background: rgba(111,149,189,0.20);
+  transform: translateY(-1px);
+}
+.option-item:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+.option-label {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+.option-go {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brick);
+  white-space: nowrap;
+}
+
+/* ---------- Mobile: option popup as bottom-sheet so it never overflows ---------- */
+@media (max-width: 720px) {
+  .option-item { grid-template-columns: 1fr; gap: 4px; }
+  .option-go { justify-self: start; }
 }
 

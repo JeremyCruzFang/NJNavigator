@@ -82,11 +82,11 @@
     <section class="hero" id="home" aria-label="Welcome">
       <div class="hero-carousel" id="heroCarousel" aria-roledescription="carousel">
         <ol class="hero-slides" id="heroSlides">
-          <li class="hero-slide is-active" data-img="IMG-HERO-01" data-desc-en="NUIST Campus Main View" data-desc-zh="南信大校园主景"></li>
-          <li class="hero-slide" data-img="IMG-HERO-02" data-desc-en="Ming City Wall / Zhonghua Gate" data-desc-zh="明城墙 / 中华门"></li>
-          <li class="hero-slide" data-img="IMG-HERO-03" data-desc-en="Xuanwu Lake" data-desc-zh="玄武湖"></li>
-          <li class="hero-slide" data-img="IMG-HERO-04" data-desc-en="Nanjing Skyline" data-desc-zh="南京天际线"></li>
-          <li class="hero-slide" data-img="IMG-HERO-05" data-desc-en="Campus Life / Library / Canteen" data-desc-zh="校园生活 / 图书馆 / 食堂"></li>
+          <li class="hero-slide is-active" data-img="hero-nuist-main" style="background-image:url('assets/images/hero/hero-nuist-main.webp');"></li>
+          <li class="hero-slide" data-img="hero-ming-wall" style="background-image:url('assets/images/hero/hero-ming-wall.webp');"></li>
+          <li class="hero-slide" data-img="hero-xuanwu-lake" style="background-image:url('assets/images/hero/hero-xuanwu-lake.webp');"></li>
+          <li class="hero-slide" data-img="hero-nanjing-skyline" style="background-image:url('assets/images/hero/hero-nanjing-skyline.webp');"></li>
+          <li class="hero-slide" data-img="hero-zhonghua-gate" style="background-image:url('assets/images/hero/hero-zhonghua-gate.webp');"></li>
         </ol>
 
         <button class="carousel-arrow prev" id="heroPrev" aria-label="Previous slide">‹</button>
@@ -141,18 +141,18 @@
         </div>
 
         <div class="grid grid-2 reveal" style="margin-top:18px">
-          <article class="glass card">
-            <h3 data-i18n="survival.cards.security.title">Campus Security</h3>
-            <p data-i18n="survival.cards.security.body">24-hour campus security contact for NUIST / Waterford Institute area.</p>
-            <p class="placeholder-line">[TO BE VERIFIED] · <span data-i18n="survival.cards.security.note">Number to be confirmed by group.</span></p>
-            <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
-          </article>
-          <article class="glass card">
+          <button type="button" class="glass card clickable" data-action="amap" data-amap-query="南京信息工程大学-保卫处">
+            <h3 data-i18n="survival.cards.security.title">Campus Security Office</h3>
+            <p data-i18n="survival.cards.security.body">Campus security office at NUIST. Tap to open in Amap.</p>
+            <p class="phone-line"><span data-i18n="survival.cards.security.telLabel">Tel</span>: <span class="phone-num">025-58731410</span></p>
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
+          <button type="button" class="glass card clickable" data-action="amap" data-amap-query="东南大学附属中大医院江北院区">
             <h3 data-i18n="survival.cards.hospital.title">Nearby Hospital</h3>
-            <p data-i18n="survival.cards.hospital.body">Recommended hospital with English-capable services near campus.</p>
-            <p class="placeholder-line">[TO BE VERIFIED] · <span data-i18n="survival.cards.hospital.note">Specific hospital to be confirmed.</span></p>
-            <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
-          </article>
+            <p data-i18n="survival.cards.hospital.body">Zhongda Hospital (Jiangbei Campus), Southeast University — closest large hospital to NUIST.</p>
+            <p class="phone-line"><span data-i18n="survival.cards.hospital.telLabel">24h Tel</span>: <span class="phone-num">025-57791399</span></p>
+            <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
+          </button>
         </div>
 
         <h3 class="subhead reveal" data-i18n="survival.appsTitle">Essential Apps</h3>
@@ -219,49 +219,41 @@
           </div>
         </a>
 
-        <!-- v1: campus points are clickable → openAmap() (no prefilled query yet). Last card is Bus → bus.html. -->
+        <!-- v2.1: direct cards open Amap; option cards open a chooser popup. -->
         <div class="grid grid-3 reveal" style="margin-top:22px">
-          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
-            <span class="point-id">CAMPUS-POINT-01</span>
+          <button type="button" class="glass card campus-point clickable"
+                  data-modal-trigger="options" data-options-id="waterford">
             <h3 data-i18n="campus.points.waterford.title">Waterford Institute Area</h3>
-            <p data-i18n="campus.points.waterford.body">Primary teaching and office area for international faculty.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
+            <p data-i18n="campus.points.waterford.body">Primary teaching and office area for international faculty — tap to choose a building.</p>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
-            <span class="point-id">CAMPUS-POINT-02</span>
+          <button type="button" class="glass card campus-point clickable"
+                  data-action="amap" data-amap-query="南京信息工程大学图书馆">
             <h3 data-i18n="campus.points.library.title">Library</h3>
             <p data-i18n="campus.points.library.body">Quiet study floors, journals, and reserved reading rooms.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
-            <span class="point-id">CAMPUS-POINT-03</span>
+          <button type="button" class="glass card campus-point clickable"
+                  data-modal-trigger="options" data-options-id="canteen">
             <h3 data-i18n="campus.points.canteen.title">Canteen</h3>
-            <p data-i18n="campus.points.canteen.body">Affordable daily meals, peak hours best avoided.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
+            <p data-i18n="campus.points.canteen.body">Campus canteens — tap to choose which one to open in Amap.</p>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
-            <span class="point-id">CAMPUS-POINT-04</span>
+          <button type="button" class="glass card campus-point clickable"
+                  data-action="amap" data-amap-query="南京信息工程大学综合门诊部">
             <h3 data-i18n="campus.points.clinic.title">Clinic</h3>
-            <p data-i18n="campus.points.clinic.body">On-campus first aid and routine consultations.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
+            <p data-i18n="campus.points.clinic.body">On-campus general outpatient clinic.</p>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <button type="button" class="glass card campus-point clickable" data-action="amap" data-amap-query="">
-            <span class="point-id">CAMPUS-POINT-05</span>
-            <h3 data-i18n="campus.points.gate.title">Main Gate / Transport Access</h3>
-            <p data-i18n="campus.points.gate.body">Bus stops, metro connections, and ride-hailing pickup.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
+          <button type="button" class="glass card campus-point clickable"
+                  data-modal-trigger="options" data-options-id="gate">
+            <h3 data-i18n="campus.points.gate.title">Main Gate</h3>
+            <p data-i18n="campus.points.gate.body">NUIST campus gates — choose a gate to open it in Amap.</p>
             <span class="card-go" data-i18n="action.openAmap">Open in Amap ↗</span>
           </button>
-          <!-- v1: Daily Routine card replaced by Bus card → bus.html -->
           <a class="glass card campus-point clickable card-bus" href="bus.html">
-            <span class="point-id">CAMPUS-POINT-06</span>
             <h3 data-i18n="campus.points.bus.title">Bus</h3>
             <p data-i18n="campus.points.bus.body">Campus shuttles and city bus lines around NUIST.</p>
-            <span class="tag tag-warn" data-i18n="tag.placeholder">Placeholder</span>
             <span class="card-go" data-i18n="action.openBus">Open bus guide →</span>
           </a>
         </div>
