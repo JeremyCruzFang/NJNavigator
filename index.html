@@ -551,98 +551,25 @@
     </section>
 
     <!-- ============================= -->
-    <!-- APPENDIX -->
+    <!-- APPENDIX (v2.3: single card → two-level Q&A modal) -->
     <!-- ============================= -->
     <section class="section section-tinted" id="appendix">
       <div class="container">
         <header class="section-head reveal">
           <p class="eyebrow" data-i18n="appendix.eyebrow">Section 5</p>
           <h2 data-i18n="appendix.title">Appendix</h2>
-          <p class="lede" data-i18n="appendix.lede">Reference material: ten useful phrases, sources, and a QR card stack for mobile use.</p>
+          <p class="lede" data-i18n="appendix.lede">A short, practical Chinese phrasebook for the first weeks on the ground.</p>
         </header>
 
-        <h3 class="subhead reveal" data-i18n="appendix.phrasesTitle">10 Essential Chinese Phrases</h3>
-        <div class="grid grid-2 reveal phrase-grid">
-          <article class="glass phrase"><span class="point-id">PHRASE-01</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-02</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-03</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-04</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-05</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-06</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-07</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-08</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-09</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
-          <article class="glass phrase"><span class="point-id">PHRASE-10</span><h5>[Phrase]</h5><p><em>Pinyin: [PLACEHOLDER]</em></p><p data-i18n="appendix.phrase.usage">Usage context: [PLACEHOLDER]</p></article>
+        <div class="reveal">
+          <button type="button" class="glass card appendix-card clickable"
+                  data-modal-trigger="appendix-list">
+            <span class="appendix-card-mark" aria-hidden="true">中</span>
+            <h3 data-i18n="appendix.card.title">Practical Chinese Q&amp;A</h3>
+            <p data-i18n="appendix.card.body">Ten everyday Chinese phrases with pinyin, translation, and when to use them. Tap to browse the questions.</p>
+            <span class="card-go" data-i18n="appendix.card.cta">Open phrasebook →</span>
+          </button>
         </div>
-
-        <div class="grid grid-2 reveal" style="margin-top:30px">
-          <article class="glass card">
-            <h3 data-i18n="appendix.refsTitle">References</h3>
-            <ol class="refs">
-              <li>REF-01 — <span data-i18n="appendix.ref.placeholder">Official source placeholder.</span></li>
-              <li>REF-02 — <span data-i18n="appendix.ref.placeholder">Official source placeholder.</span></li>
-              <li>REF-03 — <span data-i18n="appendix.ref.placeholder">Official source placeholder.</span></li>
-              <li>REF-04 — <span data-i18n="appendix.ref.placeholder">Official source placeholder.</span></li>
-              <li>REF-05 — <span data-i18n="appendix.ref.placeholder">Official source placeholder.</span></li>
-            </ol>
-            <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
-          </article>
-
-          <!-- v1: QR card becomes a card stack with manual + timed switching. -->
-          <article class="glass card qr-card qr-stack" id="qrStack" aria-label="QR card stack">
-            <h3 data-i18n="appendix.qrTitle">QR Code</h3>
-            <div class="qr-track" id="qrTrack">
-              <div class="qr-slide is-active" data-qr-id="QR-01" data-i18n-title="appendix.qr.q1.title" data-i18n-body="appendix.qr.q1.body">
-                <div class="qr-ph" aria-hidden="true">
-                  <svg viewBox="0 0 80 80" width="120" height="120">
-                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
-                    <g fill="#0B1F3A">
-                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
-                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
-                      <rect x="34" y="34" width="4" height="4"/><rect x="42" y="34" width="4" height="4"/><rect x="34" y="42" width="4" height="4"/><rect x="42" y="42" width="4" height="4"/><rect x="50" y="50" width="4" height="4"/><rect x="30" y="58" width="4" height="4"/>
-                    </g>
-                  </svg>
-                </div>
-                <p class="qr-purpose"><span class="qr-id">QR-01</span> · <span data-i18n="appendix.qr.q1.title">Website Link</span></p>
-                <p class="qr-body" data-i18n="appendix.qr.q1.body">QR Code Placeholder. To be replaced later.</p>
-              </div>
-              <div class="qr-slide" data-qr-id="QR-02" data-i18n-title="appendix.qr.q2.title" data-i18n-body="appendix.qr.q2.body">
-                <div class="qr-ph" aria-hidden="true">
-                  <svg viewBox="0 0 80 80" width="120" height="120">
-                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
-                    <g fill="#0B1F3A">
-                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
-                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
-                      <rect x="38" y="30" width="4" height="4"/><rect x="30" y="38" width="4" height="4"/><rect x="46" y="38" width="4" height="4"/><rect x="38" y="46" width="4" height="4"/><rect x="54" y="46" width="4" height="4"/><rect x="46" y="54" width="4" height="4"/>
-                    </g>
-                  </svg>
-                </div>
-                <p class="qr-purpose"><span class="qr-id">QR-02</span> · <span data-i18n="appendix.qr.q2.title">Subway Map</span></p>
-                <p class="qr-body" data-i18n="appendix.qr.q2.body">QR Code Placeholder. To be replaced later.</p>
-              </div>
-              <div class="qr-slide" data-qr-id="QR-03" data-i18n-title="appendix.qr.q3.title" data-i18n-body="appendix.qr.q3.body">
-                <div class="qr-ph" aria-hidden="true">
-                  <svg viewBox="0 0 80 80" width="120" height="120">
-                    <rect width="80" height="80" fill="#fff" stroke="#0B1F3A"/>
-                    <g fill="#0B1F3A">
-                      <rect x="6" y="6" width="18" height="18"/><rect x="56" y="6" width="18" height="18"/><rect x="6" y="56" width="18" height="18"/>
-                      <rect x="11" y="11" width="8" height="8" fill="#fff"/><rect x="61" y="11" width="8" height="8" fill="#fff"/><rect x="11" y="61" width="8" height="8" fill="#fff"/>
-                      <rect x="30" y="30" width="6" height="6"/><rect x="44" y="30" width="6" height="6"/><rect x="30" y="44" width="6" height="6"/><rect x="44" y="44" width="6" height="6"/><rect x="52" y="58" width="4" height="4"/><rect x="26" y="58" width="4" height="4"/>
-                    </g>
-                  </svg>
-                </div>
-                <p class="qr-purpose"><span class="qr-id">QR-03</span> · <span data-i18n="appendix.qr.q3.title">City Wall Virtual Tour</span></p>
-                <p class="qr-body" data-i18n="appendix.qr.q3.body">QR Code Placeholder. To be replaced later.</p>
-              </div>
-            </div>
-            <div class="qr-controls">
-              <button type="button" class="qr-arrow prev" id="qrPrev" aria-label="Previous QR">‹</button>
-              <ol class="qr-dots" id="qrDots" aria-label="QR pagination"></ol>
-              <button type="button" class="qr-arrow next" id="qrNext" aria-label="Next QR">›</button>
-            </div>
-          </article>
-        </div>
-        <!-- v1: AI Usage Disclosure card removed. -->
       </div>
     </section>
   </main>
@@ -669,9 +596,15 @@
         <p data-i18n="footer.tag">A practical and cultural guide for international faculty at NUIST.</p>
       </div>
       <div>
-        <p data-i18n="footer.version">Version: v1</p>
-        <p data-i18n="footer.note">Display logic in place. Verified content rolling in.</p>
+        <p data-i18n="footer.version">Version: v2.3</p>
+        <p data-i18n="footer.note">Verified locations, phones, and campus shuttle routes online.</p>
       </div>
+    </div>
+    <div class="container footer-tel">
+      <p>
+        <span class="footer-tel-label" data-i18n="footer.telLabel">TEL</span><span class="footer-tel-sep" data-i18n="footer.telSep">:</span>
+        <a class="footer-tel-num" href="tel:+8618367589789">+86 18367589789</a>
+      </p>
     </div>
   </footer>
 

@@ -18,7 +18,7 @@
   const i18n = {
     en: {
       'meta.title': 'NJNavigator — A Guide for International Faculty in Nanjing',
-      'brand.tag': 'v2.2',
+      'brand.tag': 'v2.3',
 
       'nav.home': 'Home',
       'nav.survival': 'Survival',
@@ -32,7 +32,7 @@
       'hero.sub': 'A practical and cultural guide for international faculty at NUIST.',
       'hero.cta1': 'Start Exploring',
       'hero.cta2': 'Campus Essentials',
-      'hero.note': 'v2.2 · Display, interaction, and verified location data online. Routes and food content rolling in.',
+      'hero.note': 'v2.3 · Verified locations, phones, campus shuttle routes, and a practical Chinese phrasebook online. Routes and food content rolling in.',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
       'hero.label.xuanwuLake':   'XuanWu Lake',
@@ -199,22 +199,43 @@
 
       'appendix.eyebrow': 'Section 5',
       'appendix.title': 'Appendix',
-      'appendix.lede': 'Reference material: ten useful phrases, sources, and a QR card stack for mobile use.',
-      'appendix.phrasesTitle': '10 Essential Chinese Phrases',
-      'appendix.phrase.usage': 'Usage context: [PLACEHOLDER]',
-      'appendix.refsTitle': 'References',
-      'appendix.ref.placeholder': 'Official source placeholder.',
-      'appendix.qrTitle': 'QR Code',
-      'appendix.qr.q1.title': 'Website Link',
-      'appendix.qr.q1.body': 'QR Code Placeholder. To be replaced later.',
-      'appendix.qr.q2.title': 'Subway Map',
-      'appendix.qr.q2.body': 'QR Code Placeholder. To be replaced later.',
-      'appendix.qr.q3.title': 'City Wall Virtual Tour',
-      'appendix.qr.q3.body': 'QR Code Placeholder. To be replaced later.',
+      'appendix.lede': 'A short, practical Chinese phrasebook for the first weeks on the ground.',
+      'appendix.card.title': 'Practical Chinese Q&A',
+      'appendix.card.body': 'Ten everyday Chinese phrases with pinyin, translation, and when to use them. Tap to browse the questions.',
+      'appendix.card.cta': 'Open phrasebook →',
+      'appendix.modal.listTitle': 'Practical Chinese Q&A',
+      'appendix.modal.intro': 'Pick a question to see the Chinese phrase, pinyin, translation, and when to use it.',
+      'appendix.detail.phrase': 'Chinese Phrase',
+      'appendix.detail.pinyin': 'Pinyin',
+      'appendix.detail.translation': 'English Translation',
+      'appendix.detail.whenToUse': 'When to Use',
+
+      'appendix.qa.q1.q':  'How to say hello?',
+      'appendix.qa.q1.when':  'Used when meeting colleagues, students, or local residents for the first time.',
+      'appendix.qa.q2.q':  'How to say thank you?',
+      'appendix.qa.q2.when':  'Used to express gratitude in daily life, at work, or in social situations.',
+      'appendix.qa.q3.q':  'How to say excuse me?',
+      'appendix.qa.q3.when':  'Used when politely asking for directions, assistance, or someone’s attention.',
+      'appendix.qa.q4.q':  'How to say it’s okay?',
+      'appendix.qa.q4.when':  'Used when responding to thanks or accepting an apology.',
+      'appendix.qa.q5.q':  'How to ask someone to speak more slowly?',
+      'appendix.qa.q5.when':  'Used when you need someone to speak more slowly for better understanding.',
+      'appendix.qa.q6.q':  'How to ask someone to wait a moment?',
+      'appendix.qa.q6.when':  'Used during meetings, phone calls, or when you need a moment to handle something.',
+      'appendix.qa.q7.q':  'How to politely ask for help?',
+      'appendix.qa.q7.when':  'Used when politely requesting help from colleagues, staff, or local residents.',
+      'appendix.qa.q8.q':  'How to say I need help?',
+      'appendix.qa.q8.when':  'Used when facing a problem or needing immediate assistance.',
+      'appendix.qa.q9.q':  'How to say I don’t understand?',
+      'appendix.qa.q9.when':  'Used when you cannot understand spoken Chinese and need clarification.',
+      'appendix.qa.q10.q': 'How to say nice to meet you?',
+      'appendix.qa.q10.when': 'Used when introducing yourself and building professional or social connections.',
 
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
-      'footer.version': 'Version: v2.2',
-      'footer.note': 'Verified locations, phones, and campus shuttle routes online.',
+      'footer.version': 'Version: v2.3',
+      'footer.note': 'Verified locations, phones, campus shuttle routes, and a practical Chinese phrasebook online.',
+      'footer.telLabel': 'TEL',
+      'footer.telSep': ': ',
 
       'bus.title': 'Bus · Getting around NUIST',
       'bus.lede': 'Placeholder guide to campus shuttles and city bus lines. Final stops, schedules, and routes to be verified.',
@@ -237,7 +258,7 @@
 
     zh: {
       'meta.title': 'NJNavigator — 南京国际教师生活与文化导航',
-      'brand.tag': 'v2.2',
+      'brand.tag': 'v2.3',
 
       'nav.home': '首页',
       'nav.survival': '生存',
@@ -251,7 +272,7 @@
       'hero.sub': '面向南信大国际教师的生活与文化导航平台。',
       'hero.cta1': '开始浏览',
       'hero.cta2': '校园要点',
-      'hero.note': 'v2.2 · 展示、交互与已核实地点已上线,路线与美食内容持续补入。',
+      'hero.note': 'v2.3 · 已核实地点、电话、校园班车线路与实用中文短语集均已上线;路线与美食内容持续补入。',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
       'hero.label.xuanwuLake':   'XuanWu Lake',
@@ -418,22 +439,43 @@
 
       'appendix.eyebrow': '第五部分',
       'appendix.title': '附录',
-      'appendix.lede': '参考材料:十句实用短语、参考资料,以及移动端二维码卡片集。',
-      'appendix.phrasesTitle': '十句实用中文短语',
-      'appendix.phrase.usage': '使用场景:[占位]',
-      'appendix.refsTitle': '参考资料',
-      'appendix.ref.placeholder': '官方来源占位。',
-      'appendix.qrTitle': '二维码',
-      'appendix.qr.q1.title': '网站链接',
-      'appendix.qr.q1.body': '二维码占位,后续将替换。',
-      'appendix.qr.q2.title': '地铁线路图',
-      'appendix.qr.q2.body': '二维码占位,后续将替换。',
-      'appendix.qr.q3.title': '城墙虚拟漫游',
-      'appendix.qr.q3.body': '二维码占位,后续将替换。',
+      'appendix.lede': '一份简洁实用的中文应急短语集,助你顺利度过到岗最初几周。',
+      'appendix.card.title': '实用中文 Q&A',
+      'appendix.card.body': '十句日常中文短语,含拼音、英文释义与使用场景。点击展开问题列表。',
+      'appendix.card.cta': '打开短语集 →',
+      'appendix.modal.listTitle': '实用中文 Q&A',
+      'appendix.modal.intro': '选择一个问题,查看对应的中文短语、拼音、英文释义与使用场景。',
+      'appendix.detail.phrase': '中文短语',
+      'appendix.detail.pinyin': '拼音',
+      'appendix.detail.translation': '英文释义',
+      'appendix.detail.whenToUse': '使用场景',
+
+      'appendix.qa.q1.q':  '怎么打招呼?',
+      'appendix.qa.q1.when':  '与同事、学生或本地居民第一次见面时使用。',
+      'appendix.qa.q2.q':  '怎么道谢?',
+      'appendix.qa.q2.when':  '在日常生活、工作或社交场合表达感谢时使用。',
+      'appendix.qa.q3.q':  '怎么说「不好意思」?',
+      'appendix.qa.q3.when':  '在礼貌地问路、请求帮助或想引起他人注意时使用。',
+      'appendix.qa.q4.q':  '怎么说「没关系」?',
+      'appendix.qa.q4.when':  '在回应他人感谢或接受他人道歉时使用。',
+      'appendix.qa.q5.q':  '怎么请对方说慢一点?',
+      'appendix.qa.q5.when':  '需要对方放慢语速以便理解时使用。',
+      'appendix.qa.q6.q':  '怎么请对方稍等一下?',
+      'appendix.qa.q6.when':  '在会议、通话中,或需要短暂处理事情时使用。',
+      'appendix.qa.q7.q':  '怎么礼貌地请人帮忙?',
+      'appendix.qa.q7.when':  '在客气地请求同事、工作人员或本地居民帮忙时使用。',
+      'appendix.qa.q8.q':  '怎么说「我需要帮助」?',
+      'appendix.qa.q8.when':  '遇到困难或需要立即协助时使用。',
+      'appendix.qa.q9.q':  '怎么说「我听不懂」?',
+      'appendix.qa.q9.when':  '听不懂中文,需要对方进一步说明时使用。',
+      'appendix.qa.q10.q': '怎么说「很高兴认识你」?',
+      'appendix.qa.q10.when': '自我介绍以及建立工作或社交关系时使用。',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
-      'footer.version': '版本:v2.2',
-      'footer.note': '已核实地点、电话与校园班车线路已上线。',
+      'footer.version': '版本:v2.3',
+      'footer.note': '已核实地点、电话、校园班车线路及实用中文短语集已上线。',
+      'footer.telLabel': 'TEL',
+      'footer.telSep': ':',
 
       'bus.title': '公交 · 南信大周边出行',
       'bus.lede': '校园班车与城市公交占位指南。最终站点、时刻表与线路待核实。',
@@ -619,6 +661,22 @@
     });
   }
 
+  /* ---------- v2.3: Practical Chinese Q&A (Appendix two-level modal) ----------
+     Phrase / Pinyin / Translation stay verbatim across languages. The two
+     question prompts and the "When to use" rationale do switch language. */
+  const practicalChineseItems = [
+    { id: 'q1',  phrase: '你好',         pinyin: 'Nǐ hǎo',                translation: 'Hello',                  questionKey: 'appendix.qa.q1.q',  whenKey: 'appendix.qa.q1.when'  },
+    { id: 'q2',  phrase: '谢谢',         pinyin: 'Xiè xie',               translation: 'Thank you',              questionKey: 'appendix.qa.q2.q',  whenKey: 'appendix.qa.q2.when'  },
+    { id: 'q3',  phrase: '不好意思',     pinyin: 'Bù hǎo yì si',          translation: 'Excuse me',              questionKey: 'appendix.qa.q3.q',  whenKey: 'appendix.qa.q3.when'  },
+    { id: 'q4',  phrase: '没关系',       pinyin: 'Méi guān xi',           translation: 'It’s okay',              questionKey: 'appendix.qa.q4.q',  whenKey: 'appendix.qa.q4.when'  },
+    { id: 'q5',  phrase: '请说慢一点',   pinyin: 'Qǐng shuō màn yì diǎn', translation: 'Please speak more slowly', questionKey: 'appendix.qa.q5.q', whenKey: 'appendix.qa.q5.when' },
+    { id: 'q6',  phrase: '请稍等一下',   pinyin: 'Qǐng shāo děng yí xià', translation: 'Please wait a moment',   questionKey: 'appendix.qa.q6.q',  whenKey: 'appendix.qa.q6.when'  },
+    { id: 'q7',  phrase: '麻烦你了',     pinyin: 'Má fan nǐ le',          translation: 'Sorry to trouble you',   questionKey: 'appendix.qa.q7.q',  whenKey: 'appendix.qa.q7.when'  },
+    { id: 'q8',  phrase: '我需要帮助',   pinyin: 'Wǒ xū yào bāng zhù',    translation: 'I need help',            questionKey: 'appendix.qa.q8.q',  whenKey: 'appendix.qa.q8.when'  },
+    { id: 'q9',  phrase: '我听不懂',     pinyin: 'Wǒ tīng bù dǒng',       translation: 'I don’t understand',     questionKey: 'appendix.qa.q9.q',  whenKey: 'appendix.qa.q9.when'  },
+    { id: 'q10', phrase: '很高兴认识你', pinyin: 'Hěn gāo xìng rèn shi nǐ', translation: 'Nice to meet you',     questionKey: 'appendix.qa.q10.q', whenKey: 'appendix.qa.q10.when' }
+  ];
+
   /* ---------- v2.2: Bus shuttle routes ----------
      Stop names stay in Chinese because there's no canonical English roster
      for these on-campus stops yet. Route name + description + UI chrome do
@@ -673,14 +731,29 @@
   };
 
   /* ---------- v1: Modal system ---------- */
+  /* Two-level modal flows (Appendix Q&A) use a stack: each entry captures
+     enough state to re-render. Back pops one level; Close empties everything. */
   const modalState = {
     open: false,
-    trigger: null,
-    activeTrigger: null,
-    titleKey: null,
-    bodyKey: null,
-    optionsId: null
+    activeTrigger: null,   // DOM element that initially opened the modal
+    stack: []              // each: { trigger, titleKey, bodyKey, optionsId, activeItemId }
   };
+
+  function modalTop() {
+    return modalState.stack[modalState.stack.length - 1] || null;
+  }
+  function pushModalLevel(level) {
+    modalState.stack.push(level);
+    renderModalContent();
+  }
+  function popModalLevel() {
+    if (modalState.stack.length > 1) {
+      modalState.stack.pop();
+      renderModalContent();
+    } else {
+      closeModal();
+    }
+  }
 
   function renderModalContent() {
     const titleEl = $('#modalTitle');
@@ -688,8 +761,18 @@
     if (!titleEl || !bodyEl) return;
     const lang = currentLang();
     const dict = i18n[lang] || i18n.en;
+    const top = modalTop();
+    if (!top) {
+      titleEl.textContent = '';
+      bodyEl.innerHTML = '';
+      return;
+    }
+    // Toggle the dialog-level "has a parent level" flag so CSS can show
+    // a Back affordance / indent the title only when there is somewhere to go.
+    const dialog = $('.modal-dialog');
+    if (dialog) dialog.classList.toggle('has-back', modalState.stack.length > 1);
 
-    if (modalState.trigger === 'restaurants') {
+    if (top.trigger === 'restaurants') {
       titleEl.textContent = dict['restaurants.modal.title'];
       bodyEl.innerHTML = renderRestaurantsHtml(dict);
       // Wire Go buttons inside the modal to openAmap.
@@ -699,11 +782,11 @@
           openAmapSearch(q);
         });
       });
-    } else if (modalState.trigger === 'bus') {
+    } else if (top.trigger === 'bus') {
       titleEl.textContent = dict['bus.modal.title'] || '';
       bodyEl.innerHTML = renderBusRoutesHtml(dict);
-    } else if (modalState.trigger === 'options') {
-      const group = optionGroups[modalState.optionsId];
+    } else if (top.trigger === 'options') {
+      const group = optionGroups[top.optionsId];
       if (group) {
         titleEl.textContent = dict[group.titleKey] || '';
         bodyEl.innerHTML = renderOptionsHtml(group, dict);
@@ -720,11 +803,72 @@
         titleEl.textContent = '';
         bodyEl.innerHTML = '';
       }
+    } else if (top.trigger === 'appendix-list') {
+      titleEl.textContent = dict['appendix.modal.listTitle'] || '';
+      bodyEl.innerHTML = renderAppendixListHtml(dict);
+      $$('.qa-pill', bodyEl).forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-qa-id');
+          pushModalLevel({ trigger: 'appendix-detail', activeItemId: id });
+        });
+      });
+    } else if (top.trigger === 'appendix-detail') {
+      const item = practicalChineseItems.find(it => it.id === top.activeItemId);
+      titleEl.textContent = item ? (dict[item.questionKey] || '') : '';
+      bodyEl.innerHTML = renderAppendixDetailHtml(item, dict);
+      $$('.modal-back', bodyEl).forEach(btn => {
+        btn.addEventListener('click', popModalLevel);
+      });
     } else {
-      titleEl.textContent = modalState.titleKey ? (dict[modalState.titleKey] || '') : '';
-      const body = modalState.bodyKey ? (dict[modalState.bodyKey] || '') : '';
+      titleEl.textContent = top.titleKey ? (dict[top.titleKey] || '') : '';
+      const body = top.bodyKey ? (dict[top.bodyKey] || '') : '';
       bodyEl.innerHTML = '<p>' + escapeHtml(body) + '</p>';
     }
+  }
+
+  function renderAppendixListHtml(dict) {
+    const intro = '<p class="modal-intro">' + escapeHtml(dict['appendix.modal.intro'] || '') + '</p>';
+    const pills = practicalChineseItems.map(item => (
+      '<button type="button" class="qa-pill" data-qa-id="' + escapeHtml(item.id) + '">' +
+        '<span class="qa-pill-num">' + escapeHtml(item.id.toUpperCase()) + '</span>' +
+        '<span class="qa-pill-text">' + escapeHtml(dict[item.questionKey] || '') + '</span>' +
+      '</button>'
+    )).join('');
+    return intro + '<div class="qa-pill-list">' + pills + '</div>';
+  }
+
+  function renderAppendixDetailHtml(item, dict) {
+    if (!item) return '';
+    const backLabel = escapeHtml(dict['action.back'] || 'Back');
+    const labels = {
+      phrase:      escapeHtml(dict['appendix.detail.phrase']      || ''),
+      pinyin:      escapeHtml(dict['appendix.detail.pinyin']      || ''),
+      translation: escapeHtml(dict['appendix.detail.translation'] || ''),
+      whenToUse:   escapeHtml(dict['appendix.detail.whenToUse']   || '')
+    };
+    return (
+      '<button type="button" class="modal-back">' +
+        '<span aria-hidden="true">←</span> ' + backLabel +
+      '</button>' +
+      '<div class="qa-detail">' +
+        '<div class="qa-row qa-row-phrase">' +
+          '<span class="qa-row-label">' + labels.phrase + '</span>' +
+          '<span class="qa-row-value qa-phrase">' + escapeHtml(item.phrase) + '</span>' +
+        '</div>' +
+        '<div class="qa-row qa-row-pinyin">' +
+          '<span class="qa-row-label">' + labels.pinyin + '</span>' +
+          '<span class="qa-row-value qa-pinyin">' + escapeHtml(item.pinyin) + '</span>' +
+        '</div>' +
+        '<div class="qa-row qa-row-translation">' +
+          '<span class="qa-row-label">' + labels.translation + '</span>' +
+          '<span class="qa-row-value qa-translation">' + escapeHtml(item.translation) + '</span>' +
+        '</div>' +
+        '<div class="qa-row qa-row-when">' +
+          '<span class="qa-row-label">' + labels.whenToUse + '</span>' +
+          '<p class="qa-row-value qa-when">' + escapeHtml(dict[item.whenKey] || '') + '</p>' +
+        '</div>' +
+      '</div>'
+    );
   }
 
   function renderBusRoutesHtml(dict) {
@@ -788,10 +932,13 @@
     if (!root) return;
     modalState.open = true;
     modalState.activeTrigger = triggerEl;
-    modalState.trigger = triggerEl.getAttribute('data-modal-trigger');
-    modalState.titleKey = triggerEl.getAttribute('data-modal-title-key');
-    modalState.bodyKey = triggerEl.getAttribute('data-modal-body-key');
-    modalState.optionsId = triggerEl.getAttribute('data-options-id');
+    modalState.stack = [{
+      trigger:  triggerEl.getAttribute('data-modal-trigger'),
+      titleKey: triggerEl.getAttribute('data-modal-title-key'),
+      bodyKey:  triggerEl.getAttribute('data-modal-body-key'),
+      optionsId: triggerEl.getAttribute('data-options-id'),
+      activeItemId: null
+    }];
     renderModalContent();
     root.hidden = false;
     document.body.classList.add('modal-open');
@@ -806,14 +953,13 @@
     modalState.open = false;
     root.hidden = true;
     document.body.classList.remove('modal-open');
+    const dialog = $('.modal-dialog', root);
+    if (dialog) dialog.classList.remove('has-back');
     if (modalState.activeTrigger && typeof modalState.activeTrigger.focus === 'function') {
       modalState.activeTrigger.focus({ preventScroll: true });
     }
     modalState.activeTrigger = null;
-    modalState.trigger = null;
-    modalState.titleKey = null;
-    modalState.bodyKey = null;
-    modalState.optionsId = null;
+    modalState.stack = [];
   }
 
   function initModal() {
@@ -900,53 +1046,7 @@
     });
   }
 
-  /* ---------- v1: QR card stack ---------- */
-  function initQrStack() {
-    const stack = $('#qrStack');
-    if (!stack) return;
-    const slides = $$('.qr-slide', stack);
-    const dotsWrap = $('#qrDots');
-    const prev = $('#qrPrev');
-    const next = $('#qrNext');
-    if (slides.length === 0) return;
-
-    let idx = 0;
-    let timer = null;
-    const INTERVAL = 6000;
-
-    dotsWrap.innerHTML = '';
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', 'Go to QR ' + (i + 1));
-      if (i === 0) b.classList.add('is-active');
-      b.addEventListener('click', () => go(i, true));
-      dotsWrap.appendChild(b);
-    });
-
-    function render() {
-      slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
-      $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
-    }
-    function go(i, userInitiated) {
-      idx = (i + slides.length) % slides.length;
-      render();
-      if (userInitiated) restart();
-    }
-    function start() { timer = setInterval(() => go(idx + 1), INTERVAL); }
-    function stop() { if (timer) clearInterval(timer); timer = null; }
-    function restart() { stop(); start(); }
-
-    prev.addEventListener('click', () => go(idx - 1, true));
-    next.addEventListener('click', () => go(idx + 1, true));
-    stack.addEventListener('mouseenter', stop);
-    stack.addEventListener('mouseleave', start);
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) start(); else stop(); });
-    }, { threshold: 0.2 });
-    io.observe(stack);
-  }
+  /* v2.3: QR card stack removed with the Appendix QR / References cards. */
 
   /* ---------- mobile nav ---------- */
   function initNavToggle() {
@@ -1035,7 +1135,6 @@
     initModal();
     initDeck();
     initRouteGalleries();
-    initQrStack();
   }
 
   if (document.readyState === 'loading') {
