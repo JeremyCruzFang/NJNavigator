@@ -848,57 +848,75 @@
     }
   }
 
-  /* ---------- v2.1: Amap jump helper ----------
-     PC  → open https://uri.amap.com/search?keyword=... in a new tab.
-     Mobile → try amapuri:// deep link first, fall back to uri.amap.com.
-              uri.amap.com itself also performs an App-or-Web handoff, which
-              keeps WeChat / Safari in-app browsers usable when the custom
-              scheme is silently blocked. */
+  /* ---------- Amap jump helper ----------
+     PC  → open https://www.amap.com/search?query=... in a new tab.
+     Mobile → navigate the current tab to https://uri.amap.com/search?...&callnative=1.
+              Amap's own page handles the App-launch handoff (keyword preserved).
+              If the page doesn't hide within ~1.2s (App not installed / scheme
+              blocked), we replace location with the &callnative=0 H5 fallback
+              so the user always lands on a real search-result page with the
+              keyword filled in. */
   function isMobileDevice() {
     if (typeof navigator === 'undefined') return false;
     const ua = navigator.userAgent || '';
     return /Android|iPhone|iPad|iPod|HarmonyOS|Mobile/i.test(ua);
   }
 
-  function buildAmapWebUrl(keyword) {
-    return 'https://uri.amap.com/search?keyword=' + encodeURIComponent(keyword)
-      + '&src=njnavigator&coordinate=gaode&callnative=1';
+  // City pinned to Nanjing for sharper Amap search ranking. Encoded once.
+  const AMAP_CITY = encodeURIComponent('南京');
+
+  function buildAmapPcUrl(keyword) {
+    // PC keeps the previously verified amap.com/search page — opens a real
+    // web search results page with the keyword pre-filled.
+    return 'https://www.amap.com/search?query=' + encodeURIComponent(keyword);
   }
-  function buildAmapAppScheme(keyword) {
-    // Official Amap URI for searching POIs — keywords + sourceApplication.
-    return 'amapuri://poi?sourceApplication=njnavigator&keywords='
-      + encodeURIComponent(keyword) + '&dev=0';
+  function buildAmapMobileNativeUrl(keyword) {
+    // Mobile primary: HTTPS uri.amap.com with callnative=1. Amap's own page
+    // attempts to launch the installed App with the same keyword preserved.
+    return 'https://uri.amap.com/search?keyword=' + encodeURIComponent(keyword)
+      + '&city=' + AMAP_CITY
+      + '&view=map&src=NJNavigator&callnative=1';
+  }
+  function buildAmapMobileFallbackUrl(keyword) {
+    // Mobile fallback: same page, callnative=0 — stays on the H5 result page
+    // when the App is not installed or the App launch is blocked.
+    return 'https://uri.amap.com/search?keyword=' + encodeURIComponent(keyword)
+      + '&city=' + AMAP_CITY
+      + '&view=map&src=NJNavigator&callnative=0';
   }
 
   function openAmapSearch(keyword) {
     const k = String(keyword == null ? '' : keyword).trim();
     if (!k) return;
-    const webUrl = buildAmapWebUrl(k);
 
     if (!isMobileDevice()) {
-      window.open(webUrl, '_blank', 'noopener,noreferrer');
+      // PC: unchanged behavior — open the working web search page in a new tab.
+      window.open(buildAmapPcUrl(k), '_blank', 'noopener,noreferrer');
       return;
     }
 
-    // Mobile path: attempt App scheme; if the page never hides (App not
-    // installed / scheme blocked), navigate to the web URL as fallback.
-    const scheme = buildAmapAppScheme(k);
-    let switched = false;
-    const onHide = () => { switched = true; };
-    document.addEventListener('visibilitychange', onHide, { once: true });
-    window.addEventListener('pagehide', onHide, { once: true });
-    window.addEventListener('blur', onHide, { once: true });
+    // Mobile: navigate the current tab to the HTTPS uri.amap.com page with
+    // callnative=1. Amap itself decides whether to launch the App (keeping the
+    // keyword) or render the H5 result page. We watch for the page hiding
+    // (pagehide / visibilitychange) — if it doesn't hide within ~1.2s we
+    // assume the App didn't take over and replace the location with the
+    // callnative=0 H5 fallback so the user lands on a usable search page.
+    const nativeUrl   = buildAmapMobileNativeUrl(k);
+    const fallbackUrl = buildAmapMobileFallbackUrl(k);
 
-    try { window.location.href = scheme; } catch (e) { /* ignore */ }
+    let hasLeftPage = false;
+    const markLeft = () => { hasLeftPage = true; };
 
-    setTimeout(() => {
-      document.removeEventListener('visibilitychange', onHide);
-      window.removeEventListener('pagehide', onHide);
-      window.removeEventListener('blur', onHide);
-      if (!switched && !document.hidden) {
-        // App did not take over — fall back to Amap web (callnative=1
-        // lets Amap retry the App handoff from its own page).
-        window.location.href = webUrl;
+    window.addEventListener('pagehide', markLeft, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) hasLeftPage = true;
+    }, { once: true });
+
+    try { window.location.href = nativeUrl; } catch (e) { /* ignore */ }
+
+    window.setTimeout(() => {
+      if (!hasLeftPage && !document.hidden) {
+        window.location.href = fallbackUrl;
       }
     }, 1200);
   }
