@@ -701,6 +701,28 @@
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
+  /* v3.2: lazy-image hydration helpers ------------------------------------
+     - hydrateLazyImages(root): promote every data-src under root to src.
+     - hydrateGalleryImage(gallery, index): hydrate only the Nth slide image.
+     Used to keep non-active route / modal / TIME slides off the network until
+     the user actually swipes / opens them. */
+  function hydrateLazyImages(root) {
+    $$('img[data-src]', root || document).forEach(img => {
+      const src = img.getAttribute('data-src');
+      if (src) {
+        img.setAttribute('src', src);
+        img.removeAttribute('data-src');
+      }
+    });
+  }
+  function hydrateGalleryImage(gallery, index) {
+    if (!gallery) return;
+    const slides = $$('.route-slide, .modal-gallery-slide', gallery);
+    const slide = slides[index];
+    if (!slide) return;
+    hydrateLazyImages(slide);
+  }
+
   /* ---------- language switching ---------- */
   function currentLang() {
     return document.documentElement.getAttribute('data-lang') || 'en';
@@ -778,9 +800,21 @@
       dotsWrap.appendChild(b);
     });
 
+    function hydrateSlide(i) {
+      const s = slides[i];
+      if (!s) return;
+      const bg = s.getAttribute('data-bg');
+      if (bg) {
+        s.style.backgroundImage = "url('" + bg + "')";
+        s.removeAttribute('data-bg');
+      }
+    }
     function render() {
       slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
       $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
+      // v3.2: hydrate the active slide + the next one (preloads the next fade).
+      hydrateSlide(idx);
+      hydrateSlide((idx + 1) % slides.length);
     }
     function go(i, userInitiated) {
       idx = (i + slides.length) % slides.length;
@@ -801,6 +835,17 @@
       entries.forEach(e => { if (e.isIntersecting) start(); else stop(); });
     }, { threshold: 0.1 });
     io.observe(carousel);
+
+    // v3.2: pre-hydrate slide 2 after initial paint so the first fade has its
+    // image ready. Other slides hydrate as they become the active/next slide.
+    if (slides.length > 1) {
+      const warmup = () => hydrateSlide(1);
+      if (typeof window.requestIdleCallback === 'function') {
+        window.requestIdleCallback(warmup, { timeout: 2000 });
+      } else {
+        setTimeout(warmup, 1500);
+      }
+    }
   }
 
   /* ---------- v2.1: Amap jump helper ----------
@@ -1318,9 +1363,12 @@
     const slides = item.images.map((img, i) => {
       const cap = escapeHtml(dict[img.captionKey] || '');
       const alt = escapeHtml(dict[img.altKey] || cap);
+      // v3.2: only the active slide loads immediately; others wait until the
+      // user swipes / clicks the next button. wireModalGallery handles hydration.
+      const srcAttr = (i === 0 ? 'src' : 'data-src');
       return (
         '<figure class="modal-gallery-slide' + (i === 0 ? ' is-active' : '') + '" data-idx="' + i + '">' +
-          '<img src="' + escapeHtml(img.src) + '" alt="' + alt + '" loading="lazy" decoding="async" />' +
+          '<img ' + srcAttr + '="' + escapeHtml(img.src) + '" alt="' + alt + '" loading="lazy" decoding="async" />' +
           '<figcaption>' + cap + '</figcaption>' +
         '</figure>'
       );
@@ -1344,19 +1392,31 @@
     const gallery = $('.modal-gallery', root);
     if (!gallery) return;
     const slides = $$('.modal-gallery-slide', gallery);
-    if (slides.length <= 1) return;
+    if (slides.length === 0) return;
+    // Single-image gallery: nothing to wire, just hydrate (no-op if eager).
+    if (slides.length === 1) {
+      hydrateGalleryImage(gallery, 0);
+      return;
+    }
     const total = slides.length;
     let idx = 0;
     const counter = $('.g-cur', gallery);
     const render = () => {
       slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
       if (counter) counter.textContent = String(idx + 1);
+      // v3.2: hydrate current + next so the next click/swipe doesn't pause.
+      hydrateGalleryImage(gallery, idx);
+      hydrateGalleryImage(gallery, (idx + 1) % total);
     };
     const go = (delta) => { idx = (idx + delta + total) % total; render(); };
     const prev = $('.gallery-arrow.prev', gallery);
     const next = $('.gallery-arrow.next', gallery);
     if (prev) prev.addEventListener('click', () => go(-1));
     if (next) next.addEventListener('click', () => go(+1));
+    // Initial hydration so the user sees the first image instantly and the
+    // second one is ready when they tap next.
+    hydrateGalleryImage(gallery, 0);
+    hydrateGalleryImage(gallery, 1 % total);
   }
 
   function renderDiningMoreHtml(dict) {
@@ -1574,12 +1634,19 @@
       function render() {
         slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
         if (dotsWrap) $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        // v3.2: hydrate active + next so swipes feel instant without preloading
+        // every non-visible slide up-front.
+        hydrateGalleryImage(gallery, idx);
+        hydrateGalleryImage(gallery, (idx + 1) % slides.length);
       }
       function go(i) {
         idx = (i + slides.length) % slides.length;
         render();
       }
       attachSwipe(gallery, d => go(idx + d));
+      // v3.2: initial hydration — first slide already has src; hydrate slide #2
+      // so the next swipe doesn't pause on network.
+      hydrateGalleryImage(gallery, (idx + 1) % slides.length);
     });
   }
 
