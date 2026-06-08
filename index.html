@@ -336,44 +336,39 @@
           <p class="lede" data-i18n="story.lede">A short walk through the layers of the city — Ming walls, Republican avenues, modern districts.</p>
         </header>
 
-        <!-- v1: timeline cards now open a centered detail modal. -->
+        <!-- v2.5: timeline cards open a unified Modal — TIME-02 / TIME-03 also
+             carry an image gallery; TIME-01 stays text-only. -->
         <ol class="timeline reveal" aria-label="Nanjing timeline">
           <li>
             <button type="button" class="timeline-item clickable"
-                    data-modal-trigger="story"
-                    data-modal-title-key="story.t1.title"
-                    data-modal-body-key="story.t1.modal">
+                    data-modal-trigger="timeline" data-timeline-id="time-01">
               <span class="t-id">TIME-01</span>
               <h4 data-i18n="story.t1.title">Ming Dynasty &amp; the City Wall</h4>
-              <p data-i18n="story.t1.body">[Placeholder] Foundation of the Ming capital and construction of one of the world's longest surviving city walls.</p>
+              <p data-i18n="story.t1.body">Foundation of the Ming capital and construction of one of the world’s longest surviving city walls.</p>
               <span class="card-go" data-i18n="action.readMore">Read more →</span>
             </button>
           </li>
           <li>
             <button type="button" class="timeline-item clickable"
-                    data-modal-trigger="story"
-                    data-modal-title-key="story.t2.title"
-                    data-modal-body-key="story.t2.modal">
+                    data-modal-trigger="timeline" data-timeline-id="time-02">
               <span class="t-id">TIME-02</span>
-              <h4 data-i18n="story.t2.title">Republican Era</h4>
-              <p data-i18n="story.t2.body">[Placeholder] Nanjing as a 20th-century capital — civic architecture, planning, and political memory.</p>
+              <h4 data-i18n="story.t2.title">Republican-era Nanjing</h4>
+              <p data-i18n="story.t2.body">Civic architecture, modern planning, and political memory of a changing nation.</p>
               <span class="card-go" data-i18n="action.readMore">Read more →</span>
             </button>
           </li>
           <li>
             <button type="button" class="timeline-item clickable"
-                    data-modal-trigger="story"
-                    data-modal-title-key="story.t3.title"
-                    data-modal-body-key="story.t3.modal">
+                    data-modal-trigger="timeline" data-timeline-id="time-03">
               <span class="t-id">TIME-03</span>
               <h4 data-i18n="story.t3.title">Modern Nanjing</h4>
-              <p data-i18n="story.t3.body">[Placeholder] University clusters, metro expansion, and contemporary cultural life.</p>
+              <p data-i18n="story.t3.body">Skyline, cross-river transit, university districts, and contemporary city life.</p>
               <span class="card-go" data-i18n="action.readMore">Read more →</span>
             </button>
           </li>
         </ol>
 
-        <!-- v1: Deep Dive becomes a two-up looping card deck with six cards total. -->
+        <!-- v2.5: Deep Dive — 4 cards in 2 groups; each card carries one real image. -->
         <div class="deck reveal" id="storyDeck" aria-label="Deep dive card deck">
           <button type="button" class="deck-arrow prev" id="deckPrev" aria-label="Previous pair">‹</button>
           <div class="deck-viewport">
@@ -381,58 +376,55 @@
               <!-- Group 1 -->
               <div class="deck-group">
                 <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-01</span>
-                  <div class="img-ph small" data-img="IMG-STORY-01" data-desc-en="Ming City Wall" data-desc-zh="明城墙"></div>
-                  <span class="deepdive-cat" data-i18n="story.cat.heritage">Heritage</span>
-                  <h3 data-i18n="story.d1.title">The Wall &amp; The City</h3>
-                  <p class="deepdive-sub" data-i18n="story.d1.sub">Ming City Wall &amp; the present-day map</p>
-                  <p data-i18n="story.d1.body">[Ming City Wall historical analysis placeholder] How the wall shapes neighborhoods, traffic, and the cognitive map of present-day Nanjing.</p>
+                  <div class="deepdive-img-wrap">
+                    <img src="assets/section3/deep-dive/DEEP-DIVE-01.webp"
+                         data-i18n-alt="story.d1.alt"
+                         alt="Sun Yat-sen Mausoleum and Presidential Palace"
+                         loading="lazy" decoding="async" />
+                  </div>
+                  <span class="deepdive-cat" data-i18n="story.cat.republic">Republican</span>
+                  <h3 data-i18n="story.d1.title">Republican Legacy: Mausoleum and Presidential Palace</h3>
+                  <p class="deepdive-sub" data-i18n="story.d1.sub">Political memory and civic architecture</p>
+                  <p data-i18n="story.d1.body">Nanjing’s Republican legacy connects political memory, architectural form, and national narrative.</p>
                 </article>
                 <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-02</span>
-                  <div class="img-ph small" data-img="IMG-STORY-02" data-desc-en="Sun Yat-sen Mausoleum / Presidential Palace" data-desc-zh="中山陵 / 总统府"></div>
-                  <span class="deepdive-cat" data-i18n="story.cat.republic">Republican</span>
-                  <h3 data-i18n="story.d2.title">Republican Legacy</h3>
-                  <p class="deepdive-sub" data-i18n="story.d2.sub">Civic spaces, not only monuments</p>
-                  <p data-i18n="story.d2.body">[Sun Yat-sen Mausoleum / Presidential Palace analysis placeholder] Reading Republican-era sites as living civic spaces, not only monuments.</p>
+                  <div class="deepdive-img-wrap">
+                    <img src="assets/section3/deep-dive/DEEP-DIVE-02.webp"
+                         data-i18n-alt="story.d2.alt"
+                         alt="Qinhuai River and Yangtze waterfront"
+                         loading="lazy" decoding="async" />
+                  </div>
+                  <span class="deepdive-cat" data-i18n="story.cat.water">Water &amp; Culture</span>
+                  <h3 data-i18n="story.d2.title">Rivers and Culture: Qinhuai and Yangtze</h3>
+                  <p class="deepdive-sub" data-i18n="story.d2.sub">Poetry, lantern-lit nights, and openness</p>
+                  <p data-i18n="story.d2.body">Water has shaped the character of Nanjing — from the Qinhuai’s nightlife to the Yangtze’s openness.</p>
                 </article>
               </div>
               <!-- Group 2 -->
               <div class="deck-group">
                 <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-03</span>
-                  <div class="img-ph small" data-img="IMG-STORY-03" data-desc-en="Qinhuai River scenes" data-desc-zh="秦淮河风光"></div>
-                  <span class="deepdive-cat" data-i18n="story.cat.water">Water &amp; Culture</span>
-                  <h3 data-i18n="story.d3.title">Rivers &amp; Culture</h3>
-                  <p class="deepdive-sub" data-i18n="story.d3.sub">The Qinhuai and the city's literary memory</p>
-                  <p data-i18n="story.d3.body">[Placeholder] The Qinhuai River, the Yangtze, and how water has shaped Nanjing's poetry, markets, and night life.</p>
-                </article>
-                <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-04</span>
-                  <div class="img-ph small" data-img="IMG-STORY-04" data-desc-en="Jiangnan Examination Hall" data-desc-zh="江南贡院"></div>
+                  <div class="deepdive-img-wrap">
+                    <img src="assets/section3/deep-dive/DEEP-DIVE-03.webp"
+                         data-i18n-alt="story.d3.alt"
+                         alt="Jiangnan Examination Hall"
+                         loading="lazy" decoding="async" />
+                  </div>
                   <span class="deepdive-cat" data-i18n="story.cat.education">Education</span>
-                  <h3 data-i18n="story.d4.title">Imperial Examinations</h3>
-                  <p class="deepdive-sub" data-i18n="story.d4.sub">Jiangnan Examination Hall &amp; the scholar city</p>
-                  <p data-i18n="story.d4.body">[Placeholder] How the Jiangnan Examination Hall positions Nanjing as a long-running center of Chinese scholarship.</p>
-                </article>
-              </div>
-              <!-- Group 3 -->
-              <div class="deck-group">
-                <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-05</span>
-                  <div class="img-ph small" data-img="IMG-STORY-05" data-desc-en="Modern skyline / metro / Xinjiekou" data-desc-zh="现代天际线 / 地铁 / 新街口"></div>
-                  <span class="deepdive-cat" data-i18n="story.cat.modern">Modern</span>
-                  <h3 data-i18n="story.d5.title">Modern Nanjing</h3>
-                  <p class="deepdive-sub" data-i18n="story.d5.sub">Metro, universities, new districts</p>
-                  <p data-i18n="story.d5.body">[Placeholder] University clusters, metro expansion, Hexi new district, and the contemporary rhythm of the city.</p>
+                  <h3 data-i18n="story.d3.title">Imperial Examination and Jiangnan Examination Hall</h3>
+                  <p class="deepdive-sub" data-i18n="story.d3.sub">Generations of scholars in the Jiangnan tradition</p>
+                  <p data-i18n="story.d3.body">The Jiangnan Examination Hall witnessed China’s institutional tradition of selecting talent.</p>
                 </article>
                 <article class="glass deepdive">
-                  <span class="point-id">DEEP-DIVE-06</span>
-                  <div class="img-ph small" data-img="IMG-STORY-06" data-desc-en="Daily street life / breakfast stalls" data-desc-zh="日常街景 / 早餐摊"></div>
+                  <div class="deepdive-img-wrap">
+                    <img src="assets/section3/deep-dive/DEEP-DIVE-04.webp"
+                         data-i18n-alt="story.d4.alt"
+                         alt="Daily street life in Nanjing"
+                         loading="lazy" decoding="async" />
+                  </div>
                   <span class="deepdive-cat" data-i18n="story.cat.everyday">Everyday</span>
-                  <h3 data-i18n="story.d6.title">Everyday Heritage</h3>
-                  <p class="deepdive-sub" data-i18n="story.d6.sub">Small habits, neighborhoods, and old trees</p>
-                  <p data-i18n="story.d6.body">[Placeholder] Street trees, old lanes, breakfast rituals — the everyday textures that hold the city together.</p>
+                  <h3 data-i18n="story.d4.title">Everyday Heritage</h3>
+                  <p class="deepdive-sub" data-i18n="story.d4.sub">Lanes, food, markets, and small encounters</p>
+                  <p data-i18n="story.d4.body">Nanjing’s heritage lives in lanes, food, markets, campuses, transport, and everyday encounters.</p>
                 </article>
               </div>
             </div>

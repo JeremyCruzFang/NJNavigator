@@ -1652,3 +1652,121 @@ body.welcome-intro-active { overflow: hidden; }
   .welcome-overlay-sub { font-size: 0.98rem; }
 }
 
+/* =================================================================
+   v2.5 — Section 3: Deep Dive images + Timeline modal gallery
+   ================================================================= */
+
+/* ---------- Deep dive single-image card ---------- */
+.deepdive-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: #e8ddd0;
+}
+.deepdive-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .5s var(--ease);
+}
+.deepdive:hover .deepdive-img-wrap img { transform: scale(1.03); }
+
+/* ---------- Timeline modal: prose + image gallery ---------- */
+.modal-prose {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 16px;
+  background: transparent;
+  border-left: none;
+  padding: 0;
+}
+.modal-gallery {
+  position: relative;
+  margin-top: 4px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(11,31,58,0.04);
+}
+.modal-gallery-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.modal-gallery-slide {
+  position: absolute; inset: 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+.modal-gallery-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-gallery-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.modal-gallery-slide figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 14px 12px;
+  background: linear-gradient(180deg, rgba(11,31,58,0) 0%, rgba(11,31,58,0.68) 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.modal-gallery .gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+  transition: transform .2s var(--ease), background .2s var(--ease);
+}
+.modal-gallery .gallery-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: #fff;
+}
+.modal-gallery .gallery-arrow.prev { left: 10px; }
+.modal-gallery .gallery-arrow.next { right: 10px; }
+.modal-gallery-counter {
+  position: absolute;
+  top: 10px; right: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.55);
+  color: #fff;
+  font-family: 'JetBrains Mono','Consolas',monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  z-index: 3;
+}
+
+@media (max-width: 720px) {
+  .modal-gallery-stage { aspect-ratio: 4 / 3; }
+  .modal-gallery .gallery-arrow {
+    width: 34px; height: 34px;
+    font-size: 1.2rem;
+  }
+  .modal-gallery .gallery-arrow.prev { left: 6px; }
+  .modal-gallery .gallery-arrow.next { right: 6px; }
+  .modal-gallery-slide figcaption {
+    font-size: 0.8rem;
+    padding: 8px 12px 10px;
+  }
+}
+

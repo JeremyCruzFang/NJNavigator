@@ -152,38 +152,47 @@
       'story.title': 'The Nanjing Story',
       'story.lede': 'A short walk through the layers of the city — Ming walls, Republican avenues, modern districts.',
       'story.t1.title': 'Ming Dynasty & the City Wall',
-      'story.t1.body': '[Placeholder] Foundation of the Ming capital and construction of one of the world’s longest surviving city walls.',
-      'story.t1.modal': '[Detailed information placeholder for this Nanjing Story card.] Founding of the Ming dynasty in Nanjing, the building of the city wall, and how that early decision still shapes the layout of the modern city.',
-      'story.t2.title': 'Republican Era',
-      'story.t2.body': '[Placeholder] Nanjing as a 20th-century capital — civic architecture, planning, and political memory.',
-      'story.t2.modal': '[Detailed information placeholder for this Nanjing Story card.] Nanjing as a 20th-century capital — Republican-era avenues, civic buildings, and the political memory that lingers in the present streetscape.',
+      'story.t1.body': 'Foundation of the Ming capital and one of the world’s longest surviving city walls.',
+      'story.t1.modal': 'The Ming founding in Nanjing and the building of the city wall set the long-term shape of the city. The wall, gates, and inner districts still organize traffic patterns, neighborhoods, and the cognitive map of present-day Nanjing.',
+      'story.t2.title': 'Republican-era Nanjing',
+      'story.t2.body': 'Civic architecture, modern planning, and political memory of a changing nation.',
+      'story.t2.modal': 'Republican-era Nanjing was more than a political capital. It was a city reshaped by modern planning, civic architecture, and symbolic public spaces. Sites such as the Sun Yat-sen Mausoleum, the Presidential Palace, and related modern landmarks preserve the memory of a changing nation.',
+      'story.t2.cap1': 'Sun Yat-sen Mausoleum · approach axis',
+      'story.t2.cap2': 'Sun Yat-sen Mausoleum · main steps',
+      'story.t2.cap3': 'Presidential Palace · courtyard',
+      'story.t2.cap4': 'Republican-era civic streetscape',
       'story.t3.title': 'Modern Nanjing',
-      'story.t3.body': '[Placeholder] University clusters, metro expansion, and contemporary cultural life.',
-      'story.t3.modal': '[Detailed information placeholder for this Nanjing Story card.] University clusters, metro expansion, and the cultural life of contemporary Nanjing — a city still rewriting itself.',
-      'story.cat.heritage': 'Heritage',
-      'story.cat.republic': 'Republican',
-      'story.cat.water': 'Water & Culture',
-      'story.cat.education': 'Education',
-      'story.cat.modern': 'Modern',
-      'story.cat.everyday': 'Everyday',
-      'story.d1.title': 'The Wall & The City',
-      'story.d1.sub': 'Ming City Wall & the present-day map',
-      'story.d1.body': '[Ming City Wall historical analysis placeholder] How the wall shapes neighborhoods, traffic, and the cognitive map of present-day Nanjing.',
-      'story.d2.title': 'Republican Legacy',
-      'story.d2.sub': 'Civic spaces, not only monuments',
-      'story.d2.body': '[Sun Yat-sen Mausoleum / Presidential Palace analysis placeholder] Reading Republican-era sites as living civic spaces, not only monuments.',
-      'story.d3.title': 'Rivers & Culture',
-      'story.d3.sub': 'The Qinhuai and the city’s literary memory',
-      'story.d3.body': '[Placeholder] The Qinhuai River, the Yangtze, and how water has shaped Nanjing’s poetry, markets, and night life.',
-      'story.d4.title': 'Imperial Examinations',
-      'story.d4.sub': 'Jiangnan Examination Hall & the scholar city',
-      'story.d4.body': '[Placeholder] How the Jiangnan Examination Hall positions Nanjing as a long-running center of Chinese scholarship.',
-      'story.d5.title': 'Modern Nanjing',
-      'story.d5.sub': 'Metro, universities, new districts',
-      'story.d5.body': '[Placeholder] University clusters, metro expansion, Hexi new district, and the contemporary rhythm of the city.',
-      'story.d6.title': 'Everyday Heritage',
-      'story.d6.sub': 'Small habits, neighborhoods, and old trees',
-      'story.d6.body': '[Placeholder] Street trees, old lanes, breakfast rituals — the everyday textures that hold the city together.',
+      'story.t3.body': 'Skyline, cross-river transit, university districts, and contemporary city life.',
+      'story.t3.modal': 'Modern Nanjing continues to grow upon layers of history. Its skyline, cross-river connections, university districts, commercial areas, and public cultural spaces reveal the energy of a contemporary city. Rather than replacing the past, modern Nanjing extends the city’s identity through new urban life, innovation, and international exchange.',
+      'story.t3.cap1': 'Hexi skyline · contemporary Nanjing',
+      'story.t3.cap2': 'Yangtze River bridges · cross-river transit',
+      'story.t3.cap3': 'University district · campus life',
+      'story.t3.cap4': 'Xinjiekou · commercial core',
+      'story.t3.cap5': 'Public cultural space',
+
+      'story.cat.republic':   'Republican',
+      'story.cat.water':      'Water & Culture',
+      'story.cat.education':  'Education',
+      'story.cat.everyday':   'Everyday',
+      'story.d1.title': 'Republican Legacy: Mausoleum and Presidential Palace',
+      'story.d1.sub':   'Political memory and civic architecture',
+      'story.d1.body':  'Nanjing’s Republican legacy connects political memory, architectural form, and national narrative. The Sun Yat-sen Mausoleum creates a solemn commemorative space through its axis and mountain setting, while the Presidential Palace preserves traces of modern governance, courtyards, and historical transition.',
+      'story.d1.alt':   'Sun Yat-sen Mausoleum and Presidential Palace',
+      'story.d2.title': 'Rivers and Culture: Qinhuai and Yangtze',
+      'story.d2.sub':   'Poetry, lantern-lit nights, and openness',
+      'story.d2.body':  'Water has shaped the character of Nanjing. The Qinhuai River nurtured poetry, lantern-lit scenes, markets, and nightlife, while the Yangtze River connected the city to trade, transport, and openness. Nanjing’s cultural memory has long moved with its waters.',
+      'story.d2.alt':   'Qinhuai River and Yangtze waterfront',
+      'story.d3.title': 'Imperial Examination and Jiangnan Examination Hall',
+      'story.d3.sub':   'Generations of scholars in the Jiangnan tradition',
+      'story.d3.body':  'The Jiangnan Examination Hall witnessed the institutional tradition of selecting talent in imperial China. It gathered generations of scholars and reflected the Jiangnan region’s emphasis on education, writing, and official service.',
+      'story.d3.alt':   'Jiangnan Examination Hall',
+      'story.d4.title': 'Everyday Heritage',
+      'story.d4.sub':   'Lanes, food, markets, and small encounters',
+      'story.d4.body':  'Nanjing’s heritage is not limited to monumental architecture. It also lives in lanes, food, markets, campuses, transport, and everyday encounters. A meal, a street, a bridge, or a riverside evening can all become entry points into understanding the city.',
+      'story.d4.alt':   'Daily street life in Nanjing',
+
+      'gallery.prev': 'Previous image',
+      'gallery.next': 'Next image',
 
       'routes.eyebrow': 'Section 4',
       'routes.title': 'Explore Like a Local',
@@ -434,38 +443,47 @@
       'story.title': '南京的故事',
       'story.lede': '一段穿越城市层次的短行 —— 明城墙、民国大道、现代城区。',
       'story.t1.title': '明代与城墙',
-      'story.t1.body': '[占位] 明代建都的开端,与世界上现存最长城墙之一的修筑。',
-      'story.t1.modal': '[此卡片的详细信息占位] 明代在南京定都,城墙的修筑,以及这一早期决定如何持续塑造今日南京的城市格局。',
-      'story.t2.title': '民国时期',
-      'story.t2.body': '[占位] 作为 20 世纪首都的南京 —— 公共建筑、城市规划与政治记忆。',
-      'story.t2.modal': '[此卡片的详细信息占位] 作为 20 世纪首都的南京 —— 民国大道、公共建筑,以及仍停驻在街景中的政治记忆。',
+      'story.t1.body': '明代建都的开端,与世界上现存最长城墙之一的修筑。',
+      'story.t1.modal': '明代在南京定都、修筑城墙的早期决定,持续塑造着今日南京的城市格局。城门、内外城与街区延续至今,继续影响着城市的交通脉络与心理地图。',
+      'story.t2.title': '民国时期南京',
+      'story.t2.body': '近代政务、公共建筑与象征性公共空间塑造下的城市。',
+      'story.t2.modal': '民国时期的南京不仅是政治中心,也是一座被现代城市规划、公共建筑和纪念性空间重新塑造的城市。中山陵、总统府以及一系列近代建筑共同构成了南京独特的城市记忆,让今天的访客能够在街道、台阶、庭院与建筑立面中感受近代中国的历史脉络。',
+      'story.t2.cap1': '中山陵 · 神道与轴线',
+      'story.t2.cap2': '中山陵 · 主台阶',
+      'story.t2.cap3': '总统府 · 庭院',
+      'story.t2.cap4': '民国时期市政街景',
       'story.t3.title': '现代南京',
-      'story.t3.body': '[占位] 高校群、地铁拓展与当代文化生活。',
-      'story.t3.modal': '[此卡片的详细信息占位] 高校群、地铁拓展,以及当代南京的文化生活 —— 一座仍在书写自身的城市。',
-      'story.cat.heritage': '历史遗产',
-      'story.cat.republic': '民国',
-      'story.cat.water': '河流与文化',
-      'story.cat.education': '教育',
-      'story.cat.modern': '现代',
-      'story.cat.everyday': '日常',
-      'story.d1.title': '城墙与城市',
-      'story.d1.sub': '明城墙与今日的南京地图',
-      'story.d1.body': '[明城墙历史分析占位] 城墙如何塑造今日南京的街区、交通与心理地图。',
-      'story.d2.title': '民国遗产',
-      'story.d2.sub': '公共空间,而不仅是纪念物',
-      'story.d2.body': '[中山陵 / 总统府分析占位] 把民国时期场所读作仍在使用的公共空间,而不仅是纪念物。',
-      'story.d3.title': '河流与文化',
-      'story.d3.sub': '秦淮河与南京的文学记忆',
-      'story.d3.body': '[占位] 秦淮河、长江,以及水如何塑造南京的诗歌、市集与夜生活。',
-      'story.d4.title': '科举与江南贡院',
-      'story.d4.sub': '江南贡院与文人城市',
-      'story.d4.body': '[占位] 江南贡院如何将南京定位为长期的中国学术中心。',
-      'story.d5.title': '现代南京',
-      'story.d5.sub': '地铁、高校与新城',
-      'story.d5.body': '[占位] 高校群、地铁拓展、河西新城,以及当代城市的节奏。',
-      'story.d6.title': '日常的遗产',
-      'story.d6.sub': '小习惯、街坊与老树',
-      'story.d6.body': '[占位] 行道树、老巷、早餐摊 —— 把城市维系在一起的日常肌理。',
+      'story.t3.body': '天际线、跨江交通、大学园区与当代城市生活。',
+      'story.t3.modal': '今天的南京在历史层积之上继续生长。高楼天际线、跨江交通、大学园区、商业街区与公共文化空间共同展现出现代城市的活力。现代南京不是对历史的替代,而是在城墙、江河与老街之外继续扩展城市生活、科技创新和国际交流的新界面。',
+      'story.t3.cap1': '河西天际线 · 当代南京',
+      'story.t3.cap2': '长江大桥群 · 跨江交通',
+      'story.t3.cap3': '大学园区 · 校园生活',
+      'story.t3.cap4': '新街口 · 商业核心',
+      'story.t3.cap5': '公共文化空间',
+
+      'story.cat.republic':   '民国',
+      'story.cat.water':      '河流与文化',
+      'story.cat.education':  '教育',
+      'story.cat.everyday':   '日常',
+      'story.d1.title': '民国遗产:中山陵与总统府',
+      'story.d1.sub':   '政治记忆与公共建筑',
+      'story.d1.body':  '南京的民国遗产将政治记忆、建筑美学与国家叙事连接在一起。中山陵以庄重的轴线和山势构成纪念空间,总统府则保存了近代政务、庭院建筑与历史变迁的痕迹。它们共同展示了南京作为近代中国重要政治中心的城市身份。',
+      'story.d1.alt':   '中山陵与总统府',
+      'story.d2.title': '河流与文化:秦淮河与长江',
+      'story.d2.sub':   '诗歌、灯影与城市开放',
+      'story.d2.body':  '水塑造了南京的城市气质。秦淮河孕育了诗歌、灯影、市井与夜生活,长江则连接贸易、交通与城市开放的方向。从河岸到桥梁,从夜游到市集,南京的文化记忆始终与水流相伴。',
+      'story.d2.alt':   '秦淮河与长江河岸',
+      'story.d3.title': '科举与江南贡院',
+      'story.d3.sub':   '江南文脉与代代士子',
+      'story.d3.body':  '江南贡院见证了古代中国选拔人才的制度传统。这里曾聚集无数士子,也承载着江南地区重视教育、文字与仕途的文化理想。理解江南贡院,就是理解南京如何在知识、制度与社会流动之间形成独特的历史位置。',
+      'story.d3.alt':   '江南贡院',
+      'story.d4.title': '日常的遗产',
+      'story.d4.sub':   '街巷、饮食、市场与小相遇',
+      'story.d4.body':  '南京的遗产不只存在于宏大的纪念建筑中,也存在于街巷、饮食、市场、校园、交通和日常交往里。真正的城市记忆往往来自普通人的生活路径:一顿饭、一条路、一座桥、一段夜晚的河岸,都可能成为理解南京的入口。',
+      'story.d4.alt':   '南京日常街景',
+
+      'gallery.prev': '上一张',
+      'gallery.next': '下一张',
 
       'routes.eyebrow': '第四部分',
       'routes.title': '像本地人一样探索',
@@ -611,6 +629,11 @@
       const key = node.getAttribute('data-i18n-aria');
       if (dict[key] != null) node.setAttribute('aria-label', dict[key]);
     });
+    // v2.5: img alt attribute i18n (deep dive cards)
+    $$('[data-i18n-alt]').forEach(node => {
+      const key = node.getAttribute('data-i18n-alt');
+      if (dict[key] != null) node.setAttribute('alt', dict[key]);
+    });
 
     // If a modal is open, re-render its content for the new language.
     if (modalState.open) renderModalContent();
@@ -749,6 +772,42 @@
       });
     });
   }
+
+  /* ---------- v2.5: Section 3 Timeline (TIME-01..03) ----------
+     Only TIME-02 and TIME-03 carry image galleries. TIME-01 stays text-only,
+     so its `images` array is empty and renderTimelineModalHtml skips the
+     gallery controls entirely. */
+  const timelineItems = [
+    {
+      id: 'time-01',
+      titleKey: 'story.t1.title',
+      bodyKey:  'story.t1.modal',
+      images: []
+    },
+    {
+      id: 'time-02',
+      titleKey: 'story.t2.title',
+      bodyKey:  'story.t2.modal',
+      images: [
+        { src: 'assets/section3/time/time-02/TIME-02-01.webp', captionKey: 'story.t2.cap1', altKey: 'story.t2.cap1' },
+        { src: 'assets/section3/time/time-02/TIME-02-02.webp', captionKey: 'story.t2.cap2', altKey: 'story.t2.cap2' },
+        { src: 'assets/section3/time/time-02/TIME-02-03.webp', captionKey: 'story.t2.cap3', altKey: 'story.t2.cap3' },
+        { src: 'assets/section3/time/time-02/TIME-02-04.webp', captionKey: 'story.t2.cap4', altKey: 'story.t2.cap4' }
+      ]
+    },
+    {
+      id: 'time-03',
+      titleKey: 'story.t3.title',
+      bodyKey:  'story.t3.modal',
+      images: [
+        { src: 'assets/section3/time/time-03/TIME-03-01.webp', captionKey: 'story.t3.cap1', altKey: 'story.t3.cap1' },
+        { src: 'assets/section3/time/time-03/TIME-03-02.webp', captionKey: 'story.t3.cap2', altKey: 'story.t3.cap2' },
+        { src: 'assets/section3/time/time-03/TIME-03-03.webp', captionKey: 'story.t3.cap3', altKey: 'story.t3.cap3' },
+        { src: 'assets/section3/time/time-03/TIME-03-04.webp', captionKey: 'story.t3.cap4', altKey: 'story.t3.cap4' },
+        { src: 'assets/section3/time/time-03/TIME-03-05.webp', captionKey: 'story.t3.cap5', altKey: 'story.t3.cap5' }
+      ]
+    }
+  ];
 
   /* ---------- v2.4: Dining Guide — 10 dishes ----------
      First two render directly on the page (Claypot-Flavored Chicken and Duck
@@ -891,6 +950,11 @@
     } else if (top.trigger === 'bus') {
       titleEl.textContent = dict['bus.modal.title'] || '';
       bodyEl.innerHTML = renderBusRoutesHtml(dict);
+    } else if (top.trigger === 'timeline') {
+      const item = timelineItems.find(it => it.id === top.timelineId);
+      titleEl.textContent = item ? (dict[item.titleKey] || '') : '';
+      bodyEl.innerHTML = renderTimelineModalHtml(item, dict);
+      wireModalGallery(bodyEl);
     } else if (top.trigger === 'dining-more') {
       titleEl.textContent = dict['dining.modal.title'] || '';
       bodyEl.innerHTML = renderDiningMoreHtml(dict);
@@ -978,6 +1042,55 @@
         '</div>' +
       '</div>'
     );
+  }
+
+  function renderTimelineModalHtml(item, dict) {
+    if (!item) return '';
+    const body = '<p class="modal-intro modal-prose">' + escapeHtml(dict[item.bodyKey] || '') + '</p>';
+    if (!item.images || item.images.length === 0) return body;
+
+    const slides = item.images.map((img, i) => {
+      const cap = escapeHtml(dict[img.captionKey] || '');
+      const alt = escapeHtml(dict[img.altKey] || cap);
+      return (
+        '<figure class="modal-gallery-slide' + (i === 0 ? ' is-active' : '') + '" data-idx="' + i + '">' +
+          '<img src="' + escapeHtml(img.src) + '" alt="' + alt + '" loading="lazy" decoding="async" />' +
+          '<figcaption>' + cap + '</figcaption>' +
+        '</figure>'
+      );
+    }).join('');
+
+    const showControls = item.images.length > 1;
+    const controlsHtml = showControls ? (
+      '<button type="button" class="gallery-arrow prev" aria-label="' + escapeHtml(dict['gallery.prev'] || 'Previous image') + '">‹</button>' +
+      '<button type="button" class="gallery-arrow next" aria-label="' + escapeHtml(dict['gallery.next'] || 'Next image') + '">›</button>' +
+      '<div class="modal-gallery-counter"><span class="g-cur">1</span> / ' + item.images.length + '</div>'
+    ) : '';
+
+    return body +
+      '<div class="modal-gallery" data-total="' + item.images.length + '">' +
+        '<div class="modal-gallery-stage">' + slides + '</div>' +
+        controlsHtml +
+      '</div>';
+  }
+
+  function wireModalGallery(root) {
+    const gallery = $('.modal-gallery', root);
+    if (!gallery) return;
+    const slides = $$('.modal-gallery-slide', gallery);
+    if (slides.length <= 1) return;
+    const total = slides.length;
+    let idx = 0;
+    const counter = $('.g-cur', gallery);
+    const render = () => {
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+      if (counter) counter.textContent = String(idx + 1);
+    };
+    const go = (delta) => { idx = (idx + delta + total) % total; render(); };
+    const prev = $('.gallery-arrow.prev', gallery);
+    const next = $('.gallery-arrow.next', gallery);
+    if (prev) prev.addEventListener('click', () => go(-1));
+    if (next) next.addEventListener('click', () => go(+1));
   }
 
   function renderDiningMoreHtml(dict) {
@@ -1073,10 +1186,11 @@
     modalState.open = true;
     modalState.activeTrigger = triggerEl;
     modalState.stack = [{
-      trigger:  triggerEl.getAttribute('data-modal-trigger'),
-      titleKey: triggerEl.getAttribute('data-modal-title-key'),
-      bodyKey:  triggerEl.getAttribute('data-modal-body-key'),
-      optionsId: triggerEl.getAttribute('data-options-id'),
+      trigger:    triggerEl.getAttribute('data-modal-trigger'),
+      titleKey:   triggerEl.getAttribute('data-modal-title-key'),
+      bodyKey:    triggerEl.getAttribute('data-modal-body-key'),
+      optionsId:  triggerEl.getAttribute('data-options-id'),
+      timelineId: triggerEl.getAttribute('data-timeline-id'),
       activeItemId: null
     }];
     renderModalContent();
