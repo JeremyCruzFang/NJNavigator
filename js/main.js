@@ -18,7 +18,7 @@
   const i18n = {
     en: {
       'meta.title': 'NJNavigator — A Guide for International Faculty in Nanjing',
-      'brand.tag': 'v2.4',
+      'brand.tag': 'v2.6',
 
       'nav.home': 'Home',
       'nav.survival': 'Survival',
@@ -32,7 +32,7 @@
       'hero.sub': 'A practical and cultural guide for international faculty at NUIST.',
       'hero.cta1': 'Start Exploring',
       'hero.cta2': 'Campus Essentials',
-      'hero.note': 'v2.4 · Verified locations, phones, campus shuttle routes, a practical Chinese phrasebook, and a real dining guide online.',
+      'hero.note': 'v2.6 · Verified locations, phones, shuttle routes, phrasebook, dining guide, Nanjing story, and two local routes online.',
       'hero.hideAria': 'Hide welcome card',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
@@ -196,27 +196,84 @@
 
       'routes.eyebrow': 'Section 4',
       'routes.title': 'Explore Like a Local',
-      'routes.lede': 'Two half-day routes designed for first-month arrivals. Practical timing, transport, and one cultural prompt per stop.',
-      'routes.a.title': 'Route A · History Buff',
-      'routes.a.sub': 'Nanjing Museum → Ming Xiaoling Mausoleum',
-      'routes.a.s1.t': 'Nanjing Museum',
-      'routes.a.s2.t': 'Ming Xiaoling Mausoleum',
-      'routes.b.title': 'Route B · Nature & Peace',
-      'routes.b.sub': 'Xuanwu Lake → Zifeng Tower / Gulou Area',
-      'routes.b.s1.t': 'Xuanwu Lake',
-      'routes.b.s2.t': 'Zifeng Tower / Gulou',
-      'routes.meta.time': 'Suggested time',
+      'routes.lede': 'Two half-day routes designed for first-month arrivals. Tap a field to read the practical tip in a popup.',
+      'routes.a.title': 'Route A · Museum & Lake',
+      'routes.a.sub': 'Nanjing Museum → Xuanwu Lake',
+      'routes.b.title': 'Route B · Tower & Drum Tower',
+      'routes.b.sub': 'Zifeng Tower → Nanjing Drum Tower',
+      'routes.meta.time': 'Best time',
       'routes.meta.transit': 'Transport',
       'routes.meta.duration': 'Duration',
-      'routes.meta.practical': 'Practical note',
-      'routes.meta.cultural': 'Cultural note',
+      'routes.meta.practical': 'Practical tips',
+      'routes.meta.cultural': 'Cultural notes',
+      'routes.mapPickPlace': 'Choose a place to open in Amap ↗',
+      'routes.mapAria.routeA': 'Open Route A map and choose a place',
+      'routes.mapAria.routeB': 'Open Route B map and choose a place',
+      'routes.placeSelect.title': 'Choose a place',
+      'routes.placeSelect.intro': 'Pick a stop on this route — it will open in Amap.',
+      'routes.a.imgCap.museum1': 'Nanjing Museum · entrance',
+      'routes.a.imgCap.museum2': 'Nanjing Museum · gallery',
+      'routes.a.imgCap.xuanwu1': 'Xuanwu Lake · lakeside view',
+      'routes.a.imgCap.xuanwu2': 'Xuanwu Lake · skyline backdrop',
+      'routes.b.imgCap.zifeng1': 'Zifeng Tower · daytime exterior',
+      'routes.b.imgCap.zifeng2': 'Zifeng Tower · night view',
+      'routes.b.imgCap.drum1':   'Nanjing Drum Tower · main building',
+      'routes.b.imgCap.drum2':   'Nanjing Drum Tower · detail',
+
+      'places.nanjingMuseum.name':                 'Nanjing Museum',
+      'places.nanjingMuseum.bestTime':              'Recommended times are 9:00-11:30 or before 16:00 in the afternoon. The museum officially opens from 9:00 to 17:00, with last ticket check at 16:00, and is closed on Mondays except public holidays. Book in advance and avoid arriving too close to closing time.',
+      'places.nanjingMuseum.transport':             'From campus, use the metro to reach the city center and transfer toward Minggugong Station, then walk to the museum. Within downtown Nanjing, Metro Line 2 to Minggugong Station is the most convenient option, followed by a short walk. Use AMap for real-time bus or taxi routing.',
+      'places.nanjingMuseum.duration':              'Plan 2.5-4 hours. A focused visit to major galleries may take about 2 hours; a deeper visit including special exhibitions can take half a day.',
+      'places.nanjingMuseum.practicalTips':         'Check reservation rules and required ID before visiting. The museum is large, so prioritize major areas such as history, art, or Republican-era galleries first. It is also a strong indoor option on rainy, very hot, or cold days.',
+      'places.nanjingMuseum.culturalNotes':         'Nanjing Museum is a strong first stop for understanding the city’s historical depth. It is not just a single attraction, but a gateway into ancient civilization, Ming-Qing culture, and modern urban memory.',
+
+      'places.xuanwuLake.name':                     'Xuanwu Lake Scenic Area',
+      'places.xuanwuLake.bestTime':                 'Spring and autumn are the most comfortable seasons. Early morning, late afternoon, and sunset are ideal for walking, photos, and skyline views. The lakeside road is open 24 hours, while the five islets and Lovers’ Garden usually open from 6:00-22:00 from April to October and 6:00-21:00 from November to March.',
+      'places.xuanwuLake.transport':                'Within downtown Nanjing, take Metro Line 1 to Xuanwumen Station, or Metro Line 3/4 to Jimingsi Station, then walk into the scenic area. If continuing from Nanjing Museum, use AMap for the best real-time metro, bus, or taxi option.',
+      'places.xuanwuLake.duration':                 'Allow 1.5-2 hours for a light visit. If walking around the lake, visiting the islets, or photographing sunset, plan 3-5 hours.',
+      'places.xuanwuLake.practicalTips':            'Xuanwu Lake is large, so a full loop is not necessary for a first visit. Choose Xuanwumen Gate, Liangzhou, Yingzhou, or the section near the city wall as a compact route. In summer, prepare sun protection and water; for night photos, use a stable phone grip or tripod if available.',
+      'places.xuanwuLake.culturalNotes':            'Xuanwu Lake is a key window into Nanjing’s landscape pattern of mountains, water, city walls, and forests. It links the lake, the city wall, Purple Mountain, and the modern skyline, showing the shift from royal garden to public urban park.',
+
+      'places.zifengTower.name':                    'Zifeng Tower',
+      'places.zifengTower.bestTime':                'Late afternoon to evening is recommended for skyline and night views around Gulou. The public access status of the observation floor may change, so confirm through AMap, ticketing platforms, or on-site information before going. If uncertain, treat it as an exterior landmark and Gulou skyline stop.',
+      'places.zifengTower.transport':               'Take Metro Line 1 or Line 4 to Gulou Station, then walk to the Zifeng Tower / Gulou Square area. It pairs well with Nanjing Drum Tower, Gulou Square, Hunan Road, or an evening view near Xuanwu Lake.',
+      'places.zifengTower.duration':                'Allow 30-60 minutes for exterior photos and nearby views. If the observation floor is confirmed open and you enter, plan 1-2 hours.',
+      'places.zifengTower.practicalTips':           'Do not assume the observation floor is open. For landmark photos, choose a clear evening or night. Haze, rain, or fog can significantly reduce visibility.',
+      'places.zifengTower.culturalNotes':           'Zifeng Tower represents the height and business identity of modern Nanjing. Its contrast with nearby Drum Tower, Xuanwu Lake, and the Ming City Wall makes it a useful stop for understanding how ancient capital and modern metropolis coexist.',
+
+      'places.drumTower.name':                      'Nanjing Drum Tower',
+      'places.drumTower.bestTime':                  'Recommended times are 9:00-11:00 or 15:00-17:00, when the light is better and it is easy to combine with Zifeng Tower and Gulou Square. Commonly listed hours are 9:00-17:00 with last entry around 16:45, but check on-site notices.',
+      'places.drumTower.transport':                 'Take Metro Line 1 or Line 4 to Gulou Station and walk from Exit 3 or nearby exits. It is in central Nanjing and pairs well with Zifeng Tower, Nanjing University Gulou Campus, and Hunan Road.',
+      'places.drumTower.duration':                  'Plan 45-90 minutes. A quick photo stop may take 30-45 minutes; allow longer if you want to explore the architecture and surrounding square.',
+      'places.drumTower.practicalTips':             'Drum Tower and Zifeng Tower are close to each other and work well in the same route. Use the contrast between historic architecture and the modern tower for photos, but pay attention to traffic and safe crossings.',
+      'places.drumTower.culturalNotes':             'Nanjing Drum Tower is one of the historic landmarks of the city center, historically associated with timekeeping, ceremony, and urban order. Its position beside the modern Gulou commercial area shows how Nanjing’s historical center continues into the modern city.',
+
       'routes.foodieTitle': 'Foodie Corner',
-      'routes.foodie.f1.title': 'Nanjing Salted Duck',
-      'routes.foodie.f1.body': '[PLACEHOLDER] Brief cultural and sensory note to be written.',
-      'routes.foodie.f2.title': 'Plum Blossom Cake',
-      'routes.foodie.f2.body': '[PLACEHOLDER] Brief cultural and sensory note to be written.',
-      'routes.foodie.f3.title': 'Local Restaurant',
-      'routes.foodie.f3.body': '[PLACEHOLDER] Recommended restaurant to be confirmed by group.',
+      'action.viewDetails': 'View details →',
+
+      'foodie.field.bestFor':     'Best for',
+      'foodie.field.highlights':  'Why go',
+      'foodie.field.description': 'Notes',
+
+      'foodie.nanjingImpressions.name':        'Nanjing Impressions',
+      'foodie.nanjingImpressions.teaser':      'A signature spot to try many Nanjing dishes in one visit.',
+      'foodie.nanjingImpressions.imgCap':      'Nanjing salted duck — a signature local dish.',
+      'foodie.nanjingImpressions.bestFor':     'First-time visitors who want to try many Nanjing dishes in one place.',
+      'foodie.nanjingImpressions.highlights':  'Strong atmosphere and a retro teahouse-style setting make it visitor-friendly.',
+      'foodie.nanjingImpressions.description': 'Recommended dishes include sweet taro balls, duck blood vermicelli soup, Beauty’s Porridge, salted duck, roast duck buns, and lion’s head meatballs. Deji Plaza and Confucius Temple branches are convenient, but expect queues at peak hours.',
+
+      'foodie.maXiangXing.name':        'Ma Xiang Xing Halal Restaurant',
+      'foodie.maXiangXing.teaser':      'A Nanjing time-honored halal restaurant.',
+      'foodie.maXiangXing.bestFor':     'Visitors who want an old-school Nanjing time-honored restaurant.',
+      'foodie.maXiangXing.highlights':  'A more local and traditional stop, listed among Nanjing time-honored restaurants.',
+      'foodie.maXiangXing.description': 'Local sources list its address at No. 32 Yunnan North Road, Gulou District. Signature dishes include egg shaomai, squirrel-shaped fish, and phoenix-tail shrimp, offering a classic Jinling halal dining experience.',
+
+      'foodie.lvliuju.name':        'Lvliuju Vegetarian Restaurant',
+      'foodie.lvliuju.teaser':      'Old-Nanjing vegetarian dishes and dim sum.',
+      'foodie.lvliuju.imgCap':      'Plum blossom cake — a classic Nanjing snack.',
+      'foodie.lvliuju.bestFor':     'Visitors interested in Qinhuai-style dining, vegetarian dishes, dim sum, and time-honored restaurants.',
+      'foodie.lvliuju.highlights':  'Another classic Nanjing time-honored brand, locally said to be founded in 1912.',
+      'foodie.lvliuju.description': 'Specialties include vegetarian “roast duck,” shaomai, and beef potstickers. A commonly listed old-store address is No. 248 Taiping South Road, Qinhuai District. It feels more old-Nanjing than Nanjing Impressions and more focused on snacks and vegetarian dishes than Ma Xiang Xing.',
 
       'options.modal.intro': 'Choose a destination — it will open in Amap.',
 
@@ -240,13 +297,6 @@
       'options.gate.dongyuanS':   'Dongyuan South Gate (东苑南门)',
       'options.gate.dongyuanN':   'Dongyuan North Gate (东苑北门)',
       'options.gate.dongyuanE':   'Dongyuan East Gate (东苑东门)',
-
-      'restaurants.modal.title': 'Restaurant Recommendations',
-      'restaurants.modal.intro': 'Placeholder list — restaurants below to be verified by the group. Tapping Go opens Amap (search keyword to be added later).',
-      'restaurants.r1.name': 'Restaurant Name [TO BE ADDED]',
-      'restaurants.r2.name': 'Restaurant Name [TO BE ADDED]',
-      'restaurants.r3.name': 'Restaurant Name [TO BE ADDED]',
-      'restaurants.addr.placeholder': '[Address to be verified]',
 
       'appendix.eyebrow': 'Section 5',
       'appendix.title': 'Appendix',
@@ -283,8 +333,8 @@
       'appendix.qa.q10.when': 'Used when introducing yourself and building professional or social connections.',
 
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
-      'footer.version': 'Version: v2.4',
-      'footer.note': 'Verified locations, phones, shuttle routes, phrasebook, and Dining Guide online.',
+      'footer.version': 'Version: v2.6',
+      'footer.note': 'Verified locations, phones, shuttle routes, phrasebook, dining guide, story, and routes online.',
       'footer.telLabel': 'TEL',
       'footer.telSep': ': ',
 
@@ -309,7 +359,7 @@
 
     zh: {
       'meta.title': 'NJNavigator — 南京国际教师生活与文化导航',
-      'brand.tag': 'v2.4',
+      'brand.tag': 'v2.6',
 
       'nav.home': '首页',
       'nav.survival': '生存',
@@ -323,7 +373,7 @@
       'hero.sub': '面向南信大国际教师的生活与文化导航平台。',
       'hero.cta1': '开始浏览',
       'hero.cta2': '校园要点',
-      'hero.note': 'v2.4 · 已核实地点、电话、校园班车线路、实用中文短语集与南信大美食指南均已上线。',
+      'hero.note': 'v2.6 · 已核实地点、电话、班车线路、短语集、美食指南、南京故事与两条本地路线均已上线。',
       'hero.hideAria': '隐藏欢迎卡片',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
@@ -487,27 +537,84 @@
 
       'routes.eyebrow': '第四部分',
       'routes.title': '像本地人一样探索',
-      'routes.lede': '为初到一个月的访客设计的两条半日路线。每站附带时间、交通与一条文化提示。',
-      'routes.a.title': '路线 A · 历史向',
-      'routes.a.sub': '南京博物院 → 明孝陵',
-      'routes.a.s1.t': '南京博物院',
-      'routes.a.s2.t': '明孝陵',
-      'routes.b.title': '路线 B · 自然与宁静',
-      'routes.b.sub': '玄武湖 → 紫峰大厦 / 鼓楼一带',
-      'routes.b.s1.t': '玄武湖',
-      'routes.b.s2.t': '紫峰大厦 / 鼓楼',
+      'routes.lede': '为初到一个月的访客设计的两条半日路线。点击字段在弹窗中查看实用提示。',
+      'routes.a.title': '路线 A · 博物院与玄武湖',
+      'routes.a.sub': '南京博物院 → 玄武湖',
+      'routes.b.title': '路线 B · 紫峰与鼓楼',
+      'routes.b.sub': '紫峰大厦 → 南京鼓楼',
       'routes.meta.time': '建议时段',
       'routes.meta.transit': '交通',
       'routes.meta.duration': '用时',
       'routes.meta.practical': '实用提示',
       'routes.meta.cultural': '文化提示',
+      'routes.mapPickPlace': '选择一个地点在高德地图中打开 ↗',
+      'routes.mapAria.routeA': '打开路线 A 地图并选择地点',
+      'routes.mapAria.routeB': '打开路线 B 地图并选择地点',
+      'routes.placeSelect.title': '请选择地点',
+      'routes.placeSelect.intro': '选择本路线上的一个地点,将在高德地图中打开。',
+      'routes.a.imgCap.museum1': '南京博物院 · 主入口',
+      'routes.a.imgCap.museum2': '南京博物院 · 馆区',
+      'routes.a.imgCap.xuanwu1': '玄武湖 · 湖畔',
+      'routes.a.imgCap.xuanwu2': '玄武湖 · 湖天背景',
+      'routes.b.imgCap.zifeng1': '紫峰大厦 · 日间外观',
+      'routes.b.imgCap.zifeng2': '紫峰大厦 · 夜景',
+      'routes.b.imgCap.drum1':   '南京鼓楼 · 主楼',
+      'routes.b.imgCap.drum2':   '南京鼓楼 · 局部',
+
+      'places.nanjingMuseum.name':                 '南京博物院',
+      'places.nanjingMuseum.bestTime':             '建议上午 9:00-11:30 或下午 14:00-16:00 前往。南京博物院官方开放时间为 9:00-17:00,16:00 停止检票,周一闭馆,法定节假日除外。热门时段人流较多,建议提前预约并避开临近闭馆时间。',
+      'places.nanjingMuseum.transport':            '从校园出发可优先使用地铁组合前往市区,再换乘至明故宫站附近,之后步行抵达南京博物院。市区内前往可使用地铁 2 号线明故宫站,再步行约 300 米。也可使用高德地图实时规划公交或打车路线。',
+      'places.nanjingMuseum.duration':             '建议预留 2.5-4 小时。如果只看核心展厅,约 2 小时;如果细看多个馆区与特展,建议半天。',
+      'places.nanjingMuseum.practicalTips':        '务必提前确认预约规则和入馆证件。馆内空间较大,建议先看历史馆、艺术馆或民国馆等重点区域,再按兴趣补充。雨天、酷暑或寒冷天气时,南博是非常适合安排的室内目的地。',
+      'places.nanjingMuseum.culturalNotes':        '南京博物院适合作为理解南京历史纵深的第一站。它不是单一景点,而是从古代文明、明清文化到近现代城市记忆的综合入口。',
+
+      'places.xuanwuLake.name':                    '玄武湖景区',
+      'places.xuanwuLake.bestTime':                '春秋季最舒适。日常建议清晨、傍晚或日落前后前往,适合散步、拍照和看城市天际线。玄武湖环湖路 24 小时开放,五洲及情侣园通常 4-10 月 6:00-22:00、11 月至次年 3 月 6:00-21:00。',
+      'places.xuanwuLake.transport':               '市区内可乘地铁 1 号线至玄武门站,或乘地铁 3/4 号线至鸡鸣寺站,再步行进入景区。若从南京博物院接续前往,可使用高德地图选择地铁、公交或打车路线。',
+      'places.xuanwuLake.duration':                '轻量游览建议 1.5-2 小时;如果环湖、上岛或拍摄夕阳,可预留 3-5 小时。',
+      'places.xuanwuLake.practicalTips':           '玄武湖面积较大,不建议第一次来就完整环湖。可以选择玄武门入口、梁洲、樱洲或靠近城墙的一段作为精华路线。夏季注意防晒补水,晚间拍照建议带稳定设备。',
+      'places.xuanwuLake.culturalNotes':           '玄武湖是南京"山水城林"格局的重要窗口。它连接湖泊、城墙、紫金山和现代天际线,也体现了南京从皇家园林到公共城市公园的转变。',
+
+      'places.zifengTower.name':                   '紫峰大厦',
+      'places.zifengTower.bestTime':               '建议傍晚至夜间前往,在鼓楼片区观看城市天际线和灯光效果更好。紫峰大厦观光层开放状态可能变化,建议出发前通过高德地图、购票平台或现场信息确认;若不确定,按"外观打卡 + 鼓楼片区城市景观"安排即可。',
+      'places.zifengTower.transport':              '可乘地铁 1 号线或 4 号线至鼓楼站,出站后步行前往紫峰大厦所在的鼓楼广场片区。它适合和南京鼓楼、鼓楼广场、湖南路或玄武湖夜景组合安排。',
+      'places.zifengTower.duration':               '外观与周边拍照约 30-60 分钟;如果确认观光层开放并进入参观,可预留 1-2 小时。',
+      'places.zifengTower.practicalTips':          '不要默认观光层一定开放。若只是城市地标打卡,建议选择晴朗傍晚或夜间;如果天气雾霾、雨雾较重,高空视野会明显受影响。',
+      'places.zifengTower.culturalNotes':          '紫峰大厦代表现代南京的高度与金融商务形象。它与周边的鼓楼、玄武湖、明城墙形成强烈对比,是理解南京"古都与现代都市并置"的好地点。',
+
+      'places.drumTower.name':                     '南京鼓楼',
+      'places.drumTower.bestTime':                 '建议上午 9:00-11:00 或下午 15:00-17:00 前往,光线较好,也便于和紫峰大厦、鼓楼广场一并游览。鼓楼公园常见开放信息为 9:00-17:00、16:45 停止入场,实际以现场公告为准。',
+      'places.drumTower.transport':                '可乘地铁 1 号线或 4 号线至鼓楼站,从 3 号口或附近出口步行前往。这里位于南京市中心,适合与紫峰大厦、南京大学鼓楼校区、湖南路等组合。',
+      'places.drumTower.duration':                 '建议预留 45-90 分钟。若只拍照和简单参观,约 30-45 分钟;若想慢慢看建筑和周边广场,可预留更久。',
+      'places.drumTower.practicalTips':            '鼓楼与紫峰大厦距离近,适合放在同一条路线。拍摄时可以利用古建筑与现代高楼的同框对比,但注意道路车流和过街安全。',
+      'places.drumTower.culturalNotes':            '南京鼓楼是城市中心历史地标之一,曾承担报时、礼仪和城市管理象征功能。它与现代鼓楼商圈并置,能直观看到南京历史中心向现代城市中心的延续。',
+
       'routes.foodieTitle': '美食角',
-      'routes.foodie.f1.title': '南京盐水鸭',
-      'routes.foodie.f1.body': '[占位] 简短的文化与感官描述,后续补写。',
-      'routes.foodie.f2.title': '梅花糕',
-      'routes.foodie.f2.body': '[占位] 简短的文化与感官描述,后续补写。',
-      'routes.foodie.f3.title': '本地餐厅',
-      'routes.foodie.f3.body': '[占位] 推荐餐厅待小组确认。',
+      'action.viewDetails': '查看详情 →',
+
+      'foodie.field.bestFor':     '适合',
+      'foodie.field.highlights':  '优势',
+      'foodie.field.description': '说明',
+
+      'foodie.nanjingImpressions.name':        '南京大牌档',
+      'foodie.nanjingImpressions.teaser':      '一次性尝试多种南京菜的代表餐厅。',
+      'foodie.nanjingImpressions.imgCap':      '南京盐水鸭 —— 南京经典菜品。',
+      'foodie.nanjingImpressions.bestFor':     '第一次来南京、想一次吃到多种南京菜的人。',
+      'foodie.nanjingImpressions.highlights':  '场景感强,复古茶馆式环境更适合游客体验。',
+      'foodie.nanjingImpressions.description': '可点古法糖芋苗、鸭血粉丝、民国美龄粥、盐水鸭、烤鸭包、狮子头等。德基广场店、夫子庙店较方便,但热门时段排队明显。',
+
+      'foodie.maXiangXing.name':        '马祥兴清真菜馆',
+      'foodie.maXiangXing.teaser':      '南京老字号清真菜馆。',
+      'foodie.maXiangXing.bestFor':     '想吃真正老南京老字号的人。',
+      'foodie.maXiangXing.highlights':  '更推荐保留"本地感"的一站,出现在南京老字号名单中。',
+      'foodie.maXiangXing.description': '本地资料列出的地址为鼓楼区云南北路32号。代表菜包括蛋烧卖、松鼠鱼、凤尾虾,正餐可以体验老派金陵清真菜。',
+
+      'foodie.lvliuju.name':        '绿柳居',
+      'foodie.lvliuju.teaser':      '老南京素菜与点心。',
+      'foodie.lvliuju.imgCap':      '梅花糕 —— 南京经典点心。',
+      'foodie.lvliuju.bestFor':     '想吃秦淮气质、素菜、点心和老字号的人。',
+      'foodie.lvliuju.highlights':  '同样属于南京老字号,资料显示其创建于 1912 年。',
+      'foodie.lvliuju.description': '特色包括素烧鸭、烧卖、牛肉锅贴,本地宝列出的老店地址为秦淮区太平南路248号。它比南京大牌档更"老南京",比马祥兴更偏点心和素菜体验。',
 
       'options.modal.intro': '请选择目的地 —— 将在高德地图中打开。',
 
@@ -531,13 +638,6 @@
       'options.gate.dongyuanS':   '东苑南门',
       'options.gate.dongyuanN':   '东苑北门',
       'options.gate.dongyuanE':   '东苑东门',
-
-      'restaurants.modal.title': '推荐餐厅',
-      'restaurants.modal.intro': '占位列表 —— 以下餐厅待小组核实。点击「前往」打开高德地图(搜索关键字将在后续填入)。',
-      'restaurants.r1.name': '餐厅名称 [待补充]',
-      'restaurants.r2.name': '餐厅名称 [待补充]',
-      'restaurants.r3.name': '餐厅名称 [待补充]',
-      'restaurants.addr.placeholder': '[地址待核实]',
 
       'appendix.eyebrow': '第五部分',
       'appendix.title': '附录',
@@ -574,8 +674,8 @@
       'appendix.qa.q10.when': '自我介绍以及建立工作或社交关系时使用。',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
-      'footer.version': '版本:v2.4',
-      'footer.note': '已核实地点、电话、校园班车线路、实用中文短语集与美食指南均已上线。',
+      'footer.version': '版本:v2.6',
+      'footer.note': '已核实地点、电话、班车线路、短语集、美食指南、南京故事与本地路线均已上线。',
       'footer.telLabel': 'TEL',
       'footer.telSep': ':',
 
@@ -773,6 +873,93 @@
     });
   }
 
+  /* ---------- v2.6: Section 4 — Routes, Places, Foodie Corner ---------- */
+  const routeItems = [
+    {
+      id: 'route-a',
+      titleKey: 'routes.a.title',
+      subKey:   'routes.a.sub',
+      images: [
+        { src: 'assets/section4/routes/route-a/nanjing-museum-01.jpg', captionKey: 'routes.a.imgCap.museum1' },
+        { src: 'assets/section4/routes/route-a/nanjing-museum-02.jpg', captionKey: 'routes.a.imgCap.museum2' },
+        { src: 'assets/section4/routes/route-a/xuanwu-lake-01.jpg',    captionKey: 'routes.a.imgCap.xuanwu1' },
+        { src: 'assets/section4/routes/route-a/xuanwu-lake-02.jpg',    captionKey: 'routes.a.imgCap.xuanwu2' }
+      ],
+      mapImage: 'assets/section4/routes/maps/route-a-map.jpg',
+      placeIds: ['nanjing-museum', 'xuanwu-lake']
+    },
+    {
+      id: 'route-b',
+      titleKey: 'routes.b.title',
+      subKey:   'routes.b.sub',
+      images: [
+        { src: 'assets/section4/routes/route-b/zifeng-tower-01.jpg', captionKey: 'routes.b.imgCap.zifeng1' },
+        { src: 'assets/section4/routes/route-b/zifeng-tower-02.jpg', captionKey: 'routes.b.imgCap.zifeng2' },
+        { src: 'assets/section4/routes/route-b/drum-tower-01.jpg',   captionKey: 'routes.b.imgCap.drum1' },
+        { src: 'assets/section4/routes/route-b/drum-tower-02.jpg',   captionKey: 'routes.b.imgCap.drum2' }
+      ],
+      mapImage: 'assets/section4/routes/maps/route-b-map.jpg',
+      placeIds: ['zifeng-tower', 'drum-tower']
+    }
+  ];
+
+  const placeInfo = {
+    'nanjing-museum': {
+      nameKey: 'places.nanjingMuseum.name',
+      amapKeyword: '南京博物院'
+    },
+    'xuanwu-lake': {
+      nameKey: 'places.xuanwuLake.name',
+      amapKeyword: '玄武湖景区'
+    },
+    'zifeng-tower': {
+      nameKey: 'places.zifengTower.name',
+      amapKeyword: '紫峰大厦'
+    },
+    'drum-tower': {
+      nameKey: 'places.drumTower.name',
+      amapKeyword: '南京鼓楼'
+    }
+  };
+
+  const placeInfoFields = [
+    { id: 'bestTime',      labelKey: 'routes.meta.time' },
+    { id: 'transport',     labelKey: 'routes.meta.transit' },
+    { id: 'duration',      labelKey: 'routes.meta.duration' },
+    { id: 'practicalTips', labelKey: 'routes.meta.practical' },
+    { id: 'culturalNotes', labelKey: 'routes.meta.cultural' }
+  ];
+
+  const foodieItems = [
+    {
+      id: 'nanjing-impressions',
+      nameKey:        'foodie.nanjingImpressions.name',
+      amapKeyword:    '南京大牌档',
+      images: [{ src: 'assets/section4/food/salted-duck.jpg', captionKey: 'foodie.nanjingImpressions.imgCap' }],
+      bestForKey:     'foodie.nanjingImpressions.bestFor',
+      highlightsKey:  'foodie.nanjingImpressions.highlights',
+      descriptionKey: 'foodie.nanjingImpressions.description'
+    },
+    {
+      id: 'ma-xiang-xing',
+      nameKey:        'foodie.maXiangXing.name',
+      amapKeyword:    '马祥兴清真菜馆',
+      images: [],
+      bestForKey:     'foodie.maXiangXing.bestFor',
+      highlightsKey:  'foodie.maXiangXing.highlights',
+      descriptionKey: 'foodie.maXiangXing.description'
+    },
+    {
+      id: 'lvliuju',
+      nameKey:        'foodie.lvliuju.name',
+      amapKeyword:    '绿柳居',
+      images: [{ src: 'assets/section4/food/meihua-cake.jpg', captionKey: 'foodie.lvliuju.imgCap' }],
+      bestForKey:     'foodie.lvliuju.bestFor',
+      highlightsKey:  'foodie.lvliuju.highlights',
+      descriptionKey: 'foodie.lvliuju.description'
+    }
+  ];
+
   /* ---------- v2.5: Section 3 Timeline (TIME-01..03) ----------
      Only TIME-02 and TIME-03 carry image galleries. TIME-01 stays text-only,
      so its `images` array is empty and renderTimelineModalHtml skips the
@@ -937,19 +1124,39 @@
     const dialog = $('.modal-dialog');
     if (dialog) dialog.classList.toggle('has-back', modalState.stack.length > 1);
 
-    if (top.trigger === 'restaurants') {
-      titleEl.textContent = dict['restaurants.modal.title'];
-      bodyEl.innerHTML = renderRestaurantsHtml(dict);
-      // Wire Go buttons inside the modal to openAmap.
-      $$('.restaurant-item .btn-go', bodyEl).forEach(btn => {
-        btn.addEventListener('click', () => {
-          const q = btn.getAttribute('data-amap-query') || '';
-          openAmapSearch(q);
-        });
-      });
-    } else if (top.trigger === 'bus') {
+    if (top.trigger === 'bus') {
       titleEl.textContent = dict['bus.modal.title'] || '';
       bodyEl.innerHTML = renderBusRoutesHtml(dict);
+    } else if (top.trigger === 'place-select') {
+      titleEl.textContent = dict['routes.placeSelect.title'] || '';
+      bodyEl.innerHTML = renderPlaceSelectHtml(top.routeId, dict);
+      $$('.place-select-item', bodyEl).forEach(btn => {
+        btn.addEventListener('click', () => {
+          const kw = btn.getAttribute('data-amap-query') || '';
+          openAmapSearch(kw);
+          closeModal();
+        });
+      });
+    } else if (top.trigger === 'place-info') {
+      const place = placeInfo[top.placeId];
+      const field = placeInfoFields.find(f => f.id === top.fieldId);
+      const placeName = place ? (dict[place.nameKey] || '') : '';
+      const fieldLabel = field ? (dict[field.labelKey] || '') : '';
+      titleEl.textContent = placeName + ' · ' + fieldLabel;
+      const bodyKey = 'places.' + camelizePlaceId(top.placeId) + '.' + top.fieldId;
+      const text = dict[bodyKey] || '';
+      bodyEl.innerHTML = '<p class="modal-prose">' + escapeHtml(text) + '</p>';
+    } else if (top.trigger === 'foodie-detail') {
+      const item = foodieItems.find(it => it.id === top.foodieId);
+      titleEl.textContent = item ? (dict[item.nameKey] || '') : '';
+      bodyEl.innerHTML = renderFoodieDetailHtml(item, dict);
+      wireModalGallery(bodyEl);
+      $$('.foodie-amap-btn', bodyEl).forEach(btn => {
+        btn.addEventListener('click', () => {
+          const kw = btn.getAttribute('data-amap-query') || '';
+          openAmapSearch(kw);
+        });
+      });
     } else if (top.trigger === 'timeline') {
       const item = timelineItems.find(it => it.id === top.timelineId);
       titleEl.textContent = item ? (dict[item.titleKey] || '') : '';
@@ -1041,6 +1248,67 @@
           '<p class="qa-row-value qa-when">' + escapeHtml(dict[item.whenKey] || '') + '</p>' +
         '</div>' +
       '</div>'
+    );
+  }
+
+  function camelizePlaceId(id) {
+    return String(id || '').replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  }
+
+  function renderPlaceSelectHtml(routeId, dict) {
+    const route = routeItems.find(r => r.id === routeId);
+    if (!route) return '';
+    const intro = '<p class="modal-intro">' + escapeHtml(dict['routes.placeSelect.intro'] || '') + '</p>';
+    const list = route.placeIds.map(pid => {
+      const p = placeInfo[pid];
+      if (!p) return '';
+      const name = escapeHtml(dict[p.nameKey] || '');
+      return (
+        '<button type="button" class="option-item place-select-item" data-amap-query="' + escapeHtml(p.amapKeyword) + '">' +
+          '<span class="option-label">' + name + '</span>' +
+          '<span class="option-go">' + escapeHtml(dict['action.openAmap'] || '') + '</span>' +
+        '</button>'
+      );
+    }).join('');
+    return intro + '<div class="option-list">' + list + '</div>';
+  }
+
+  function renderFoodieDetailHtml(item, dict) {
+    if (!item) return '';
+    // Optional gallery (single image or none — no nav controls when count <= 1).
+    let gallery = '';
+    if (item.images && item.images.length) {
+      const slides = item.images.map((img, i) => (
+        '<figure class="modal-gallery-slide' + (i === 0 ? ' is-active' : '') + '" data-idx="' + i + '">' +
+          '<img src="' + escapeHtml(img.src) + '" alt="' + escapeHtml(dict[item.nameKey] || '') + '" loading="lazy" decoding="async" />' +
+          '<figcaption>' + escapeHtml(dict[img.captionKey] || '') + '</figcaption>' +
+        '</figure>'
+      )).join('');
+      const showCtrls = item.images.length > 1;
+      const ctrls = showCtrls ? (
+        '<div class="modal-gallery-counter"><span class="g-cur">1</span> / ' + item.images.length + '</div>'
+      ) : '';
+      gallery = '<div class="modal-gallery" data-total="' + item.images.length + '">' +
+                 '<div class="modal-gallery-stage">' + slides + '</div>' +
+                 ctrls +
+               '</div>';
+    }
+    const row = (labelKey, valueKey) => (
+      '<div class="foodie-row">' +
+        '<span class="foodie-row-label">' + escapeHtml(dict[labelKey] || '') + '</span>' +
+        '<p class="foodie-row-value">' + escapeHtml(dict[valueKey] || '') + '</p>' +
+      '</div>'
+    );
+    return (
+      gallery +
+      '<div class="foodie-detail">' +
+        row('foodie.field.bestFor',     item.bestForKey) +
+        row('foodie.field.highlights',  item.highlightsKey) +
+        row('foodie.field.description', item.descriptionKey) +
+      '</div>' +
+      '<button type="button" class="btn btn-primary foodie-amap-btn" data-amap-query="' + escapeHtml(item.amapKeyword) + '">' +
+        escapeHtml(dict['action.openAmap'] || '') +
+      '</button>'
     );
   }
 
@@ -1155,24 +1423,8 @@
     return intro + '<div class="option-list">' + list + '</div>';
   }
 
-  function renderRestaurantsHtml(dict) {
-    const items = [
-      { nameKey: 'restaurants.r1.name', addrKey: 'restaurants.addr.placeholder' },
-      { nameKey: 'restaurants.r2.name', addrKey: 'restaurants.addr.placeholder' },
-      { nameKey: 'restaurants.r3.name', addrKey: 'restaurants.addr.placeholder' }
-    ];
-    const intro = '<p class="modal-intro">' + escapeHtml(dict['restaurants.modal.intro']) + '</p>';
-    const list = items.map(it => (
-      '<div class="restaurant-item">' +
-        '<div>' +
-          '<p class="r-name">' + escapeHtml(dict[it.nameKey]) + '</p>' +
-          '<p class="r-addr">' + escapeHtml(dict[it.addrKey]) + '</p>' +
-        '</div>' +
-        '<button type="button" class="btn-go" data-amap-query="">' + escapeHtml(dict['action.go']) + '</button>' +
-      '</div>'
-    )).join('');
-    return intro + '<div class="restaurant-list">' + list + '</div>';
-  }
+  /* v2.6: renderRestaurantsHtml removed — Foodie Corner now uses real
+     restaurant cards that open a dedicated foodie-detail modal. */
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({
@@ -1191,6 +1443,10 @@
       bodyKey:    triggerEl.getAttribute('data-modal-body-key'),
       optionsId:  triggerEl.getAttribute('data-options-id'),
       timelineId: triggerEl.getAttribute('data-timeline-id'),
+      routeId:    triggerEl.getAttribute('data-route-id'),
+      placeId:    triggerEl.getAttribute('data-place-id'),
+      fieldId:    triggerEl.getAttribute('data-field-id'),
+      foodieId:   triggerEl.getAttribute('data-foodie-id'),
       activeItemId: null
     }];
     renderModalContent();
@@ -1232,6 +1488,30 @@
   }
 
   /* ---------- v1: Story deep-dive deck ---------- */
+  /* v2.6 swipe helper — fires onDelta(±1) when the touch crosses the threshold. */
+  function attachSwipe(el, onDelta) {
+    if (!el) return;
+    let startX = 0, startY = 0, tracking = false;
+    const THRESHOLD = 40;
+    el.addEventListener('touchstart', ev => {
+      if (!ev.touches || ev.touches.length !== 1) return;
+      startX = ev.touches[0].clientX;
+      startY = ev.touches[0].clientY;
+      tracking = true;
+    }, { passive: true });
+    el.addEventListener('touchend', ev => {
+      if (!tracking) return;
+      tracking = false;
+      const t = (ev.changedTouches && ev.changedTouches[0]) || null;
+      if (!t) return;
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      if (Math.abs(dx) >= THRESHOLD && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        onDelta(dx < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+  }
+
   function initDeck() {
     const deck = $('#storyDeck');
     if (!deck) return;
@@ -1244,59 +1524,64 @@
 
     let idx = 0;
 
-    dotsWrap.innerHTML = '';
-    groups.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', 'Go to pair ' + (i + 1));
-      if (i === 0) b.classList.add('is-active');
-      b.addEventListener('click', () => go(i));
-      dotsWrap.appendChild(b);
-    });
+    if (dotsWrap) {
+      dotsWrap.innerHTML = '';
+      groups.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to card ' + (i + 1));
+        if (i === 0) b.classList.add('is-active');
+        b.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(b);
+      });
+    }
 
     function render() {
       track.style.transform = 'translateX(' + (-100 * idx) + '%)';
-      $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
+      if (dotsWrap) $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
     }
     function go(i) {
       idx = (i + groups.length) % groups.length;
       render();
     }
-    prev.addEventListener('click', () => go(idx - 1));
-    next.addEventListener('click', () => go(idx + 1));
+    if (prev) prev.addEventListener('click', () => go(idx - 1));
+    if (next) next.addEventListener('click', () => go(idx + 1));
+
+    // v2.6: swipe support — arrows are gone on .deck-single, swipe is the
+    // main interaction along with the bottom dots.
+    attachSwipe($('.deck-viewport', deck), d => go(idx + d));
   }
 
-  /* ---------- v1: Route image galleries ---------- */
+  /* ---------- v2.6: Route image galleries (no arrows, swipe + dots) ---------- */
   function initRouteGalleries() {
     $$('.route-gallery').forEach(gallery => {
       const slides = $$('.route-slide', gallery);
-      const prev = $('.gallery-arrow.prev', gallery);
-      const next = $('.gallery-arrow.next', gallery);
       const dotsWrap = $('.gallery-dots', gallery);
       if (slides.length === 0) return;
 
       let idx = 0;
 
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', 'Go to image ' + (i + 1));
-        if (i === 0) b.classList.add('is-active');
-        b.addEventListener('click', ev => { ev.stopPropagation(); go(i); });
-        dotsWrap.appendChild(b);
-      });
+      if (dotsWrap) {
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Go to image ' + (i + 1));
+          if (i === 0) b.classList.add('is-active');
+          b.addEventListener('click', ev => { ev.stopPropagation(); go(i); });
+          dotsWrap.appendChild(b);
+        });
+      }
 
       function render() {
         slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
-        $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        if (dotsWrap) $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('is-active', i === idx));
       }
       function go(i) {
         idx = (i + slides.length) % slides.length;
         render();
       }
-      prev.addEventListener('click', ev => { ev.stopPropagation(); go(idx - 1); });
-      next.addEventListener('click', ev => { ev.stopPropagation(); go(idx + 1); });
+      attachSwipe(gallery, d => go(idx + d));
     });
   }
 

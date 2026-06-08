@@ -1770,3 +1770,246 @@ body.welcome-intro-active { overflow: hidden; }
   }
 }
 
+/* =================================================================
+   v2.6 — Section 4 (routes/places/foodie) + Section 3 deck single mode
+   ================================================================= */
+
+/* ---------- Route image gallery: real images, no arrows ---------- */
+.route-gallery {
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.route-slides {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.route-slide {
+  position: absolute; inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+.route-slide.is-active {
+  opacity: 1;
+  position: absolute;
+}
+.route-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Bottom indicator pills (replaces the v1 arrows) */
+.route-gallery .gallery-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.route-gallery .gallery-dots button {
+  width: 18px; height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.50);
+  transition: all .25s var(--ease);
+}
+.route-gallery .gallery-dots button.is-active {
+  background: #fff;
+  width: 28px;
+}
+
+/* ---------- Route place blocks + per-field buttons ---------- */
+.route-places {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 16px;
+  counter-reset: routeStep;
+}
+.route-place {
+  counter-increment: routeStep;
+  position: relative;
+  padding: 14px 16px 14px 50px;
+  background: rgba(255,255,255,0.55);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+.route-place::before {
+  content: counter(routeStep);
+  position: absolute;
+  left: 14px; top: 14px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.route-place h5 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--navy);
+}
+.place-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.place-field-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(111,149,189,0.16);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.place-field-btn:hover {
+  background: rgba(111,149,189,0.30);
+  transform: translateY(-1px);
+}
+.place-field-btn:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ---------- Map-route button (replaces map-embed for Section 4) ---------- */
+.map-route-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  cursor: pointer;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.map-route-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.map-route-btn:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+.map-route-btn img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.map-route-cta {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 16px 12px;
+  background: linear-gradient(180deg, rgba(11,31,58,0) 0%, rgba(11,31,58,0.62) 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-align: left;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+/* ---------- Foodie card (entry) ---------- */
+.foodie-card {
+  text-align: left;
+  padding: 22px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: linear-gradient(180deg, rgba(158,63,53,0.08), rgba(255,255,255,0.65));
+}
+.foodie-card h4 { margin: 0; color: var(--navy); }
+.foodie-card p  { margin: 0; color: var(--text-soft); }
+
+/* ---------- Foodie detail modal ---------- */
+.foodie-detail {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 14px;
+}
+.foodie-row {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(111,149,189,0.10);
+  border: 1px solid var(--line);
+}
+.foodie-row-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+.foodie-row-value {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.foodie-amap-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------- Section 3: deck single-card mode (no arrows, swipe + dots) ---------- */
+.deck-single { padding: 0; }
+.deck-single .deck-group { grid-template-columns: 1fr; }
+.deck-single .deck-arrow { display: none; }
+.deck-single .deck-viewport {
+  touch-action: pan-y;
+}
+.deck-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(11,31,58,0.08);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.deck-single .deck-dots button {
+  width: 18px; height: 4px;
+  border-radius: 2px;
+  background: rgba(11,31,58,0.30);
+}
+.deck-single .deck-dots button.is-active {
+  background: var(--navy);
+  width: 28px;
+}
+
+@media (max-width: 720px) {
+  .route-place { padding: 12px 14px 12px 44px; }
+  .route-place::before { left: 12px; top: 12px; width: 22px; height: 22px; font-size: 0.78rem; }
+  .place-field-btn { font-size: 0.8rem; padding: 6px 10px; }
+  .map-route-cta { font-size: 0.85rem; padding: 10px 14px 12px; }
+  .foodie-card { padding: 18px; }
+}
+

@@ -368,12 +368,10 @@
           </li>
         </ol>
 
-        <!-- v2.5: Deep Dive — 4 cards in 2 groups; each card carries one real image. -->
-        <div class="deck reveal" id="storyDeck" aria-label="Deep dive card deck">
-          <button type="button" class="deck-arrow prev" id="deckPrev" aria-label="Previous pair">‹</button>
+        <!-- v2.6: Deep Dive — 4 single-card groups, swipe + dots, no arrows. -->
+        <div class="deck reveal deck-single" id="storyDeck" aria-label="Deep dive card deck">
           <div class="deck-viewport">
             <div class="deck-track" id="deckTrack">
-              <!-- Group 1 -->
               <div class="deck-group">
                 <article class="glass deepdive">
                   <div class="deepdive-img-wrap">
@@ -387,6 +385,8 @@
                   <p class="deepdive-sub" data-i18n="story.d1.sub">Political memory and civic architecture</p>
                   <p data-i18n="story.d1.body">Nanjing’s Republican legacy connects political memory, architectural form, and national narrative.</p>
                 </article>
+              </div>
+              <div class="deck-group">
                 <article class="glass deepdive">
                   <div class="deepdive-img-wrap">
                     <img src="assets/section3/deep-dive/DEEP-DIVE-02.webp"
@@ -400,7 +400,6 @@
                   <p data-i18n="story.d2.body">Water has shaped the character of Nanjing — from the Qinhuai’s nightlife to the Yangtze’s openness.</p>
                 </article>
               </div>
-              <!-- Group 2 -->
               <div class="deck-group">
                 <article class="glass deepdive">
                   <div class="deepdive-img-wrap">
@@ -414,6 +413,8 @@
                   <p class="deepdive-sub" data-i18n="story.d3.sub">Generations of scholars in the Jiangnan tradition</p>
                   <p data-i18n="story.d3.body">The Jiangnan Examination Hall witnessed China’s institutional tradition of selecting talent.</p>
                 </article>
+              </div>
+              <div class="deck-group">
                 <article class="glass deepdive">
                   <div class="deepdive-img-wrap">
                     <img src="assets/section3/deep-dive/DEEP-DIVE-04.webp"
@@ -429,7 +430,6 @@
               </div>
             </div>
           </div>
-          <button type="button" class="deck-arrow next" id="deckNext" aria-label="Next pair">›</button>
           <ol class="deck-dots" id="deckDots" aria-label="Card deck pagination"></ol>
         </div>
       </div>
@@ -449,118 +449,119 @@
         <div class="grid grid-2 reveal">
           <article class="glass route-card">
             <header>
-              <span class="point-id">ROUTE-A</span>
-              <h3 data-i18n="routes.a.title">Route A · History Buff</h3>
-              <p data-i18n="routes.a.sub">Nanjing Museum → Ming Xiaoling Mausoleum</p>
+              <h3 data-i18n="routes.a.title">Route A · Museum &amp; Lake</h3>
+              <p data-i18n="routes.a.sub">Nanjing Museum → Xuanwu Lake</p>
             </header>
 
-            <!-- v1: route image becomes a manual gallery. -->
-            <div class="route-gallery" data-gallery="routeA" aria-label="Route A images">
+            <!-- v2.6: gallery with swipe + dots, no arrows. -->
+            <div class="route-gallery" data-gallery="route-a" aria-label="Route A images">
               <ol class="route-slides">
-                <li class="route-slide is-active img-ph small" data-img="IMG-ROUTE-A-01" data-desc-en="Nanjing Museum" data-desc-zh="南京博物院"></li>
-                <li class="route-slide img-ph small" data-img="IMG-ROUTE-A-02" data-desc-en="Ming Xiaoling forest path" data-desc-zh="明孝陵神道"></li>
-                <li class="route-slide img-ph small" data-img="IMG-ROUTE-A-03" data-desc-en="Ming Xiaoling stone statues" data-desc-zh="明孝陵石像生"></li>
+                <li class="route-slide is-active"><img src="assets/section4/routes/route-a/nanjing-museum-01.jpg" data-i18n-alt="routes.a.imgCap.museum1" alt="Nanjing Museum entrance" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-a/nanjing-museum-02.jpg" data-i18n-alt="routes.a.imgCap.museum2" alt="Nanjing Museum gallery" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-a/xuanwu-lake-01.jpg" data-i18n-alt="routes.a.imgCap.xuanwu1" alt="Xuanwu Lake view" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-a/xuanwu-lake-02.jpg" data-i18n-alt="routes.a.imgCap.xuanwu2" alt="Xuanwu Lake skyline" loading="lazy" decoding="async" /></li>
               </ol>
-              <button type="button" class="gallery-arrow prev" aria-label="Previous image">‹</button>
-              <button type="button" class="gallery-arrow next" aria-label="Next image">›</button>
               <ol class="gallery-dots" aria-label="Route A pagination"></ol>
             </div>
 
-            <ol class="steps">
-              <li>
-                <h5 data-i18n="routes.a.s1.t">Nanjing Museum</h5>
-                <p><span data-i18n="routes.meta.time">Suggested time</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.transit">Transport</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.duration">Duration</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.practical">Practical note</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
-              </li>
-              <li>
-                <h5 data-i18n="routes.a.s2.t">Ming Xiaoling Mausoleum</h5>
-                <p><span data-i18n="routes.meta.time">Suggested time</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.transit">Transport</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.duration">Duration</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.practical">Practical note</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
-              </li>
-            </ol>
-
-            <!-- v1: route map placeholder is clickable → openAmap() -->
-            <button type="button" class="map-embed map-link" data-action="amap" data-amap-query="" aria-label="Open Route A in Amap">
-              <div class="map-placeholder">
-                <span class="map-id">MAP-02 · Route A</span>
-                <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
-                <p class="map-cta" data-i18n="map.openAmap">Open in Amap ↗</p>
+            <div class="route-places">
+              <div class="route-place">
+                <h5 data-i18n="places.nanjingMuseum.name">Nanjing Museum</h5>
+                <div class="place-fields">
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="nanjing-museum" data-field-id="bestTime"      data-i18n="routes.meta.time">Best time</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="nanjing-museum" data-field-id="transport"     data-i18n="routes.meta.transit">Transport</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="nanjing-museum" data-field-id="duration"      data-i18n="routes.meta.duration">Duration</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="nanjing-museum" data-field-id="practicalTips" data-i18n="routes.meta.practical">Practical tips</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="nanjing-museum" data-field-id="culturalNotes" data-i18n="routes.meta.cultural">Cultural notes</button>
+                </div>
               </div>
+              <div class="route-place">
+                <h5 data-i18n="places.xuanwuLake.name">Xuanwu Lake Scenic Area</h5>
+                <div class="place-fields">
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="xuanwu-lake" data-field-id="bestTime"      data-i18n="routes.meta.time">Best time</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="xuanwu-lake" data-field-id="transport"     data-i18n="routes.meta.transit">Transport</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="xuanwu-lake" data-field-id="duration"      data-i18n="routes.meta.duration">Duration</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="xuanwu-lake" data-field-id="practicalTips" data-i18n="routes.meta.practical">Practical tips</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="xuanwu-lake" data-field-id="culturalNotes" data-i18n="routes.meta.cultural">Cultural notes</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="map-route-btn"
+                    data-modal-trigger="place-select" data-route-id="route-a"
+                    data-i18n-aria="routes.mapAria.routeA"
+                    aria-label="Open Route A map and choose a place">
+              <img src="assets/section4/routes/maps/route-a-map.jpg" alt="Route A map" loading="lazy" decoding="async" />
+              <span class="map-route-cta" data-i18n="routes.mapPickPlace">Choose a place to open in Amap ↗</span>
             </button>
           </article>
 
           <article class="glass route-card">
             <header>
-              <span class="point-id">ROUTE-B</span>
-              <h3 data-i18n="routes.b.title">Route B · Nature &amp; Peace</h3>
-              <p data-i18n="routes.b.sub">Xuanwu Lake → Zifeng Tower / Gulou Area</p>
+              <h3 data-i18n="routes.b.title">Route B · Tower &amp; Drum Tower</h3>
+              <p data-i18n="routes.b.sub">Zifeng Tower → Nanjing Drum Tower</p>
             </header>
 
-            <div class="route-gallery" data-gallery="routeB" aria-label="Route B images">
+            <div class="route-gallery" data-gallery="route-b" aria-label="Route B images">
               <ol class="route-slides">
-                <li class="route-slide is-active img-ph small" data-img="IMG-ROUTE-B-01" data-desc-en="Xuanwu Lake at dusk" data-desc-zh="黄昏的玄武湖"></li>
-                <li class="route-slide img-ph small" data-img="IMG-ROUTE-B-02" data-desc-en="Zifeng Tower / Gulou Area" data-desc-zh="紫峰大厦 / 鼓楼一带"></li>
-                <li class="route-slide img-ph small" data-img="IMG-ROUTE-B-03" data-desc-en="Lakeside path" data-desc-zh="湖畔小径"></li>
+                <li class="route-slide is-active"><img src="assets/section4/routes/route-b/zifeng-tower-01.jpg" data-i18n-alt="routes.b.imgCap.zifeng1" alt="Zifeng Tower exterior" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-b/zifeng-tower-02.jpg" data-i18n-alt="routes.b.imgCap.zifeng2" alt="Zifeng Tower at night" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-b/drum-tower-01.jpg" data-i18n-alt="routes.b.imgCap.drum1" alt="Nanjing Drum Tower" loading="lazy" decoding="async" /></li>
+                <li class="route-slide"><img src="assets/section4/routes/route-b/drum-tower-02.jpg" data-i18n-alt="routes.b.imgCap.drum2" alt="Drum Tower detail" loading="lazy" decoding="async" /></li>
               </ol>
-              <button type="button" class="gallery-arrow prev" aria-label="Previous image">‹</button>
-              <button type="button" class="gallery-arrow next" aria-label="Next image">›</button>
               <ol class="gallery-dots" aria-label="Route B pagination"></ol>
             </div>
 
-            <ol class="steps">
-              <li>
-                <h5 data-i18n="routes.b.s1.t">Xuanwu Lake</h5>
-                <p><span data-i18n="routes.meta.time">Suggested time</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.transit">Transport</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.duration">Duration</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.practical">Practical note</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
-              </li>
-              <li>
-                <h5 data-i18n="routes.b.s2.t">Zifeng Tower / Gulou</h5>
-                <p><span data-i18n="routes.meta.time">Suggested time</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.transit">Transport</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.duration">Duration</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.practical">Practical note</span>: [PLACEHOLDER]</p>
-                <p><span data-i18n="routes.meta.cultural">Cultural note</span>: [PLACEHOLDER]</p>
-              </li>
-            </ol>
-
-            <button type="button" class="map-embed map-link" data-action="amap" data-amap-query="" aria-label="Open Route B in Amap">
-              <div class="map-placeholder">
-                <span class="map-id">MAP-03 · Route B</span>
-                <p data-i18n="map.placeholder">Embedded map placeholder — to be replaced with official / verified map iframe.</p>
-                <p class="map-cta" data-i18n="map.openAmap">Open in Amap ↗</p>
+            <div class="route-places">
+              <div class="route-place">
+                <h5 data-i18n="places.zifengTower.name">Zifeng Tower</h5>
+                <div class="place-fields">
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="zifeng-tower" data-field-id="bestTime"      data-i18n="routes.meta.time">Best time</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="zifeng-tower" data-field-id="transport"     data-i18n="routes.meta.transit">Transport</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="zifeng-tower" data-field-id="duration"      data-i18n="routes.meta.duration">Duration</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="zifeng-tower" data-field-id="practicalTips" data-i18n="routes.meta.practical">Practical tips</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="zifeng-tower" data-field-id="culturalNotes" data-i18n="routes.meta.cultural">Cultural notes</button>
+                </div>
               </div>
+              <div class="route-place">
+                <h5 data-i18n="places.drumTower.name">Nanjing Drum Tower</h5>
+                <div class="place-fields">
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="drum-tower" data-field-id="bestTime"      data-i18n="routes.meta.time">Best time</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="drum-tower" data-field-id="transport"     data-i18n="routes.meta.transit">Transport</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="drum-tower" data-field-id="duration"      data-i18n="routes.meta.duration">Duration</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="drum-tower" data-field-id="practicalTips" data-i18n="routes.meta.practical">Practical tips</button>
+                  <button type="button" class="place-field-btn" data-modal-trigger="place-info" data-place-id="drum-tower" data-field-id="culturalNotes" data-i18n="routes.meta.cultural">Cultural notes</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="map-route-btn"
+                    data-modal-trigger="place-select" data-route-id="route-b"
+                    data-i18n-aria="routes.mapAria.routeB"
+                    aria-label="Open Route B map and choose a place">
+              <img src="assets/section4/routes/maps/route-b-map.jpg" alt="Route B map" loading="lazy" decoding="async" />
+              <span class="map-route-cta" data-i18n="routes.mapPickPlace">Choose a place to open in Amap ↗</span>
             </button>
           </article>
         </div>
 
         <h3 class="subhead reveal" data-i18n="routes.foodieTitle">Foodie Corner</h3>
         <div class="grid grid-3 reveal">
-          <article class="glass food-card">
-            <h4 data-i18n="routes.foodie.f1.title">Nanjing Salted Duck</h4>
-            <p data-i18n="routes.foodie.f1.body">[PLACEHOLDER] Brief cultural and sensory note to be written.</p>
-          </article>
-          <!-- v1: Plum Blossom Cake replaces Duck Blood Vermicelli Soup. -->
-          <article class="glass food-card">
-            <h4 data-i18n="routes.foodie.f2.title">Plum Blossom Cake</h4>
-            <p data-i18n="routes.foodie.f2.body">[PLACEHOLDER] Brief cultural and sensory note to be written.</p>
-          </article>
-          <article class="glass food-card">
-            <span class="point-id">IMG-FOOD-LOCAL</span>
-            <h4 data-i18n="routes.foodie.f3.title">Local Restaurant</h4>
-            <p data-i18n="routes.foodie.f3.body">[PLACEHOLDER] Recommended restaurant to be confirmed by group.</p>
-            <span class="tag tag-warn" data-i18n="tag.unverified">Needs verification</span>
-            <!-- v1: Show More opens a restaurant modal. -->
-            <button type="button" class="btn btn-ghost btn-sm showmore-btn" data-modal-trigger="restaurants" data-i18n="action.showMore">Show More</button>
-          </article>
+          <button type="button" class="glass food-card foodie-card clickable" data-modal-trigger="foodie-detail" data-foodie-id="nanjing-impressions">
+            <h4 data-i18n="foodie.nanjingImpressions.name">Nanjing Impressions</h4>
+            <p data-i18n="foodie.nanjingImpressions.teaser">A signature spot to try many Nanjing dishes in one visit.</p>
+            <span class="card-go" data-i18n="action.viewDetails">View details →</span>
+          </button>
+          <button type="button" class="glass food-card foodie-card clickable" data-modal-trigger="foodie-detail" data-foodie-id="ma-xiang-xing">
+            <h4 data-i18n="foodie.maXiangXing.name">Ma Xiang Xing Halal Restaurant</h4>
+            <p data-i18n="foodie.maXiangXing.teaser">A Nanjing time-honored halal restaurant.</p>
+            <span class="card-go" data-i18n="action.viewDetails">View details →</span>
+          </button>
+          <button type="button" class="glass food-card foodie-card clickable" data-modal-trigger="foodie-detail" data-foodie-id="lvliuju">
+            <h4 data-i18n="foodie.lvliuju.name">Lvliuju Vegetarian Restaurant</h4>
+            <p data-i18n="foodie.lvliuju.teaser">Old-Nanjing vegetarian dishes and dim sum.</p>
+            <span class="card-go" data-i18n="action.viewDetails">View details →</span>
+          </button>
         </div>
       </div>
     </section>
