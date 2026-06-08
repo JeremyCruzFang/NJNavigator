@@ -112,6 +112,13 @@ p  { margin: 0 0 .6em; color: var(--text-soft); }
   letter-spacing: -0.005em;
 }
 .brand-mark { display: inline-flex; }
+.brand-mark img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
 .brand-tag {
   font-size: 0.72rem;
   font-weight: 500;
@@ -1458,6 +1465,14 @@ body.modal-open { overflow: hidden; }
   margin-left: 2px;
 }
 .footer-tel-num:hover { text-decoration: underline; }
+.footer-credit {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  letter-spacing: 0.06em;
+  font-style: italic;
+  text-align: center;
+}
 
 /* ---------- Mobile polish for Section 5 ---------- */
 @media (max-width: 720px) {
