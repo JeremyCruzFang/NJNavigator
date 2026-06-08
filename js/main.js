@@ -18,7 +18,7 @@
   const i18n = {
     en: {
       'meta.title': 'NJNavigator — A Guide for International Faculty in Nanjing',
-      'brand.tag': 'v2.6',
+      'brand.tag': '',
 
       'nav.home': 'Home',
       'nav.survival': 'Survival',
@@ -32,7 +32,7 @@
       'hero.sub': 'A practical and cultural guide for international faculty at NUIST.',
       'hero.cta1': 'Start Exploring',
       'hero.cta2': 'Campus Essentials',
-      'hero.note': 'v2.6 · Verified locations, phones, shuttle routes, phrasebook, dining guide, Nanjing story, and two local routes online.',
+      'hero.note': 'Verified campus locations, phones, shuttle routes, a Chinese phrasebook, dining guide, and walking routes online.',
       'hero.hideAria': 'Hide welcome card',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
@@ -333,8 +333,7 @@
       'appendix.qa.q10.when': 'Used when introducing yourself and building professional or social connections.',
 
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
-      'footer.version': 'Version: v2.6',
-      'footer.note': 'Verified locations, phones, shuttle routes, phrasebook, dining guide, story, and routes online.',
+      'footer.note': 'Verified campus locations, phones, shuttle routes, dining guide, and walking routes.',
       'footer.telLabel': 'TEL',
       'footer.telSep': ': ',
 
@@ -359,7 +358,7 @@
 
     zh: {
       'meta.title': 'NJNavigator — 南京国际教师生活与文化导航',
-      'brand.tag': 'v2.6',
+      'brand.tag': '',
 
       'nav.home': '首页',
       'nav.survival': '生存',
@@ -373,7 +372,7 @@
       'hero.sub': '面向南信大国际教师的生活与文化导航平台。',
       'hero.cta1': '开始浏览',
       'hero.cta2': '校园要点',
-      'hero.note': 'v2.6 · 已核实地点、电话、班车线路、短语集、美食指南、南京故事与两条本地路线均已上线。',
+      'hero.note': '已核实地点、电话、班车线路、短语集、美食指南、南京故事与本地路线均已上线。',
       'hero.hideAria': '隐藏欢迎卡片',
       'hero.label.nuist':        'NUIST',
       'hero.label.mingWall':     'Ming Wall',
@@ -674,8 +673,7 @@
       'appendix.qa.q10.when': '自我介绍以及建立工作或社交关系时使用。',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
-      'footer.version': '版本:v2.6',
-      'footer.note': '已核实地点、电话、班车线路、短语集、美食指南、南京故事与本地路线均已上线。',
+      'footer.note': '已核实地点、电话、班车线路、美食指南与本地路线。',
       'footer.telLabel': 'TEL',
       'footer.telSep': ':',
 
