@@ -593,6 +593,22 @@
             <span class="card-go" data-i18n="appendix.card.cta">Open phrasebook →</span>
           </button>
         </div>
+
+        <!-- Metro Map block — minimal card; iframe + QR live in modals. -->
+        <div class="reveal metro-block">
+          <article class="glass card metro-card">
+            <h3 data-i18n="metro.title">Metro Map</h3>
+            <p data-i18n="metro.desc">View or scan the Nanjing Metro map for route planning.</p>
+            <div class="metro-actions">
+              <button type="button" class="btn btn-primary metro-pill"
+                      data-modal-trigger="metro-open"
+                      data-i18n="metro.openInside">Open Metro Map</button>
+              <button type="button" class="btn btn-ghost metro-pill"
+                      data-modal-trigger="metro-qr"
+                      data-i18n="metro.saveQr">Save QR Code</button>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>

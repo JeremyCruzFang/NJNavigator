@@ -332,6 +332,20 @@
       'appendix.qa.q10.q': 'How to say nice to meet you?',
       'appendix.qa.q10.when': 'Used when introducing yourself and building professional or social connections.',
 
+      'metro.title': 'Metro Map',
+      'metro.desc': 'View or scan the Nanjing Metro map for route planning.',
+      'metro.openInside': 'Open Metro Map',
+      'metro.saveQr': 'Save QR Code',
+      'metro.open.title': 'Nanjing Metro Map',
+      'metro.open.iframeTitle': 'Nanjing Metro Map (metroman.cn)',
+      'metro.open.loading': 'Loading the metro map…',
+      'metro.open.fallback': 'The metro map may not allow embedded viewing. Open it in a new tab if the map does not load.',
+      'metro.open.newTab': 'Open in New Tab ↗',
+      'metro.qr.title': 'Save QR Code',
+      'metro.qr.intro': 'Scan this QR code with another device to open the Nanjing Metro Map.',
+      'metro.qr.alt': 'QR code linking to the Nanjing Metro map on metroman.cn',
+      'metro.qr.download': 'Download QR Code',
+
       'footer.tag': 'A practical and cultural guide for international faculty at NUIST.',
       'footer.note': 'Verified campus locations, phones, shuttle routes, dining guide, and walking routes.',
       'footer.telLabel': 'TEL',
@@ -671,6 +685,20 @@
       'appendix.qa.q9.when':  '听不懂中文,需要对方进一步说明时使用。',
       'appendix.qa.q10.q': '怎么说「很高兴认识你」?',
       'appendix.qa.q10.when': '自我介绍以及建立工作或社交关系时使用。',
+
+      'metro.title': '地铁线路图',
+      'metro.desc': '查看或扫码打开南京地铁线路图,便于出行规划。',
+      'metro.openInside': '打开线路图',
+      'metro.saveQr': '保存二维码',
+      'metro.open.title': '南京地铁线路图',
+      'metro.open.iframeTitle': '南京地铁线路图(metroman.cn)',
+      'metro.open.loading': '正在加载地铁线路图……',
+      'metro.open.fallback': '该线路图页面可能不允许站内嵌入浏览。如无法加载,请在新标签页中打开。',
+      'metro.open.newTab': '在新标签页打开 ↗',
+      'metro.qr.title': '保存二维码',
+      'metro.qr.intro': '使用其他设备扫描此二维码,即可打开南京地铁线路图。',
+      'metro.qr.alt': '南京地铁线路图二维码(指向 metroman.cn)',
+      'metro.qr.download': '下载二维码',
 
       'footer.tag': '面向南信大国际教师的生活与文化导航平台。',
       'footer.note': '已核实地点、电话、班车线路、美食指南与本地路线。',
@@ -1188,6 +1216,13 @@
     if (top.trigger === 'bus') {
       titleEl.textContent = dict['bus.modal.title'] || '';
       bodyEl.innerHTML = renderBusRoutesHtml(dict);
+    } else if (top.trigger === 'metro-open') {
+      titleEl.textContent = dict['metro.open.title'] || '';
+      bodyEl.innerHTML = renderMetroOpenHtml(dict);
+      wireMetroOpenIframe(bodyEl);
+    } else if (top.trigger === 'metro-qr') {
+      titleEl.textContent = dict['metro.qr.title'] || '';
+      bodyEl.innerHTML = renderMetroQrHtml(dict);
     } else if (top.trigger === 'place-select') {
       titleEl.textContent = dict['routes.placeSelect.title'] || '';
       bodyEl.innerHTML = renderPlaceSelectHtml(top.routeId, dict);
@@ -1314,6 +1349,74 @@
 
   function camelizePlaceId(id) {
     return String(id || '').replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  }
+
+  /* ---------- Metro Map (v3.3) ----------
+     - METRO_URL: live page that Open Metro Map iframes into.
+     - METRO_QR_SRC: locally generated PNG (Python qrcode lib) encoding METRO_URL.
+       File is regenerated on every QR update so old/wrong images can never load. */
+  const METRO_URL = 'https://www.metroman.cn/maps/nanjing/network';
+  const METRO_QR_SRC = 'assets/metro/nanjing-metro-map-qr.png';
+  const METRO_QR_DOWNLOAD = 'nanjing-metro-map-qr.png';
+
+  function renderMetroOpenHtml(dict) {
+    const loadingTxt   = escapeHtml(dict['metro.open.loading'] || '');
+    const iframeTitle  = escapeHtml(dict['metro.open.iframeTitle'] || '');
+    const fallbackTxt  = escapeHtml(dict['metro.open.fallback'] || '');
+    const newTabTxt    = escapeHtml(dict['metro.open.newTab'] || '');
+    return (
+      '<div class="metro-iframe-wrap">' +
+        '<div class="metro-iframe-loading" data-role="loading">' + loadingTxt + '</div>' +
+        '<iframe class="metro-iframe" data-role="frame"' +
+          ' src="' + METRO_URL + '"' +
+          ' title="' + iframeTitle + '"' +
+          ' loading="lazy"' +
+          ' referrerpolicy="no-referrer-when-downgrade"' +
+          ' allow="fullscreen"></iframe>' +
+      '</div>' +
+      '<p class="metro-open-fallback">' + fallbackTxt + '</p>' +
+      '<div class="metro-modal-actions">' +
+        '<a class="btn btn-primary metro-modal-open"' +
+          ' href="' + METRO_URL + '"' +
+          ' target="_blank" rel="noopener noreferrer">' + newTabTxt + '</a>' +
+      '</div>'
+    );
+  }
+
+  /* Iframe hint hider: dismiss the loading text on iframe load, or after a
+     6s safety timer if the load event never fires (CSP block / network error).
+     The "Open in New Tab" button stays visible regardless. */
+  function wireMetroOpenIframe(root) {
+    const loadingEl = $('[data-role="loading"]', root);
+    const frame     = $('[data-role="frame"]', root);
+    if (!frame || !loadingEl) return;
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      loadingEl.classList.add('is-hidden');
+    };
+    frame.addEventListener('load', finish, { once: true });
+    setTimeout(finish, 6000);
+  }
+
+  function renderMetroQrHtml(dict) {
+    const intro = '<p class="modal-intro modal-prose">'
+      + escapeHtml(dict['metro.qr.intro'] || '') + '</p>';
+    const qrAlt = escapeHtml(dict['metro.qr.alt'] || '');
+    const dlTxt = escapeHtml(dict['metro.qr.download'] || '');
+    return (
+      intro +
+      '<figure class="metro-modal-qr">' +
+        '<img src="' + METRO_QR_SRC + '" alt="' + qrAlt + '"' +
+          ' loading="lazy" decoding="async" />' +
+      '</figure>' +
+      '<div class="metro-modal-actions">' +
+        '<a class="btn btn-primary metro-modal-download"' +
+          ' href="' + METRO_QR_SRC + '"' +
+          ' download="' + METRO_QR_DOWNLOAD + '">' + dlTxt + '</a>' +
+      '</div>'
+    );
   }
 
   function renderPlaceSelectHtml(routeId, dict) {
